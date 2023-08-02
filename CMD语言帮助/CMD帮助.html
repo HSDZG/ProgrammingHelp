@@ -1,0 +1,1146 @@
+<!DOCTYPE html><html><head>
+      <title>CMD&#x5E2E;&#x52A9;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\ms\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">CMD&#x5E2E;&#x52A9;&#x6587;&#x6863;</h1>
+
+
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#cmd&#x5E2E;&#x52A9;&#x6587;&#x6863;" class="md-toc-link"><p>CMD&#x5E2E;&#x52A9;&#x6587;&#x6863;</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x6982;&#x8FF0;" class="md-toc-link">
+            <p>&#x6982;&#x8FF0;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;" class="md-toc-link">
+            <p>&#x5F00;&#x53D1;&#x73AF;&#x5883;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x57FA;&#x672C;&#x8BED;&#x6CD5;" class="md-toc-link">
+            <p>&#x57FA;&#x672C;&#x8BED;&#x6CD5;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x6CE8;&#x91CA;" class="md-toc-link">
+            <p>&#x6CE8;&#x91CA;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x6807;&#x8BC6;&#x7B26;" class="md-toc-link">
+            <p>&#x6807;&#x8BC6;&#x7B26;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x5173;&#x952E;&#x5B57;" class="md-toc-link">
+            <p>&#x5173;&#x952E;&#x5B57;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x901A;&#x914D;&#x7B26;" class="md-toc-link">
+            <p>&#x901A;&#x914D;&#x7B26;</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#&#x57FA;&#x672C;&#x8F93;&#x5165;&#x8F93;&#x51FA;" class="md-toc-link"><p>&#x57FA;&#x672C;&#x8F93;&#x5165;&#x8F93;&#x51FA;</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#choice" class="md-toc-link">
+            <p>choice</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#echo" class="md-toc-link">
+            <p>echo</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x8F93;&#x51FA;" class="md-toc-link">
+            <p>&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x8F93;&#x51FA;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x6570;&#x636E;&#x7C7B;&#x578B;" class="md-toc-link">
+            <p>&#x6570;&#x636E;&#x7C7B;&#x578B;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x53D8;&#x91CF;" class="md-toc-link">
+            <p>&#x53D8;&#x91CF;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x5E38;&#x91CF;" class="md-toc-link">
+            <p>&#x5E38;&#x91CF;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x8F6C;&#x4E49;&#x5B57;&#x7B26;" class="md-toc-link">
+            <p>&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x8FD0;&#x7B97;&#x7B26;" class="md-toc-link">
+            <p>&#x8FD0;&#x7B97;&#x7B26;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x5206;&#x652F;&#x8BED;&#x53E5;" class="md-toc-link">
+            <p>&#x5206;&#x652F;&#x8BED;&#x53E5;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x5FAA;&#x73AF;&#x8BED;&#x53E5;" class="md-toc-link">
+            <p>&#x5FAA;&#x73AF;&#x8BED;&#x53E5;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#goto&#x8BED;&#x53E5;" class="md-toc-link">
+            <p>goto&#x8BED;&#x53E5;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x5B50;&#x7A0B;&#x5E8F;" class="md-toc-link">
+            <p>&#x5B50;&#x7A0B;&#x5E8F;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x6E90;&#x6587;&#x4EF6;&#x53CA;&#x591A;&#x6587;&#x4EF6;&#x7F16;&#x7A0B;" class="md-toc-link">
+            <p>&#x6E90;&#x6587;&#x4EF6;&#x53CA;&#x591A;&#x6587;&#x4EF6;&#x7F16;&#x7A0B;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x5F02;&#x5E38;&#x5904;&#x7406;" class="md-toc-link">
+            <p>&#x5F02;&#x5E38;&#x5904;&#x7406;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="md-toc-link">
+            <p>&#x5E38;&#x7528;&#x547D;&#x4EE4;</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h2 class="mume-header" id="%E6%A6%82%E8%BF%B0">&#x6982;&#x8FF0;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+CMD&#xFF08;Command Prompt&#xFF09;&#x662F;Windows&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x754C;&#x9762;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x952E;&#x5165;&#x547D;&#x4EE4;&#x6765;&#x6267;&#x884C;&#x5404;&#x79CD;&#x64CD;&#x4F5C;&#x548C;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x5173;&#x4E8E; CMD &#x7684;&#x4E00;&#x822C;&#x6982;&#x8FF0;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x529F;&#x80FD;&#xFF1A;CMD &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x547D;&#x4EE4;&#x548C;&#x529F;&#x80FD;&#xFF0C;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x3001;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x3001;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x3001;&#x8FDB;&#x7A0B;&#x63A7;&#x5236;&#x7B49;&#x4EFB;&#x52A1;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x952E;&#x5165;&#x547D;&#x4EE4;&#x6765;&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x4E0E;&#x4F7F;&#x7528;&#x56FE;&#x5F62;&#x754C;&#x9762;&#xFF08;GUI&#xFF09;&#x76F8;&#x6BD4;&#xFF0C;CMD &#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x76F4;&#x63A5;&#x548C;&#x9AD8;&#x5EA6;&#x5B9A;&#x5236;&#x7684;&#x63A7;&#x5236;&#x3002;</p>
+</li>
+<li>
+<p>&#x547D;&#x4EE4;&#x884C;&#x754C;&#x9762;&#xFF1A;CMD &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x6587;&#x672C;&#x7684;&#x754C;&#x9762;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4E2D;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x547D;&#x4EE4;&#x7531;&#x547D;&#x4EE4;&#x540D;&#x79F0;&#x548C;&#x4E00;&#x4E9B;&#x53C2;&#x6570;&#x7EC4;&#x6210;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x8981;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;CMD &#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5185;&#x7F6E;&#x7684;&#x547D;&#x4EE4;&#xFF08;&#x5982; dir&#x3001;cd&#x3001;copy &#x7B49;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5E38;&#x89C1;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x7CFB;&#x7EDF;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li>
+<p>&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#xFF1A;CMD &#x5141;&#x8BB8;&#x7528;&#x6237;&#x521B;&#x5EFA;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#xFF0C;&#x901A;&#x8FC7;&#x7F16;&#x5199;&#x4E00;&#x7CFB;&#x5217;&#x547D;&#x4EE4;&#x548C;&#x903B;&#x8F91;&#x6765;&#x81EA;&#x52A8;&#x5316;&#x4EFB;&#x52A1;&#x3002;&#x8FD9;&#x4E9B;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x5177;&#x6709;&#x6269;&#x5C55;&#x540D;&#x4E3A; .bat &#x6216; .cmd&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x547D;&#x4EE4;&#x4EE5;&#x5B8C;&#x6210;&#x590D;&#x6742;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li>
+<p>&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF1A;CMD &#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6765;&#x914D;&#x7F6E;&#x548C;&#x63A7;&#x5236;&#x5176;&#x884C;&#x4E3A;&#x3002;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x8DEF;&#x5F84;&#x3001;&#x7528;&#x6237;&#x914D;&#x7F6E;&#x3001;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x5728; CMD &#x6267;&#x884C;&#x547D;&#x4EE4;&#x65F6;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+</li>
+<li>
+<p>&#x6267;&#x884C;&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#xFF1A;&#x9664;&#x4E86;&#x6267;&#x884C;&#x5185;&#x7F6E;&#x7684;&#x547D;&#x4EE4;&#xFF0C;CMD &#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x6765;&#x6267;&#x884C;&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#x3002;&#x8FD9;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6216;&#x6267;&#x884C;&#x5176;&#x4ED6;&#x811A;&#x672C;&#x8BED;&#x8A00;&#xFF08;&#x5982; Python&#x3001;Perl &#x7B49;&#xFF09;&#x3002;</p>
+</li>
+<li>
+<p>&#x547D;&#x4EE4;&#x5386;&#x53F2;&#x548C;&#x5FEB;&#x6377;&#x952E;&#xFF1A;CMD &#x4FDD;&#x6301;&#x4E86;&#x7528;&#x6237;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x5728;&#x7528;&#x6237;&#x6309;&#x4E0A;&#x4E0B;&#x7BAD;&#x5934;&#x952E;&#x65F6;&#x63D0;&#x4F9B;&#x81EA;&#x52A8;&#x8865;&#x5168;&#x529F;&#x80FD;&#x3002;&#x6B64;&#x5916;&#xFF0C;CMD &#x8FD8;&#x652F;&#x6301;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x5FEB;&#x6377;&#x952E;&#x548C;&#x7F16;&#x8F91;&#x529F;&#x80FD;&#xFF0C;&#x5982;&#x590D;&#x5236;&#x7C98;&#x8D34;&#x3001;&#x5220;&#x9664;&#x548C;&#x79FB;&#x52A8;&#x5149;&#x6807;&#x7B49;&#x3002;</p>
+</li>
+</ol>
+<p>CMD &#x662F;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x7279;&#x522B;&#x9002;&#x7528;&#x4E8E;&#x90A3;&#x4E9B;&#x719F;&#x6089;&#x547D;&#x4EE4;&#x884C;&#x754C;&#x9762;&#x548C;&#x559C;&#x6B22;&#x901A;&#x8FC7;&#x952E;&#x5165;&#x547D;&#x4EE4;&#x6765;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x7684;&#x7528;&#x6237;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x7075;&#x6D3B;&#x6027;&#x548C;&#x63A7;&#x5236;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x65E5;&#x5E38;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x3001;&#x811A;&#x672C;&#x7F16;&#x5199;&#x3001;&#x6545;&#x969C;&#x6392;&#x9664;&#x7B49;&#x5404;&#x79CD;&#x573A;&#x666F;&#x3002;</p>
+<h2 class="mume-header" id="%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">&#x5F00;&#x53D1;&#x73AF;&#x5883;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5982;&#x679C;&#x4F60;&#x6253;&#x7B97;&#x5F00;&#x53D1;&#x81EA;&#x5B9A;&#x4E49;&#x7684; CMD&#xFF08;Command Prompt&#xFF09;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6216;&#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</p>
+<ol>
+<li>
+<p>Visual Studio&#xFF1A;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x96C6;&#x6210;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF08;IDE&#xFF09;&#xFF0C;Visual Studio &#x63D0;&#x4F9B;&#x4E86;&#x4E30;&#x5BCC;&#x7684;&#x5DE5;&#x5177;&#x548C;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x548C;&#x8C03;&#x8BD5;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5305;&#x62EC;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; C# &#x6216; C++ &#x7B49;&#x8BED;&#x8A00;&#x6765;&#x5F00;&#x53D1;&#x547D;&#x4EE4;&#x884C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x5229;&#x7528; Visual Studio &#x7684;&#x8C03;&#x8BD5;&#x5668;&#x3001;&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5668;&#x3001;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x7B49;&#x529F;&#x80FD;&#x6765;&#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x3002;</p>
+</li>
+<li>
+<p>Notepad++&#xFF1A;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;Notepad++ &#x5728; CMD &#x5F00;&#x53D1;&#x4E2D;&#x662F;&#x4E00;&#x4E2A;&#x53D7;&#x6B22;&#x8FCE;&#x7684;&#x9009;&#x62E9;&#x3002;&#x5B83;&#x5177;&#x5907;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x3001;&#x4EE3;&#x7801;&#x6298;&#x53E0;&#x3001;&#x641C;&#x7D22;&#x66FF;&#x6362;&#x3001;&#x6269;&#x5C55;&#x63D2;&#x4EF6;&#x7B49;&#x529F;&#x80FD;&#xFF0C;&#x9002;&#x5408;&#x7B80;&#x5355;&#x7684; CMD &#x811A;&#x672C;&#x7F16;&#x5199;&#x548C;&#x7F16;&#x8F91;&#x3002;</p>
+</li>
+<li>
+<p>Sublime Text&#xFF1A;&#x7C7B;&#x4F3C;&#x4E8E; Notepad++&#xFF0C;Sublime Text &#x662F;&#x4E00;&#x4E2A;&#x6D41;&#x884C;&#x7684;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E30;&#x5BCC;&#x7684;&#x529F;&#x80FD;&#x548C;&#x63D2;&#x4EF6;&#x751F;&#x6001;&#x7CFB;&#x7EDF;&#xFF0C;&#x4EE5;&#x652F;&#x6301; CMD &#x5F00;&#x53D1;&#x548C;&#x7F16;&#x5199;&#x811A;&#x672C;&#x3002;</p>
+</li>
+<li>
+<p>Atom&#xFF1A;Atom &#x662F;&#x7531; GitHub &#x5F00;&#x53D1;&#x7684;&#x514D;&#x8D39;&#x5F00;&#x6E90;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x5177;&#x6709;&#x5F3A;&#x5927;&#x7684;&#x6269;&#x5C55;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x6027;&#xFF0C;&#x53EF;&#x6EE1;&#x8DB3; CMD &#x5F00;&#x53D1;&#x7684;&#x9700;&#x6C42;&#x3002;&#x901A;&#x8FC7;&#x5B89;&#x88C5;&#x76F8;&#x5173;&#x63D2;&#x4EF6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x3001;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x3001;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x7B49;&#x529F;&#x80FD;&#x6765;&#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x4F53;&#x9A8C;&#x3002;</p>
+</li>
+<li>
+<p>Visual Studio Code&#xFF1A;&#x7B80;&#x79F0;&#x4E3A; VS Code&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x514D;&#x8D39;&#x5F00;&#x6E90;&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x652F;&#x6301;&#x8BB8;&#x591A;&#x8BED;&#x8A00;&#x548C;&#x6269;&#x5C55;&#x3002;VS Code &#x63D0;&#x4F9B;&#x4E86;&#x4E30;&#x5BCC;&#x7684; CMD &#x5F00;&#x53D1;&#x652F;&#x6301;&#xFF0C;&#x652F;&#x6301;&#x8C03;&#x8BD5;&#x3001;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x3001;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x7B49;&#x529F;&#x80FD;&#x3002;</p>
+</li>
+</ol>
+<p>&#x65E0;&#x8BBA;&#x4F60;&#x9009;&#x62E9;&#x54EA;&#x4E2A;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x662F;&#x6839;&#x636E;&#x4E2A;&#x4EBA;&#x6216;&#x56E2;&#x961F;&#x7684;&#x559C;&#x597D;&#x548C;&#x9700;&#x6C42;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#x3002;&#x8FD9;&#x4E9B;&#x5DE5;&#x5177;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x7F16;&#x8F91;&#x548C;&#x8C03;&#x8BD5;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x5F00;&#x53D1;&#x548C;&#x8C03;&#x8BD5; CMD &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6216;&#x811A;&#x672C;&#x3002;</p>
+<h2 class="mume-header" id="%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+CMD&#xFF08;Command Prompt&#xFF09;&#x662F;Windows&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x7279;&#x5B9A;&#x7684;&#x8BED;&#x6CD5;&#x6765;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684; CMD &#x57FA;&#x672C;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x547D;&#x4EE4;&#x540D;&#x79F0;&#xFF1A;&#x547D;&#x4EE4;&#x7531;&#x547D;&#x4EE4;&#x540D;&#x79F0;&#x8868;&#x793A;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x8981;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;dir&quot;&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x5B50;&#x76EE;&#x5F55;&#x3002;</p>
+</li>
+<li>
+<p>&#x9009;&#x9879;&#x548C;&#x53C2;&#x6570;&#xFF1A;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5E26;&#x6709;&#x9009;&#x9879;&#x548C;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x63A7;&#x5236;&#x547D;&#x4EE4;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x9009;&#x9879;&#x901A;&#x5E38;&#x4EE5;&#x524D;&#x5BFC;&#x659C;&#x6760;&#xFF08;/&#xFF09;&#x6216;&#x7834;&#x6298;&#x53F7;&#xFF08;-&#xFF09;&#x8868;&#x793A;&#xFF0C;&#x53C2;&#x6570;&#x662F;&#x547D;&#x4EE4;&#x6240;&#x9700;&#x7684;&#x8F93;&#x5165;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;dir /w&quot;&#x547D;&#x4EE4;&#x5728;&#x5217;&#x51FA;&#x6587;&#x4EF6;&#x65F6;&#x4F7F;&#x7528;&#x5BBD;&#x683C;&#x5F0F;&#x3002;</p>
+</li>
+<li>
+<p>&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#xFF1A;&#x8BB8;&#x591A;&#x547D;&#x4EE4;&#x9700;&#x8981;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6216;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x8868;&#x793A;&#xFF0C;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6216;&#x76F8;&#x5BF9;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x5F84;&#x8868;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;cd C:\Windows&quot;&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5C06;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x66F4;&#x6539;&#x4E3A;C:\Windows&#x3002;</p>
+</li>
+<li>
+<p>&#x901A;&#x914D;&#x7B26;&#xFF1A;CMD &#x652F;&#x6301;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x6765;&#x5339;&#x914D;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5E38;&#x7528;&#x7684;&#x901A;&#x914D;&#x7B26;&#x5305;&#x62EC;&#x661F;&#x53F7;&#xFF08;*&#xFF09;&#x548C;&#x95EE;&#x53F7;&#xFF08;?&#xFF09;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;dir *.txt&quot;&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4EE5; .txt &#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li>
+<p>&#x547D;&#x4EE4;&#x7684;&#x7ED3;&#x675F;&#xFF1A;&#x5728; CMD &#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6309;&#x4E0B;&#x56DE;&#x8F66;&#x952E;&#x6765;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x3002;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x4F1A;&#x663E;&#x793A;&#x547D;&#x4EE4;&#x7684;&#x7ED3;&#x679C;&#x6216;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li>
+<p>&#x547D;&#x4EE4;&#x7684;&#x94FE;&#x63A5;&#x548C;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#xFF1A;&#x5728; CMD &#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4E32;&#x8054;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&quot;&amp;&amp;&quot;&#x6765;&#x5206;&#x9694;&#x5B83;&#x4EEC;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;dir &amp;&amp; echo Hello&quot;&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5148;&#x6267;&#x884C; &quot;dir&quot; &#x547D;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C; &quot;echo Hello&quot; &#x547D;&#x4EE4;&#x3002;</p>
+</li>
+<li>
+<p>&#x6CE8;&#x91CA;&#xFF1A;&#x5728; CMD &#x4E2D;&#xFF0C;&#x4F7F;&#x7528; &quot;REM&quot; &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x6CE8;&#x91CA;&#xFF0C;&#x4EE5;&#x63D0;&#x4F9B;&#x5BF9;&#x547D;&#x4EE4;&#x7684;&#x989D;&#x5916;&#x8BF4;&#x660E;&#xFF0C;&#x8FD9;&#x4E9B;&#x6CE8;&#x91CA;&#x4E0D;&#x4F1A;&#x88AB; CMD &#x89E3;&#x91CA;&#x5668;&#x6267;&#x884C;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8FD9;&#x53EA;&#x662F; CMD &#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7684;&#x4E00;&#x4E9B;&#x793A;&#x4F8B;&#xFF0C;&#x8FD8;&#x6709;&#x8BB8;&#x591A;&#x5176;&#x4ED6;&#x547D;&#x4EE4;&#x548C;&#x8BED;&#x6CD5;&#x7528;&#x6CD5;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; CMD &#x4E2D;&#x8F93;&#x5165; &quot;help&quot; &#x6216;&#x547D;&#x4EE4;&#x540E;&#x52A0;&#x4E0A; &quot;/?&quot; &#x6765;&#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#xFF0C;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x7528;&#x6CD5;&#x3002;</p>
+<h2 class="mume-header" id="%E6%B3%A8%E9%87%8A">&#x6CE8;&#x91CA;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; &quot;REM&quot; &#x547D;&#x4EE4;&#x6765;&#x6DFB;&#x52A0;&#x6CE8;&#x91CA;&#x3002;&#x6CE8;&#x91CA;&#x662F;&#x5BF9;&#x547D;&#x4EE4;&#x6216;&#x811A;&#x672C;&#x7684;&#x89E3;&#x91CA;&#x8BF4;&#x660E;&#xFF0C;&#x5BF9;&#x4E8E;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x548C;&#x7EF4;&#x62A4;&#x6027;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x5173;&#x4E8E; CMD &#x4E2D;&#x6CE8;&#x91CA;&#x7684;&#x51E0;&#x4E2A;&#x8981;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x4F7F;&#x7528; &quot;REM&quot; &#x5F00;&#x5934;&#xFF1A;&#x5728; CMD &#x4E2D;&#xFF0C;&#x4F7F;&#x7528; &quot;REM&quot; &#x5F00;&#x5934;&#x7684;&#x884C;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&#x6CE8;&#x91CA;&#xFF0C;CMD &#x89E3;&#x91CA;&#x5668;&#x5C06;&#x5FFD;&#x7565;&#x8FD9;&#x4E9B;&#x884C;&#x5E76;&#x4E0D;&#x6267;&#x884C;&#x5176;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+</li>
+<li>
+<p>&#x5355;&#x884C;&#x6CE8;&#x91CA;&#xFF1A;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x884C;&#x7684;&#x5F00;&#x5934;&#x4F7F;&#x7528; &quot;REM&quot; &#x547D;&#x4EE4;&#x6DFB;&#x52A0;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&quot;REM This is a comment&quot;&#x3002;</p>
+</li>
+<li>
+<p>&#x591A;&#x884C;&#x6CE8;&#x91CA;&#xFF1A;CMD &#x5E76;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x652F;&#x6301;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x6765;&#x6A21;&#x62DF;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>REM This is a multi-line
+REM comment in CMD
+REM It spans across multiple lines
+</code></pre></li>
+<li>
+<p>&#x4F4D;&#x7F6E;&#x9650;&#x5B9A;&#x7B26;&#xFF1A;CMD &#x89E3;&#x91CA;&#x5668;&#x5BF9;&#x6CE8;&#x91CA;&#x4F4D;&#x7F6E;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x9650;&#x5236;&#x3002;&#x5373;&#xFF0C;&#x6CE8;&#x91CA;&#x5E94;&#x8BE5;&#x5728;&#x547D;&#x4EE4;&#x4E4B;&#x524D;&#x6216;&#x5728;&#x547D;&#x4EE4;&#x7684;&#x540C;&#x4E00;&#x884C;&#x3002;&#x5982;&#x679C;&#x6CE8;&#x91CA;&#x4F4D;&#x4E8E;&#x547D;&#x4EE4;&#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x5C06;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x8BE5;&#x547D;&#x4EE4;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6CE8;&#x91CA;&#x3002;</p>
+</li>
+</ol>
+<p>&#x6DFB;&#x52A0;&#x6CE8;&#x91CA;&#x6709;&#x52A9;&#x4E8E;&#x63D0;&#x9AD8;&#x811A;&#x672C;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x4F7F;&#x522B;&#x4EBA;&#x548C;&#x81EA;&#x5DF1;&#x66F4;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x811A;&#x672C;&#x7684;&#x610F;&#x56FE;&#x548C;&#x529F;&#x80FD;&#x3002;&#x5728;&#x7F16;&#x5199; CMD &#x811A;&#x672C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6CE8;&#x91CA;&#x6765;&#x89E3;&#x91CA;&#x547D;&#x4EE4;&#x7684;&#x7528;&#x9014;&#x3001;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#x3001;&#x7279;&#x5B9A;&#x64CD;&#x4F5C;&#x7684;&#x539F;&#x7406;&#x7B49;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x5BF9;&#x4E8E;&#x7A0D;&#x540E;&#x7684;&#x7EF4;&#x62A4;&#x548C;&#x4FEE;&#x6539;&#xFF0C;&#x6CE8;&#x91CA;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x53C2;&#x8003;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x6CE8;&#x91CA;&#x53EA;&#x5BF9;&#x4EBA;&#x7C7B;&#x53EF;&#x8BFB;&#xFF0C;CMD &#x89E3;&#x91CA;&#x5668;&#x4F1A;&#x5FFD;&#x7565;&#x5B83;&#x4EEC;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x6CE8;&#x91CA;&#x4E2D;&#x4E0D;&#x5E94;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x5BF9;&#x547D;&#x4EE4;&#x884C;&#x6267;&#x884C;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+<h2 class="mume-header" id="%E6%A0%87%E8%AF%86%E7%AC%A6">&#x6807;&#x8BC6;&#x7B26;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x662F;&#x7528;&#x6765;&#x6807;&#x8BC6;&#x53D8;&#x91CF;&#x3001;&#x53C2;&#x6570;&#x3001;&#x547D;&#x4EE4;&#x548C;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x7684;&#x540D;&#x79F0;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684; CMD &#x6807;&#x8BC6;&#x7B26;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x53D8;&#x91CF;&#x540D;&#xFF1A;&#x5728; CMD &#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x767E;&#x5206;&#x53F7;&#xFF08;%&#xFF09;&#x5C06;&#x53D8;&#x91CF;&#x540D;&#x62EC;&#x8D77;&#x6765;&#x6765;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;%USERNAME%&quot; &#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x8868;&#x793A;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7528;&#x6237;&#x7684;&#x7528;&#x6237;&#x540D;&#x3002;</p>
+</li>
+<li>
+<p>&#x53C2;&#x6570;&#xFF1A;&#x5F53;&#x4F60;&#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49;&#x7684; CMD &#x811A;&#x672C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#xFF08;%0&#x3001;%1&#x3001;%2...&#xFF09;&#x6765;&#x5F15;&#x7528;&#x4F20;&#x9012;&#x7ED9;&#x811A;&#x672C;&#x7684;&#x53C2;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;%1&quot; &#x8868;&#x793A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&quot;%2&quot; &#x8868;&#x793A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</p>
+</li>
+<li>
+<p>&#x6807;&#x51C6;&#x8F93;&#x5165;&#x548C;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF1A;CMD &#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x6765;&#x8868;&#x793A;&#x6807;&#x51C6;&#x8F93;&#x5165;&#xFF08;stdin&#xFF09;&#x3001;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF08;stdout&#xFF09;&#x548C;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#xFF08;stderr&#xFF09;&#x3002;&quot;&lt;&quot; &#x8868;&#x793A;&#x5C06;&#x8F93;&#x5165;&#x4ECE;&#x6587;&#x4EF6;&#x6216;&#x547D;&#x4EE4;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x5165;&#xFF0C;&quot;&gt;&quot; &#x8868;&#x793A;&#x5C06;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&quot;2&gt;&quot; &#x8868;&#x793A;&#x5C06;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li>
+<p>&#x547D;&#x4EE4;&#x540D;&#x79F0;&#xFF1A;CMD &#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x901A;&#x5E38;&#x4EE5;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#x7EC4;&#x6210;&#x7684;&#x540D;&#x79F0;&#x6765;&#x8868;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;dir&quot; &#x662F;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x5217;&#x51FA;&#x76EE;&#x5F55;&#x5185;&#x5BB9;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+<li>
+<p>&#x6279;&#x5904;&#x7406;&#x6807;&#x7B7E;&#xFF1A;&#x5728;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5192;&#x53F7;&#xFF08;:&#xFF09;&#x7ED9;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x8D77;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x3002;&#x8FD9;&#x4E2A;&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5728;&#x811A;&#x672C;&#x4E2D;&#x8FDB;&#x884C;&#x8DF3;&#x8F6C;&#x548C;&#x6807;&#x8BB0;&#x4F4D;&#x7F6E;&#x3002;</p>
+</li>
+<li>
+<p>&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF1A;CMD &#x4E2D;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E5F;&#x53EF;&#x4EE5;&#x89C6;&#x4E3A;&#x6807;&#x8BC6;&#x7B26;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x9002;&#x5F53;&#x7684;&#x8F6C;&#x4E49;&#x6216;&#x5F15;&#x53F7;&#x6765;&#x5904;&#x7406;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x8DEF;&#x5F84;&#x6216;&#x6587;&#x4EF6;&#x540D;&#x4E2D;&#x5305;&#x542B;&#x7A7A;&#x683C;&#x6216;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5F15;&#x53F7;&#x5C06;&#x5176;&#x62EC;&#x8D77;&#x6765;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x6807;&#x8BC6;&#x7B26;&#x7528;&#x4E8E;&#x5728; CMD &#x7684;&#x811A;&#x672C;&#x6216;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x5F15;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5143;&#x7D20;&#x6216;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x7406;&#x89E3;&#x8FD9;&#x4E9B;&#x6807;&#x8BC6;&#x7B26;&#x7684;&#x542B;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x5BF9;&#x7F16;&#x5199;&#x548C;&#x6267;&#x884C; CMD &#x547D;&#x4EE4;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<h2 class="mume-header" id="%E5%85%B3%E9%94%AE%E5%AD%97">&#x5173;&#x952E;&#x5B57;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+CMD&#xFF08;Command Prompt&#xFF09;&#x662F;Windows&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x548C;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x4EE4;&#x548C;&#x64CD;&#x4F5C;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684; CMD &#x5173;&#x952E;&#x5B57;&#xFF1A;</p>
+<ol>
+<li>
+<p>CD&#xFF1A;&#x7528;&#x4E8E;&#x6539;&#x53D8;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;cd C:\Windows&quot; &#x5C06;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x66F4;&#x6539;&#x4E3A; C:\Windows&#x3002;</p>
+</li>
+<li>
+<p>DIR&#xFF1A;&#x7528;&#x4E8E;&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x5B50;&#x76EE;&#x5F55;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;dir&quot; &#x5C06;&#x663E;&#x793A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+</li>
+<li>
+<p>ECHO&#xFF1A;&#x7528;&#x4E8E;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x663E;&#x793A;&#x6D88;&#x606F;&#x6216;&#x542F;&#x7528;/&#x7981;&#x7528;&#x547D;&#x4EE4;&#x56DE;&#x663E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;echo Hello, World!&quot; &#x5C06;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x663E;&#x793A; &quot;Hello, World!&quot;&#x3002;</p>
+</li>
+<li>
+<p>SET&#xFF1A;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6216;&#x521B;&#x5EFA;&#x548C;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;set VAR=123&quot; &#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; VAR &#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A; 123&#x3002;</p>
+</li>
+<li>
+<p>REM&#xFF1A;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x6CE8;&#x91CA;&#x3002;&quot;rem This is a comment&quot; &#x8868;&#x793A;&#x5728; CMD &#x811A;&#x672C;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x884C;&#x6CE8;&#x91CA;&#xFF0C;&#x8FD9;&#x884C;&#x6CE8;&#x91CA;&#x4E0D;&#x4F1A;&#x88AB;&#x89E3;&#x91CA;&#x548C;&#x6267;&#x884C;&#x3002;</p>
+</li>
+<li>
+<p>PAUSE&#xFF1A;&#x7528;&#x4E8E;&#x6682;&#x505C;&#x547D;&#x4EE4;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x7528;&#x6237;&#x6309;&#x4E0B;&#x4EFB;&#x610F;&#x952E;&#x3002;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x811A;&#x672C;&#x7684;&#x8C03;&#x8BD5;&#x6216;&#x63D0;&#x793A;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li>
+<p>IF&#xFF1A;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;if exist filename.txt echo File exists&quot; &#x8868;&#x793A;&#x5982;&#x679C; filename.txt &#x5B58;&#x5728;&#xFF0C;&#x5219;&#x663E;&#x793A; &quot;File exists&quot;&#x3002;</p>
+</li>
+<li>
+<p>GOTO&#xFF1A;&#x7528;&#x4E8E;&#x8DF3;&#x8F6C;&#x5230;&#x811A;&#x672C;&#x4E2D;&#x7684;&#x6807;&#x7B7E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;goto label&quot; &#x5C06;&#x8DF3;&#x8F6C;&#x5230;&#x6807;&#x7B7E;&#x5904;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x3002;</p>
+</li>
+<li>
+<p>FOR&#xFF1A;&#x7528;&#x4E8E;&#x5FAA;&#x73AF;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x9009;&#x9879;&#x548C;&#x53C2;&#x6570;&#x6765;&#x6307;&#x5B9A;&#x5FAA;&#x73AF;&#x7684;&#x65B9;&#x5F0F;&#x548C;&#x8981;&#x5904;&#x7406;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x5173;&#x952E;&#x5B57;&#x5728; CMD &#x4E2D;&#x626E;&#x6F14;&#x7740;&#x91CD;&#x8981;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x548C;&#x6267;&#x884C;&#x5404;&#x79CD;&#x547D;&#x4EE4;&#x548C;&#x64CD;&#x4F5C;&#x3002;&#x5B83;&#x4EEC;&#x5728;&#x7F16;&#x5199;&#x548C;&#x6267;&#x884C; CMD &#x811A;&#x672C;&#x65F6;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x5B9E;&#x73B0;&#x6761;&#x4EF6;&#x6267;&#x884C;&#x3001;&#x5FAA;&#x73AF;&#x3001;&#x53D8;&#x91CF;&#x8BBE;&#x7F6E;&#x7B49;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x3002;</p>
+<h2 class="mume-header" id="%E9%80%9A%E9%85%8D%E7%AC%A6">&#x901A;&#x914D;&#x7B26;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x901A;&#x914D;&#x7B26;&#x662F;&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#x7528;&#x4E8E;&#x5339;&#x914D;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x540D;&#x79F0;&#x7684;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x3002;CMD &#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x901A;&#x914D;&#x7B26;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x661F;&#x53F7;&#xFF08;<em>&#xFF09;&#xFF1A;&#x4EE3;&#x8868;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;</em>.txt&quot; &#x5339;&#x914D;&#x4EE5; &quot;.txt&quot; &#x7ED3;&#x5C3E;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li>
+<p>&#x95EE;&#x53F7;&#xFF08;?&#xFF09;&#xFF1A;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;file?.txt&quot; &#x5339;&#x914D;&#x6587;&#x4EF6;&#x540D;&#x4E3A; &quot;file1.txt&quot;&#x3001;&quot;file2.txt&quot;&#x3001;&quot;fileA.txt&quot; &#x7B49;&#x3002;</p>
+</li>
+<li>
+<p>&#x65B9;&#x62EC;&#x53F7;&#xFF08;[ ]&#xFF09;&#xFF1A;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x8303;&#x56F4;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;[abc]file.txt&quot; &#x5339;&#x914D; &quot;afile.txt&quot;&#x3001;&quot;bfile.txt&quot; &#x6216; &quot;cfile.txt&quot;&#x3002;</p>
+</li>
+<li>
+<p>&#x8131;&#x5B57;&#x7B26;&#xFF08;<sup>&#xFF09;&#xFF1A;&#x7528;&#x4E8E;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x524D;&#x8F6C;&#x4E49;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;[</sup>abc]file.txt&quot; &#x5339;&#x914D;&#x4E0D;&#x5305;&#x542B; a&#x3001;b &#x6216; c &#x4F5C;&#x4E3A;&#x5F00;&#x5934;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+</ol>
+<p>&#x901A;&#x914D;&#x7B26;&#x53EF;&#x7528;&#x4E8E;&#x5404;&#x79CD; CMD &#x547D;&#x4EE4;&#x548C;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x547D;&#x4EE4;&#x4E2D;&#x5217;&#x51FA;&#x6587;&#x4EF6;&#x3001;&#x590D;&#x5236;&#x3001;&#x79FB;&#x52A8;&#x6216;&#x5220;&#x9664;&#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x5728;&#x811A;&#x672C;&#x4E2D;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x7B49;&#x3002;&#x901A;&#x914D;&#x7B26;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x66F4;&#x7CBE;&#x786E;&#x5730;&#x5339;&#x914D;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#xFF0C;&#x63D0;&#x4F9B;&#x66F4;&#x5F3A;&#x5927;&#x7684;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x80FD;&#x529B;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x901A;&#x914D;&#x7B26;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x4E2D;&#x53EF;&#x80FD;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x65F6;&#xFF0C;&#x5EFA;&#x8BAE;&#x67E5;&#x9605;&#x76F8;&#x5173;&#x6587;&#x6863;&#x6216;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x6B63;&#x786E;&#x7406;&#x89E3;&#x548C;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x884C;&#x4E3A;&#x3002;</p>
+<h2 class="mume-header" id="%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA">&#x57FA;&#x672C;&#x8F93;&#x5165;&#x8F93;&#x51FA;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#x6765;&#x4E0E;&#x7528;&#x6237;&#x4EA4;&#x4E92;&#x3001;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x7B49;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x51E0;&#x79CD;&#x57FA;&#x672C;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x6807;&#x51C6;&#x8F93;&#x5165;&#xFF08;stdin&#xFF09;&#xFF1A;CMD &#x4E2D;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x901A;&#x5E38;&#x901A;&#x8FC7;&#x952E;&#x76D8;&#x8F93;&#x5165;&#x3002;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7B49;&#x5F85;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x8F93;&#x5165;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li>
+<p>&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF08;stdout&#xFF09;&#xFF1A;CMD &#x4E2D;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x901A;&#x5E38;&#x663E;&#x793A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x3002;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x7ED3;&#x679C;&#x4F1A;&#x88AB;&#x53D1;&#x9001;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF0C;&#x5E76;&#x663E;&#x793A;&#x7ED9;&#x7528;&#x6237;&#x3002;</p>
+</li>
+<li>
+<p>&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#xFF08;stderr&#xFF09;&#xFF1A;CMD &#x4E2D;&#x7684;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#x901A;&#x5E38;&#x663E;&#x793A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#xFF0C;&#x7528;&#x4E8E;&#x62A5;&#x544A;&#x9519;&#x8BEF;&#x6216;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#x3002;&#x4E0D;&#x540C;&#x4E8E;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF0C;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#x901A;&#x5E38;&#x4EE5;&#x7EA2;&#x8272;&#x5B57;&#x4F53;&#x663E;&#x793A;&#x3002;</p>
+</li>
+<li>
+<p>&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; &quot;&gt;&quot; &#x7B26;&#x53F7;&#x5C06;&#x547D;&#x4EE4;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C4F;&#x5E55;&#x4E0A;&#x663E;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&quot;dir &gt; output.txt&quot; &#x5C06;&#x76EE;&#x5F55;&#x5217;&#x8868;&#x8F93;&#x51FA;&#x5230;&#x540D;&#x4E3A; output.txt &#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+</li>
+<li>
+<p>&#x8F93;&#x5165;&#x91CD;&#x5B9A;&#x5411;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; &quot;&lt;&quot; &#x7B26;&#x53F7;&#x5C06;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x901A;&#x8FC7;&#x952E;&#x76D8;&#x8F93;&#x5165;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&quot;sort &lt; input.txt&quot; &#x5C06; input.txt &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A; sort &#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
+</li>
+</ol>
+<p>&#x9664;&#x4E86;&#x4EE5;&#x4E0A;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7BA1;&#x9053;&#x7B26;&#x53F7;&#xFF08;&quot;|&quot;&#xFF09;&#x5C06;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;dir | findstr .txt&quot; &#x5C06;&#x76EE;&#x5F55;&#x5217;&#x8868;&#x4F20;&#x9012;&#x7ED9; findstr &#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x7B5B;&#x9009;&#xFF0C;&#x4EE5;&#x627E;&#x5230;&#x5305;&#x542B; &quot;.txt&quot; &#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x8FD9;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5728; CMD &#x4E2D;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3001;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x548C;&#x91CD;&#x5B9A;&#x5411;&#x8F93;&#x51FA;&#x3002;&#x901A;&#x8FC7;&#x5408;&#x7406;&#x4F7F;&#x7528;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x6709;&#x6548;&#x5730;&#x8FDB;&#x884C;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x548C;&#x5904;&#x7406;&#x3002;</p>
+<h3 class="mume-header" id="choice">choice</h3>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728;CMD&#xFF08;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF09;&#x4E2D;&#xFF0C;<code>choice</code>&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5728;&#x7528;&#x6237;&#x9700;&#x8981;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x9009;&#x9879;&#x65F6;&#x7B49;&#x5F85;&#x7528;&#x6237;&#x8F93;&#x5165;&#x3002;&#x4EE5;&#x4E0B;&#x662F;<code>choice</code>&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6CD5;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">choice /C option1,option2,option3 <span class="token punctuation">[</span>/N<span class="token punctuation">]</span> <span class="token punctuation">[</span>/T timeout<span class="token punctuation">]</span> <span class="token punctuation">[</span>/D default<span class="token punctuation">]</span> <span class="token punctuation">[</span>/M <span class="token string">&quot;prompt&quot;</span><span class="token punctuation">]</span>
+</pre><ul>
+<li><code>/C option1,option2,option3</code>&#xFF1A;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x53EF;&#x9009;&#x62E9;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x591A;&#x4E2A;&#x9009;&#x9879;&#x4E4B;&#x95F4;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#x3002;</li>
+<li><code>/N</code>&#xFF1A;&#x7981;&#x7528;&#x7528;&#x6237;&#x6309;&#x4E0B;&#x76F8;&#x5E94;&#x7684;&#x952E;&#x540E;&#x663E;&#x793A;&#x9009;&#x9879;&#x5B57;&#x7B26;&#x3002;</li>
+<li><code>/T timeout</code>&#xFF1A;&#x6307;&#x5B9A;&#x7B49;&#x5F85;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x65F6;&#x95F4;&#xFF08;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#x3002;</li>
+<li><code>/D default</code>&#xFF1A;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x9009;&#x9879;&#xFF0C;&#x5F53;&#x8D85;&#x8FC7;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x65F6;&#x5C06;&#x9009;&#x62E9;&#x9ED8;&#x8BA4;&#x9009;&#x9879;&#x3002;</li>
+<li><code>/M &quot;prompt&quot;</code>&#xFF1A;&#x6307;&#x5B9A;&#x8981;&#x663E;&#x793A;&#x7ED9;&#x7528;&#x6237;&#x7684;&#x63D0;&#x793A;&#x6D88;&#x606F;&#x3002;</li>
+</ul>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x5C06;&#x63D0;&#x793A;&#x7528;&#x6237;&#x9009;&#x62E9;&#x201C;&#x662F;&#x201D;&#x6216;&#x201C;&#x5426;&#x201D;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">@echo off
+choice /C YN /M <span class="token string">&quot;Do you want to continue?&quot;</span>
+<span class="token keyword keyword-if">if</span> errorlevel <span class="token number">2</span> <span class="token punctuation">(</span>
+    <span class="token builtin class-name">echo</span> You chose No.
+<span class="token punctuation">)</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">(</span>
+    <span class="token builtin class-name">echo</span> You chose Yes.
+<span class="token punctuation">)</span>
+</pre><p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x91CC;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x6309;&#x4E0B;Y&#x6216;N&#x6765;&#x4F5C;&#x51FA;&#x9009;&#x62E9;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x9009;&#x62E9;&quot;&#x662F;&quot;&#xFF0C;&#x5219;&#x663E;&#x793A;&quot;You chose Yes.&quot;&#xFF0C;&#x5426;&#x5219;&#x663E;&#x793A;&quot;You chose No.&quot;&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;<code>choice</code>&#x547D;&#x4EE4;&#x5728;&#x4E00;&#x4E9B;&#x8F83;&#x8001;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x53EF;&#x80FD;&#x4E0D;&#x53EF;&#x7528;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>set /P</code>&#x547D;&#x4EE4;&#x7ED3;&#x5408;&#x9519;&#x8BEF;&#x7EA7;&#x522B;&#x53D8;&#x91CF;&#xFF08;<code>%errorlevel%</code>&#xFF09;&#x8FDB;&#x884C;&#x7C7B;&#x4F3C;&#x7684;&#x7528;&#x6237;&#x8F93;&#x5165;&#x63A7;&#x5236;&#x3002;</p>
+<h3 class="mume-header" id="echo">echo</h3>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#xFF0C;<code>echo</code>&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#x8F93;&#x51FA;&#x6587;&#x672C;&#x6216;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;<code>echo</code>&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6CD5;&#x793A;&#x4F8B;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x8F93;&#x51FA;&#x6587;&#x672C;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token builtin class-name">echo</span> Hello, World<span class="token operator">!</span>
+</pre></li>
+<li>
+<p>&#x8F93;&#x51FA;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token builtin class-name">set</span> <span class="token assign-left variable">name</span><span class="token operator">=</span>John
+<span class="token builtin class-name">echo</span> Hello, %name%<span class="token operator">!</span>
+</pre></li>
+<li>
+<p>&#x8F93;&#x51FA;&#x7A7A;&#x884C;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">echo.
+</pre></li>
+<li>
+<p>&#x6253;&#x5370;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token builtin class-name">echo</span> Special characters: ^ <span class="token operator">&lt;</span> <span class="token operator">&gt;</span> <span class="token operator">&amp;</span> <span class="token operator">|</span>
+</pre></li>
+<li>
+<p>&#x7981;&#x7528;&#x547D;&#x4EE4;&#x7684;&#x56DE;&#x663E;&#xFF08;&#x5728;&#x811A;&#x672C;&#x4E2D;&#x5E38;&#x7528;&#xFF09;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">@echo off
+</pre></li>
+</ol>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x8F6C;&#x4E49;&#xFF0C;&#x5982;<code>&lt;</code>&#x3001;<code>&gt;</code>&#x548C;<code>&amp;</code>&#x7B26;&#x53F7;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x91CD;&#x5B9A;&#x5411;&#x64CD;&#x4F5C; <code>&gt;</code> &#x5C06;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5982; <code>echo Text &gt; output.txt</code>&#x3002;</p>
+<h2 class="mume-header" id="%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA">&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x8F93;&#x51FA;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x8F93;&#x5165;&#x91CD;&#x5B9A;&#x5411;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; &quot;&lt;&quot; &#x7B26;&#x53F7;&#x5C06;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x901A;&#x8FC7;&#x952E;&#x76D8;&#x8F93;&#x5165;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;sort &lt; input.txt&quot; &#x5C06; input.txt &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A; sort &#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
+</li>
+<li>
+<p>&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; &quot;&gt;&quot; &#x7B26;&#x53F7;&#x5C06;&#x547D;&#x4EE4;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C4F;&#x5E55;&#x4E0A;&#x663E;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;dir &gt; output.txt&quot; &#x5C06;&#x76EE;&#x5F55;&#x5217;&#x8868;&#x8F93;&#x51FA;&#x5230;&#x540D;&#x4E3A; output.txt &#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+</li>
+<li>
+<p>&#x8FFD;&#x52A0;&#x8F93;&#x51FA;&#xFF1A;&#x4F7F;&#x7528; &quot;&gt;&gt;&quot; &#x7B26;&#x53F7;&#x53EF;&#x4EE5;&#x5C06;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x8FFD;&#x52A0;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x672B;&#x5C3E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8986;&#x76D6;&#x539F;&#x6709;&#x5185;&#x5BB9;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;echo New line &gt;&gt; existing.txt&quot; &#x5C06;&#x6587;&#x672C; &quot;New line&quot; &#x8FFD;&#x52A0;&#x5230; existing.txt &#x6587;&#x4EF6;&#x7684;&#x672B;&#x5C3E;&#x3002;</p>
+</li>
+<li>
+<p>&#x901A;&#x8FC7;&#x7BA1;&#x9053;&#xFF08;|&#xFF09;&#x4E0E;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x6D41;&#x5904;&#x7406;&#xFF1A;&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x4ECE;&#x800C;&#x5BF9;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x6D41;&#x5904;&#x7406;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;type input.txt | findstr &quot;keyword&quot;&quot; &#x5C06; input.txt &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x4F20;&#x9012;&#x7ED9; findstr &#x547D;&#x4EE4;&#x6765;&#x641C;&#x7D22;&#x5305;&#x542B;&#x6307;&#x5B9A;&#x5173;&#x952E;&#x5B57;&#x7684;&#x884C;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x64CD;&#x4F5C;&#x63D0;&#x4F9B;&#x4E86;&#x5728; CMD &#x4E2D;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x548C;&#x91CD;&#x5B9A;&#x5411;&#x8F93;&#x51FA;&#x7684;&#x4FBF;&#x5229;&#x65B9;&#x6CD5;&#x3002;&#x901A;&#x8FC7;&#x5408;&#x7406;&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x9AD8;&#x6548;&#x5730;&#x5904;&#x7406;&#x548C;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#x6570;&#x636E;&#x3002;</p>
+<h2 class="mume-header" id="%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">&#x6570;&#x636E;&#x7C7B;&#x578B;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#xFF0C;&#x5B58;&#x5728;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;</p>
+<p>&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x5B57;&#x7B26;&#x4E32;&#xFF08;String&#xFF09;&#xFF1A;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x6587;&#x672C;&#x6570;&#x636E;&#x3002;&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x4EE5;&#x662F;&#x7531;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x548C;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x7EC4;&#x6210;&#x7684;&#x4EFB;&#x610F;&#x5E8F;&#x5217;&#x3002;</p>
+</li>
+<li>
+<p>&#x6570;&#x503C;&#xFF08;Number&#xFF09;&#xFF1A;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x6570;&#x5B57;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x6574;&#x6570;&#x6216;&#x6D6E;&#x70B9;&#x6570;&#x3002;</p>
+</li>
+<li>
+<p>&#x5E03;&#x5C14;&#x503C;&#xFF08;Boolean&#xFF09;&#xFF1A;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x503C;&#xFF0C;True&#xFF08;&#x771F;&#xFF09;&#x548C; False&#xFF08;&#x5047;&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x548C;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x3002;</p>
+</li>
+<li>
+<p>&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF08;File Path&#xFF09;&#xFF1A;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6216;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</p>
+</li>
+<li>
+<p>&#x7A7A;&#x503C;&#xFF08;Null&#xFF09;&#xFF1A;&#x8868;&#x793A;&#x65E0;&#x503C;&#x6216;&#x672A;&#x5B9A;&#x4E49;&#x3002;</p>
+</li>
+<li>
+<p>&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#xFF1A;&#x867D;&#x7136; CMD &#x4E2D;&#x6CA1;&#x6709;&#x4E13;&#x95E8;&#x7684;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x8868;&#x793A;&#x548C;&#x64CD;&#x4F5C;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x6570;&#x636E;&#x3002;</p>
+</li>
+</ol>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;CMD &#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x5BF9;&#x4E8E;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x652F;&#x6301;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#x3002;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x8868;&#x73B0;&#x5F62;&#x5F0F;&#x548C;&#x64CD;&#x4F5C;&#x80FD;&#x529B;&#x76F8;&#x5BF9;&#x6709;&#x9650;&#xFF0C;&#x65E0;&#x6CD5;&#x50CF;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x90A3;&#x6837;&#x5177;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x548C;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x66F4;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x6216;&#x5176;&#x4ED6;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x3002;</p>
+<h2 class="mume-header" id="%E5%8F%98%E9%87%8F">&#x53D8;&#x91CF;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#xFF0C;&#x53D8;&#x91CF;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x548C;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x3002;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x503C;&#x7B49;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x5173;&#x4E8E; CMD &#x53D8;&#x91CF;&#x7684;&#x91CD;&#x8981;&#x4E8B;&#x9879;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x53D8;&#x91CF;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x8D4B;&#x503C;&#xFF1A;</p>
+<ul>
+<li>&#x4F7F;&#x7528; <code>set</code> &#x547D;&#x4EE4;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x5E76;&#x8D4B;&#x503C;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>set variable_name=value</code>&#x3002;&#x5728;&#x8D4B;&#x503C;&#x65F6;&#xFF0C;&#x7B49;&#x53F7;&#x524D;&#x540E;&#x4E0D;&#x80FD;&#x6709;&#x7A7A;&#x683C;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x7684;&#x53D8;&#x91CF;&#x6765;&#x5B9A;&#x4E49;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>set new_variable=%existing_variable%</code>&#x3002;</li>
+<li>&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5EF6;&#x8FDF;&#x53D8;&#x91CF;&#x6269;&#x5C55;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>!</code> &#x6765;&#x8BBF;&#x95EE;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>setlocal enabledelayedexpansion</code> &#x548C; <code>echo !variable!</code>&#x3002;</li>
+</ul>
+</li>
+<li>
+<p>&#x53D8;&#x91CF;&#x7684;&#x4F7F;&#x7528;&#xFF1A;</p>
+<ul>
+<li>&#x4F7F;&#x7528; <code>%variable_name%</code> &#x7684;&#x5F62;&#x5F0F;&#x6765;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF1A;<code>echo %variable_name%</code>&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x5BF9;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x62FC;&#x63A5;&#x3001;&#x66FF;&#x6362;&#x3001;&#x622A;&#x53D6;&#x7B49;&#x64CD;&#x4F5C;&#x3002;&#x4F8B;&#x5982;&#xFF1A;<code>set result=%variable1%%variable2%</code> &#x6216; <code>set new_string=%existing_string:old=new%</code>&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x5728;&#x547D;&#x4EE4;&#x4E2D;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#xFF0C;&#x5982; <code>echo %variable_name%</code> &#x6216; <code>copy %file_name% %destination_folder%</code>&#x3002;</li>
+</ul>
+</li>
+<li>
+<p>&#x7279;&#x6B8A;&#x53D8;&#x91CF;&#xFF1A;</p>
+<ul>
+<li><code>%cd%</code>&#xFF1A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</li>
+<li><code>%date%</code>&#xFF1A;&#x5F53;&#x524D;&#x65E5;&#x671F;&#x3002;</li>
+<li><code>%time%</code>&#xFF1A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x3002;</li>
+<li><code>%random%</code>&#xFF1A;&#x968F;&#x673A;&#x6570;&#x3002;</li>
+<li><code>%errorlevel%</code>&#xFF1A;&#x4E0A;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x9519;&#x8BEF;&#x4EE3;&#x7801;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p>&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;</p>
+<ul>
+<li>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53D8;&#x91CF;&#x662F;&#x5168;&#x5C40;&#x7684;&#xFF0C;&#x5373;&#x5B83;&#x4EEC;&#x5728;&#x811A;&#x672C;&#x7684;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x90FD;&#x53EF;&#x89C1;&#x3002;</li>
+<li>&#x4F7F;&#x7528; <code>setlocal</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#xFF0C;&#x53D8;&#x91CF;&#x5728;&#x6B64;&#x73AF;&#x5883;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x8303;&#x56F4;&#x5185;&#x751F;&#x6548;&#x3002;&#x4F7F;&#x7528; <code>endlocal</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7ED3;&#x675F;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;CMD &#x7684;&#x53D8;&#x91CF;&#x7BA1;&#x7406;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x7B80;&#x5355;&#x811A;&#x672C;&#x6216;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x66F4;&#x590D;&#x6742;&#x7684;&#x53D8;&#x91CF;&#x64CD;&#x4F5C;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x652F;&#x6301;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x6216;&#x5176;&#x4ED6;&#x7F16;&#x7A0B;&#x5DE5;&#x5177;&#x3002;</p>
+<h2 class="mume-header" id="%E5%B8%B8%E9%87%8F">&#x5E38;&#x91CF;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;Command Prompt&#xFF09;&#x4E2D;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x4E13;&#x95E8;&#x7684;&#x5E38;&#x91CF;&#x58F0;&#x660E;&#x6216;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7EA6;&#x5B9A;&#x4FD7;&#x6210;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x3002;</p>
+<p>&#x5728; CMD &#x4E2D;&#xFF0C;&#x5E38;&#x91CF;&#x901A;&#x5E38;&#x662F;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x6765;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x7684;&#x547D;&#x540D;&#x65B9;&#x5F0F;&#x548C;&#x4F7F;&#x7528;&#x7EA6;&#x5B9A;&#x4E0D;&#x540C;&#x4E8E;&#x666E;&#x901A;&#x53D8;&#x91CF;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x7EA6;&#x5B9A;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x4F7F;&#x7528;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x547D;&#x540D;&#xFF1A;&#x5E38;&#x91CF;&#x7684;&#x540D;&#x79F0;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E0E;&#x666E;&#x901A;&#x53D8;&#x91CF;&#x533A;&#x5206;&#x5F00;&#x3002;</p>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x503C;&#x8D4B;&#x503C;&#xFF1A;&#x5E38;&#x91CF;&#x7684;&#x503C;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x4E00;&#x65E6;&#x5B9A;&#x4E49;&#x5C31;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#x3002;&#x901A;&#x5E38;&#x5728;&#x811A;&#x672C;&#x7684;&#x5F00;&#x5934;&#x6216;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5E38;&#x91CF;&#x7684;&#x4F4D;&#x7F6E;&#x7ED9;&#x53D8;&#x91CF;&#x8D4B;&#x503C;&#x3002;</p>
+</li>
+</ol>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x5C55;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x7EA6;&#x5B9A;&#x6765;&#x6A21;&#x62DF;&#x5E38;&#x91CF;&#x7684;&#x884C;&#x4E3A;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>@echo off
+REM &#x5B9A;&#x4E49;&#x5E38;&#x91CF;
+set &quot;PI=3.14159&quot;
+set &quot;MAX_VALUE=100&quot;
+
+REM &#x4F7F;&#x7528;&#x5E38;&#x91CF;
+echo The value of PI is %PI%
+echo The maximum value is %MAX_VALUE%
+
+REM &#x5C1D;&#x8BD5;&#x66F4;&#x6539;&#x5E38;&#x91CF;&#x7684;&#x503C;&#xFF08;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#xFF09;
+set &quot;PI=3.14&quot;
+echo The updated value of PI is %PI%
+
+pause
+</code></pre><p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x7531;&#x4E8E; CMD &#x4E0D;&#x652F;&#x6301;&#x76F4;&#x63A5;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x65F6;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x5176;&#x503C;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x4F7F;&#x7528;&#x7EA6;&#x5B9A;&#x6765;&#x5C06;&#x53D8;&#x91CF;&#x89C6;&#x4E3A;&#x5E38;&#x91CF;&#x59CB;&#x7EC8;&#x9700;&#x8981;&#x81EA;&#x6211;&#x7EA6;&#x675F;&#x4EE5;&#x786E;&#x4FDD;&#x4E0D;&#x66F4;&#x6539;&#x5176;&#x503C;&#x3002;</p>
+<h2 class="mume-header" id="%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6">&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF09;&#x4E2D;&#xFF0C;&#x6709;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF0C;&#x4EE5;&#x4FBF;&#x6B63;&#x786E;&#x89E3;&#x91CA;&#x5B83;&#x4EEC;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x548C;&#x5B83;&#x4EEC;&#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>
+<p><code>^</code>&#xFF08;&#x63D2;&#x5165;&#x7B26;&#x53F7;&#xFF09;&#xFF1A;&#x5728;&#x7279;&#x5B9A;&#x5B57;&#x7B26;&#x4E4B;&#x524D;&#x4F7F;&#x7528; <code>^</code> &#x53EF;&#x4EE5;&#x53D6;&#x6D88;&#x8BE5;&#x5B57;&#x7B26;&#x7684;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4F7F;&#x7528; <code>^&gt;</code> &#x53EF;&#x4EE5;&#x8F6C;&#x4E49;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x7B26;&#x53F7; <code>&gt;</code>&#xFF0C;&#x4F7F;&#x5B83;&#x88AB;&#x89C6;&#x4E3A;&#x666E;&#x901A;&#x5B57;&#x7B26;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8868;&#x793A;&#x91CD;&#x5B9A;&#x5411;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li>
+<p><code>&quot;</code>&#xFF08;&#x5F15;&#x53F7;&#xFF09;&#xFF1A;&#x5728; CMD &#x4E2D;&#xFF0C;&#x5F15;&#x53F7; <code>&quot; &quot;</code> &#x901A;&#x5E38;&#x7528;&#x4E8E;&#x5728;&#x5305;&#x542B;&#x7A7A;&#x683C;&#x548C;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4FDD;&#x62A4;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x4F7F;&#x7528;&#x5F15;&#x53F7;&#x672C;&#x8EAB;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#xFF0C;&#x4F8B;&#x5982; <code>&quot;Hello &quot;&quot;World&quot;&quot;&quot;</code>&#x3002;</p>
+</li>
+<li>
+<p><code>%</code>&#xFF08;&#x767E;&#x5206;&#x53F7;&#xFF09;&#xFF1A;<code>%</code> &#x7528;&#x4E8E;&#x8868;&#x793A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5305;&#x542B; <code>%</code> &#x5B57;&#x7B26;&#x672C;&#x8EAB;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>%%</code> &#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#xFF0C;&#x4F8B;&#x5982; <code>echo 50%%</code> &#x5C06;&#x8F93;&#x51FA; <code>50%</code>&#x3002;</p>
+</li>
+</ol>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#xFF0C;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x53EF;&#x80FD;&#x7565;&#x6709;&#x4E0D;&#x540C;&#x3002;&#x67D0;&#x4E9B;&#x547D;&#x4EE4;&#x6216;&#x7A0B;&#x5E8F;&#x53EF;&#x80FD;&#x4F1A;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;&#xFF0C;&#x56E0;&#x6B64;&#x5E94;&#x8BE5;&#x9488;&#x5BF9;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x67E5;&#x9605;&#x76F8;&#x5173;&#x7684;&#x6587;&#x6863;&#x6216;&#x53C2;&#x8003;&#x8D44;&#x6599;&#x3002;</p>
+<h2 class="mume-header" id="%E8%BF%90%E7%AE%97%E7%AC%A6">&#x8FD0;&#x7B97;&#x7B26;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF09;&#x4E2D;&#xFF0C;&#x6709;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x8BA1;&#x7B97;&#x3001;&#x6BD4;&#x8F83;&#x548C;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684; CMD &#x8FD0;&#x7B97;&#x7B26;&#x53CA;&#x5176;&#x7528;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</p>
+<ul>
+<li><code>+</code>&#xFF1A;&#x52A0;&#x6CD5;&#x8FD0;&#x7B97;&#xFF0C;&#x4F8B;&#x5982; <code>set /a result=5+3</code>&#x3002;</li>
+<li><code>-</code>&#xFF1A;&#x51CF;&#x6CD5;&#x8FD0;&#x7B97;&#xFF0C;&#x4F8B;&#x5982; <code>set /a result=8-2</code>&#x3002;</li>
+<li><code>*</code>&#xFF1A;&#x4E58;&#x6CD5;&#x8FD0;&#x7B97;&#xFF0C;&#x4F8B;&#x5982; <code>set /a result=4*3</code>&#x3002;</li>
+<li><code>/</code>&#xFF1A;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#xFF0C;&#x4F8B;&#x5982; <code>set /a result=10/2</code>&#x3002;</li>
+<li><code>%</code>&#xFF1A;&#x53D6;&#x6A21;&#xFF08;&#x53D6;&#x4F59;&#xFF09;&#x8FD0;&#x7B97;&#xFF0C;&#x4F8B;&#x5982; <code>set /a result=10%3</code>&#x3002;</li>
+</ul>
+</li>
+<li>
+<p>&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</p>
+<ul>
+<li><code>==</code>&#xFF1A;&#x7B49;&#x4E8E;&#xFF0C;&#x4F8B;&#x5982; <code>if %var1% == %var2% echo Equal</code>&#x3002;</li>
+<li><code>!=</code>&#xFF1A;&#x4E0D;&#x7B49;&#x4E8E;&#xFF0C;&#x4F8B;&#x5982; <code>if %var1% != %var2% echo Not equal</code>&#x3002;</li>
+<li><code>&gt;</code>&#xFF1A;&#x5927;&#x4E8E;&#xFF0C;&#x4F8B;&#x5982; <code>if %var1% &gt; %var2% echo Greater than</code>&#x3002;</li>
+<li><code>&lt;</code>&#xFF1A;&#x5C0F;&#x4E8E;&#xFF0C;&#x4F8B;&#x5982; <code>if %var1% &lt; %var2% echo Less than</code>&#x3002;</li>
+<li><code>&gt;=</code>&#xFF1A;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#xFF0C;&#x4F8B;&#x5982; <code>if %var1% &gt;= %var2% echo Greater than or equal</code>&#x3002;</li>
+<li><code>&lt;=</code>&#xFF1A;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#xFF0C;&#x4F8B;&#x5982; <code>if %var1% &lt;= %var2% echo Less than or equal</code>&#x3002;</li>
+</ul>
+</li>
+<li>
+<p>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</p>
+<ul>
+<li><code>&amp;</code>&#xFF1A;&#x903B;&#x8F91;&#x4E0E;&#xFF0C;&#x4F8B;&#x5982; <code>command1 &amp; command2</code>&#x3002;</li>
+<li><code>|</code>&#xFF1A;&#x903B;&#x8F91;&#x6216;&#xFF0C;&#x4F8B;&#x5982; <code>command1 | command2</code>&#x3002;</li>
+<li><code>&amp;&amp;</code>&#xFF1A;&#x5F53;&#x524D;&#x4E00;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x6267;&#x884C;&#x540E;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x547D;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982; <code>command1 &amp;&amp; command2</code>&#x3002;</li>
+<li><code>||</code>&#xFF1A;&#x5F53;&#x524D;&#x4E00;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#x540E;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x547D;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982; <code>command1 || command2</code>&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;CMD &#x8FD0;&#x7B97;&#x7B26;&#x5728;&#x5904;&#x7406;&#x6570;&#x503C;&#x65F6;&#x6709;&#x4E00;&#x5B9A;&#x9650;&#x5236;&#xFF0C;&#x4F8B;&#x5982;&#x53EA;&#x80FD;&#x5904;&#x7406;&#x6574;&#x6570;&#x3002;&#x82E5;&#x8981;&#x8FDB;&#x884C;&#x66F4;&#x590D;&#x6742;&#x7684;&#x6570;&#x5B66;&#x8BA1;&#x7B97;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x501F;&#x52A9;&#x5176;&#x4ED6;&#x7F16;&#x7A0B;&#x5DE5;&#x5177;&#x6216;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x3002;</p>
+<h2 class="mume-header" id="%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5">&#x5206;&#x652F;&#x8BED;&#x53E5;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF09;&#x4E2D;&#xFF0C;IF &#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x7684;&#x6210;&#x7ACB;&#x4E0E;&#x5426;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x4EE4;&#x3002;IF &#x8BED;&#x53E5;&#x6709;&#x591A;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x5E38;&#x89C1;&#x7684;&#x51E0;&#x79CD;&#x7528;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>
+<p>IF &#x6761;&#x4EF6; &#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#xFF1A;<br>
+&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x7684;&#x6210;&#x7ACB;&#x4E0E;&#x5426;&#x6765;&#x6267;&#x884C;&#x6307;&#x5B9A;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>IF exist &#x6587;&#x4EF6;&#x540D; (
+    &#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;
+)
+</code></pre><p>&#x793A;&#x4F8B;&#xFF1A;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+<li>
+<p>IF &#x6761;&#x4EF6; (<br>
+&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;<br>
+) ELSE (<br>
+&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;<br>
+)&#xFF1A;<br>
+&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x5728;&#x6761;&#x4EF6;&#x6210;&#x7ACB;&#x65F6;&#x6267;&#x884C;&#x7B2C;&#x4E00;&#x4E2A;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5426;&#x5219;&#x6267;&#x884C;&#x7B2C;&#x4E8C;&#x4E2A;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>IF &quot;%var1%&quot; == &quot;%var2%&quot; (
+    &#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;1
+) ELSE (
+    &#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;2
+)
+</code></pre><p>&#x793A;&#x4F8B;&#xFF1A;&#x5982;&#x679C; <code>%var1%</code> &#x7B49;&#x4E8E; <code>%var2%</code>&#xFF0C;&#x5219;&#x6267;&#x884C;&#x7B2C;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#xFF1B;&#x5426;&#x5219;&#xFF0C;&#x6267;&#x884C;&#x7B2C;&#x4E8C;&#x4E2A;&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+<li>
+<p>IF NOT &#x6761;&#x4EF6; &#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#xFF1A;<br>
+&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x5728;&#x6761;&#x4EF6;&#x4E0D;&#x6210;&#x7ACB;&#x65F6;&#x6267;&#x884C;&#x6307;&#x5B9A;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>IF NOT exist &#x6587;&#x4EF6;&#x540D; (
+    &#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;
+)
+</code></pre><p>&#x793A;&#x4F8B;&#xFF1A;&#x5982;&#x679C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6761;&#x4EF6;&#x53EF;&#x4EE5;&#x662F;&#x53D8;&#x91CF;&#x6BD4;&#x8F83;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x5224;&#x65AD;&#x3001;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x7B49;&#x6761;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;&#x4F8B;&#x5982; <code>==</code>&#x3001;<code>!=</code>&#x3001;<code>&gt;</code>&#x3001;<code>&lt;</code>&#x3001;<code>&gt;=</code>&#x3001;<code>&lt;=</code>&#xFF09;&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x3002;&#x5728;&#x6761;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;&#x7B49;&#x3002;</p>
+<p>&#x8FD9;&#x53EA;&#x662F; IF &#x8BED;&#x53E5;&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7528;&#x6CD5;&#xFF0C;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x66F4;&#x590D;&#x6742;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x548C;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x3002;&#x5728; CMD &#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>IF /?</code> &#x547D;&#x4EE4;&#x83B7;&#x53D6;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x9009;&#x9879;&#x5E2E;&#x52A9;&#x3002;</p>
+<h2 class="mume-header" id="%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5">&#x5FAA;&#x73AF;&#x8BED;&#x53E5;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF09;&#x4E2D;&#xFF0C;FOR &#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x5FAA;&#x73AF;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x5757;&#xFF0C;&#x5E76;&#x5BF9;&#x4E00;&#x7EC4;&#x5143;&#x7D20;&#x6309;&#x7167;&#x7279;&#x5B9A;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x8FED;&#x4EE3;&#x3002;CMD &#x7684; FOR &#x8BED;&#x53E5;&#x6709;&#x591A;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x5E38;&#x89C1;&#x7684;&#x51E0;&#x79CD;&#x7528;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>
+<p>FOR /F &quot;options&quot; %%parameter IN (set) DO (<br>
+&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;<br>
+)<br>
+&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x7528;&#x4E8E;&#x904D;&#x5386;&#x6307;&#x5B9A;&#x7684; set&#xFF08;&#x53EF;&#x4EE5;&#x662F;&#x6587;&#x4EF6;&#x3001;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x7B49;&#xFF09;&#xFF0C;&#x5BF9;&#x6BCF;&#x4E2A;&#x503C;&#x6267;&#x884C;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5757;&#x3002;<br>
+&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token operator">@</span><span class="token command"><span class="token keyword keyword-echo">echo</span> off</span>
+<span class="token command"><span class="token keyword keyword-FOR">FOR</span> <span class="token parameter attr-name">/F</span> <span class="token string">&quot;tokens=1,2&quot;</span> <span class="token variable">%%A</span> <span class="token keyword keyword-IN">IN</span> <span class="token punctuation">(</span>data.txt<span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span></span> <span class="token punctuation">(</span>
+    <span class="token command"><span class="token keyword keyword-echo">echo</span> &#x53C2;&#x6570;<span class="token number">1</span>&#xFF1A;<span class="token variable">%%A</span></span>
+    <span class="token command"><span class="token keyword keyword-echo">echo</span> &#x53C2;&#x6570;<span class="token number">2</span>&#xFF1A;<span class="token variable">%%B</span></span>
+<span class="token punctuation">)</span>
+</pre><p>&#x5728;&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;FOR &#x547D;&#x4EE4;&#x4F1A;&#x4ECE; data.txt &#x6587;&#x4EF6;&#x4E2D;&#x9010;&#x884C;&#x8BFB;&#x53D6;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x5C06;&#x6BCF;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x548C;&#x7B2C;&#x4E8C;&#x4E2A;&#x5355;&#x8BCD;&#x8D4B;&#x503C;&#x7ED9; %%A &#x548C; %%B &#x53D8;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x65F6;&#x6267;&#x884C;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5757;&#x3002;</p>
+</li>
+<li>
+<p>FOR /L %%parameter IN (start,step,end) DO (<br>
+&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;<br>
+)<br>
+&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x7528;&#x4E8E;&#x6309;&#x6307;&#x5B9A;&#x7684;&#x6B65;&#x957F;&#x4ECE;&#x5F00;&#x59CB;&#x503C;&#x8FED;&#x4EE3;&#x5230;&#x7ED3;&#x675F;&#x503C;&#xFF0C;&#x5BF9;&#x6BCF;&#x4E2A;&#x503C;&#x6267;&#x884C;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5757;&#x3002;<br>
+&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token operator">@</span><span class="token command"><span class="token keyword keyword-echo">echo</span> off</span>
+<span class="token command"><span class="token keyword keyword-FOR">FOR</span> <span class="token parameter attr-name">/L</span> <span class="token variable">%%N</span> <span class="token keyword keyword-IN">IN</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span></span> <span class="token punctuation">(</span>
+    <span class="token command"><span class="token keyword keyword-echo">echo</span> &#x8FED;&#x4EE3;&#x6B21;&#x6570;&#xFF1A;<span class="token variable">%%N</span></span>
+<span class="token punctuation">)</span>
+</pre><p>&#x5728;&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;FOR &#x547D;&#x4EE4;&#x4F1A;&#x4ECE; 1 &#x5F00;&#x59CB;&#xFF0C;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x589E;&#x52A0; 1&#xFF0C;&#x76F4;&#x5230;&#x8FBE;&#x5230;&#x6216;&#x8D85;&#x8FC7; 5 &#x7684;&#x503C;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x503C;&#x4E0A;&#x6267;&#x884C;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5757;&#x3002;</p>
+</li>
+<li>
+<p>FOR /R &quot;root&quot; %%parameter IN (set) DO (<br>
+&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;<br>
+)<br>
+&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x7528;&#x4E8E;&#x904D;&#x5386;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x53CA;&#x5176;&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x5BF9;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x6267;&#x884C;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5757;&#x3002;<br>
+&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token operator">@</span><span class="token command"><span class="token keyword keyword-echo">echo</span> off</span>
+<span class="token command"><span class="token keyword keyword-FOR">FOR</span> <span class="token parameter attr-name">/R</span> <span class="token string">&quot;C:\folder&quot;</span> <span class="token variable">%%F</span> <span class="token keyword keyword-IN">IN</span> <span class="token punctuation">(</span>*.txt<span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span></span> <span class="token punctuation">(</span>
+    <span class="token command"><span class="token keyword keyword-echo">echo</span> &#x6587;&#x4EF6;&#x540D;&#xFF1A;<span class="token variable">%%F</span></span>
+<span class="token punctuation">)</span>
+</pre><p>&#x5728;&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;FOR &#x547D;&#x4EE4;&#x4F1A;&#x904D;&#x5386; &quot;C:\folder&quot; &#x76EE;&#x5F55;&#x53CA;&#x5176;&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6240;&#x6709; txt &#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x5728;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x4E0A;&#x6267;&#x884C;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5757;&#x3002;</p>
+</li>
+</ol>
+<p>&#x4EE5;&#x4E0A;&#x662F; FOR &#x8BED;&#x53E5;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7528;&#x6CD5;&#x3002;&#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5177;&#x4F53;&#x7684;&#x9700;&#x6C42;&#x9009;&#x62E9;&#x9002;&#x5408;&#x7684; FOR &#x8BED;&#x53E5;&#x5F62;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x6240;&#x9700;&#x7684;&#x529F;&#x80FD;&#x3002;&#x5728; CMD &#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>FOR /?</code> &#x547D;&#x4EE4;&#x83B7;&#x53D6;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x9009;&#x9879;&#x5E2E;&#x52A9;&#x3002;</p>
+<h2 class="mume-header" id="goto%E8%AF%AD%E5%8F%A5">goto&#x8BED;&#x53E5;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728; CMD&#xFF08;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF09;&#x4E2D;&#xFF0C;GOTO &#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x8DF3;&#x8F6C;&#x5230;&#x811A;&#x672C;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x547D;&#x4EE4;&#x3002;GOTO &#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x4F7F;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x5728;&#x6EE1;&#x8DB3;&#x7279;&#x5B9A;&#x6761;&#x4EF6;&#x65F6;&#x8DF3;&#x8F6C;&#x5230;&#x6240;&#x9700;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4E0B;&#x9762;&#x662F; GOTO &#x8BED;&#x53E5;&#x7684;&#x7528;&#x6CD5;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token operator">@</span><span class="token command"><span class="token keyword keyword-echo">echo</span> off</span>
+
+<span class="token comment">REM &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#x811A;&#x672C;</span>
+<span class="token comment">REM &#x5982;&#x679C;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#xFF0C;&#x5219;&#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x547D;&#x4EE4;</span>
+<span class="token comment">REM &#x5982;&#x679C;&#x6761;&#x4EF6;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x5219;&#x8DF3;&#x8FC7;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;&#xFF0C;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x547D;&#x4EE4;</span>
+
+<span class="token comment">REM &#x6761;&#x4EF6;&#x5224;&#x65AD;</span>
+<span class="token command"><span class="token keyword keyword-IF">IF</span> <span class="token string">&quot;%OPTION%&quot;</span><span class="token operator">==</span><span class="token string">&quot;1&quot;</span></span> <span class="token punctuation">(</span>
+    <span class="token comment">REM &#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;</span>
+    <span class="token command"><span class="token keyword keyword-GOTO">GOTO</span> Option1</span>
+<span class="token punctuation">)</span> <span class="token command"><span class="token keyword keyword-else">else</span></span> <span class="token command"><span class="token keyword keyword-if">if</span> <span class="token string">&quot;%OPTION%&quot;</span>==<span class="token string">&quot;2&quot;</span> (</span>
+    <span class="token comment">REM &#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;</span>
+    <span class="token command"><span class="token keyword keyword-GOTO">GOTO</span> Option2</span>
+<span class="token punctuation">)</span> <span class="token command"><span class="token keyword keyword-else">else</span></span> <span class="token punctuation">(</span>
+    <span class="token comment">REM &#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;</span>
+    <span class="token command"><span class="token keyword keyword-GOTO">GOTO</span> OptionDefault</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">REM &#x6807;&#x7B7E;&#x4F4D;&#x7F6E;&#x53CA;&#x76F8;&#x5E94;&#x7684;&#x547D;&#x4EE4;</span>
+<span class="token label property">:Option1</span>
+<span class="token command"><span class="token keyword keyword-echo">echo</span> &#x9009;&#x9879; <span class="token number">1</span></span>
+<span class="token comment">REM &#x7EE7;&#x7EED;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x547D;&#x4EE4;</span>
+<span class="token command"><span class="token keyword keyword-GOTO">GOTO</span> End</span>
+
+<span class="token label property">:Option2</span>
+<span class="token command"><span class="token keyword keyword-echo">echo</span> &#x9009;&#x9879; <span class="token number">2</span></span>
+<span class="token comment">REM &#x7EE7;&#x7EED;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x547D;&#x4EE4;</span>
+<span class="token command"><span class="token keyword keyword-GOTO">GOTO</span> End</span>
+
+<span class="token label property">:OptionDefault</span>
+<span class="token command"><span class="token keyword keyword-echo">echo</span> &#x9ED8;&#x8BA4;&#x9009;&#x9879;</span>
+<span class="token comment">REM &#x7EE7;&#x7EED;&#x6267;&#x884C;&#x540E;&#x7EED;&#x7684;&#x547D;&#x4EE4;</span>
+<span class="token command"><span class="token keyword keyword-GOTO">GOTO</span> End</span>
+
+<span class="token label property">:End</span>
+<span class="token command"><span class="token keyword keyword-echo">echo</span> &#x811A;&#x672C;&#x7ED3;&#x675F;</span>
+</pre><p>&#x5728;&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6839;&#x636E;&#x53D8;&#x91CF; <code>%OPTION%</code> &#x7684;&#x503C;&#xFF0C;&#x4F7F;&#x7528; IF &#x8BED;&#x53E5;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x7684;&#x7ED3;&#x679C;&#x4F7F;&#x7528; GOTO &#x8BED;&#x53E5;&#x8DF3;&#x8F6C;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x4E0D;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x90E8;&#x5206;&#x4F1A;&#x6267;&#x884C;&#x9ED8;&#x8BA4;&#x7684;&#x9009;&#x9879;&#x3002;&#x65E0;&#x8BBA;&#x54EA;&#x4E2A;&#x9009;&#x9879;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x8DF3;&#x8F6C;&#x5230;&#x6807;&#x7B7E; &quot;End&quot; &#x5904;&#xFF0C;&#x5B8C;&#x6210;&#x6574;&#x4E2A;&#x811A;&#x672C;&#x7684;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728; GOTO &#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x6807;&#x7B7E;&#x7684;&#x540D;&#x79F0;&#x9700;&#x8981;&#x4EE5;&#x5192;&#x53F7;&#xFF08; : ) &#x5F00;&#x5934;&#xFF0C;&#x540C;&#x65F6;&#x8981;&#x786E;&#x4FDD;&#x6807;&#x7B7E;&#x540D;&#x79F0;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x811A;&#x672C;&#x4E2D;&#x5B9A;&#x4E49;&#x5728;&#x88AB;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x662F; GOTO &#x8BED;&#x53E5;&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x3002;&#x8BF7;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x9700;&#x6C42;&#x5728;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x4E2D;&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x548C;&#x8DF3;&#x8F6C;&#x3002;</p>
+<h2 class="mume-header" id="%E5%AD%90%E7%A8%8B%E5%BA%8F">&#x5B50;&#x7A0B;&#x5E8F;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728;CMD&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x6765;&#x521B;&#x5EFA;&#x548C;&#x8FD0;&#x884C;&#x5B50;&#x7A0B;&#x5E8F;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x4F7F;&#x7528;&quot;CALL&quot;&#x547D;&#x4EE4;&#x8C03;&#x7528;&#x6279;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x6216;&#x5176;&#x4ED6;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;&quot;subprogram.bat&quot;&#x7684;&#x6279;&#x5904;&#x7406;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x6765;&#x8C03;&#x7528;&#x5B83;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CALL subprogram.bat
+</code></pre><p>&#x8FD9;&#x5C06;&#x6267;&#x884C;&quot;subprogram.bat&quot;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x5728;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#x8FD4;&#x56DE;&#x5230;&#x4E3B;&#x7A0B;&#x5E8F;&#x3002;</p>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;&quot;START&quot;&#x547D;&#x4EE4;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x65B0;&#x7684;CMD&#x7A97;&#x53E3;&#xFF0C;&#x5E76;&#x5728;&#x8BE5;&#x7A97;&#x53E3;&#x4E2D;&#x8FD0;&#x884C;&#x6307;&#x5B9A;&#x7684;&#x547D;&#x4EE4;&#x6216;&#x7A0B;&#x5E8F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x65B0;&#x7684;CMD&#x7A97;&#x53E3;&#x5E76;&#x8FD0;&#x884C;&quot;subprogram.bat&quot;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>START &quot;&quot; subprogram.bat
+</code></pre><p>&#x8FD9;&#x5C06;&#x5728;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;CMD&#x7A97;&#x53E3;&#x4E2D;&#x6267;&#x884C;&quot;subprogram.bat&quot;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+</li>
+<li>
+<p>&#x5728;&#x6279;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&quot;CALL&quot;&#x547D;&#x4EE4;&#x8C03;&#x7528;&#x6807;&#x7B7E;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x6279;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x5E26;&#x6709;&#x6807;&#x7B7E;&#x7684;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&quot;CALL&quot;&#x547D;&#x4EE4;&#x4ECE;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x8C03;&#x7528;&#x8BE5;&#x4EE3;&#x7801;&#x5757;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x53EF;&#x4EE5;&#x5982;&#x4E0B;&#x5B9A;&#x4E49;&#x548C;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x6807;&#x7B7E;&#x7684;&#x4EE3;&#x7801;&#x5757;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>:mySubprogram
+echo This is a subprogram.
+echo Subprogram completed.
+goto :eof
+
+...
+
+CALL :mySubprogram
+</code></pre><p>&#x5728;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&quot;:mySubprogram&quot;&#x662F;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x6807;&#x7B7E;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&quot;CALL&quot;&#x547D;&#x4EE4;&#x4ECE;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x8C03;&#x7528;&quot;:mySubprogram&quot;&#xFF0C;&#x5C06;&#x6267;&#x884C;&#x8BE5;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x662F;&#x5728;CMD&#x4E2D;&#x521B;&#x5EFA;&#x548C;&#x8FD0;&#x884C;&#x5B50;&#x7A0B;&#x5E8F;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x65B9;&#x5F0F;&#x3002;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5177;&#x4F53;&#x9700;&#x6C42;&#x9009;&#x62E9;&#x9002;&#x5408;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7EC4;&#x7EC7;&#x548C;&#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x3002;</p>
+<h2 class="mume-header" id="%E6%BA%90%E6%96%87%E4%BB%B6%E5%8F%8A%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E7%A8%8B">&#x6E90;&#x6587;&#x4EF6;&#x53CA;&#x591A;&#x6587;&#x4EF6;&#x7F16;&#x7A0B;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728;CMD&#x4E2D;&#xFF0C;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x7684;&#x5E38;&#x89C1;&#x6E90;&#x6587;&#x4EF6;&#x6269;&#x5C55;&#x540D;&#x662F;&quot;.bat&quot;&#x548C;&quot;.cmd&quot;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x6269;&#x5C55;&#x540D;&#x90FD;&#x8868;&#x793A;&#x53EF;&#x6267;&#x884C;&#x7684;&#x6279;&#x5904;&#x7406;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;CMD&#x4E2D;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x3002;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x54EA;&#x4E2A;&#x6269;&#x5C55;&#x540D;&#x4E3B;&#x8981;&#x53D6;&#x51B3;&#x4E8E;&#x4E2A;&#x4EBA;&#x504F;&#x597D;&#x548C;&#x811A;&#x672C;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<p>&#x5F53;&#x6D89;&#x53CA;&#x5230;&#x591A;&#x6587;&#x4EF6;&#x7F16;&#x7A0B;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;CMD&#x4E2D;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x811A;&#x672C;&#x8C03;&#x7528;&#xFF1A;&#x4E00;&#x4E2A;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#x4E2D;&#x4F7F;&#x7528;&quot;CALL&quot;&#x547D;&#x4EE4;&#x6765;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x7684;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CALL script1.bat
+CALL script2.bat
+</code></pre><p>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x6309;&#x987A;&#x5E8F;&#x8C03;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li>
+<p>&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#x8C03;&#x7528;&#xFF1A;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#x6765;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x540D;&#x6216;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x6765;&#x6267;&#x884C;&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>notepad.exe
+&quot;C:\Program Files\Example\program.exe&quot;
+</code></pre><p>&#x8FD9;&#x5C06;&#x6267;&#x884C;&quot;notepad.exe&quot;&#x548C;&#x4F4D;&#x4E8E;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x7684;&quot;program.exe&quot;&#x3002;</p>
+</li>
+<li>
+<p>&#x811A;&#x672C;&#x7EC4;&#x7EC7;&#xFF1A;&#x53EF;&#x4EE5;&#x5C06;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;&#x6216;&#x4EFB;&#x52A1;&#x5206;&#x522B;&#x7F16;&#x5199;&#x5230;&#x591A;&#x4E2A;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E00;&#x4E2A;&#x4E3B;&#x811A;&#x672C;&#x4E2D;&#x9010;&#x4E2A;&#x8C03;&#x7528;&#x8FD9;&#x4E9B;&#x5B50;&#x811A;&#x672C;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x7EC4;&#x7EC7;&#x548C;&#x7BA1;&#x7406;&#x811A;&#x672C;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x5176;&#x66F4;&#x5177;&#x53EF;&#x8BFB;&#x6027;&#x548C;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x6280;&#x672F;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x5728;CMD&#x4E2D;&#x8FDB;&#x884C;&#x591A;&#x6587;&#x4EF6;&#x7F16;&#x7A0B;&#xFF0C;&#x65B9;&#x4FBF;&#x5730;&#x5C06;&#x4E0D;&#x540C;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x548C;&#x4EFB;&#x52A1;&#x62C6;&#x5206;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#x590D;&#x7528;&#x548C;&#x903B;&#x8F91;&#x63A7;&#x5236;&#x3002;&#x6839;&#x636E;&#x5177;&#x4F53;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x9002;&#x5F53;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7EC4;&#x7EC7;&#x548C;&#x7F16;&#x5199;CMD&#x811A;&#x672C;&#x3002;</p>
+<h2 class="mume-header" id="%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">&#x5F02;&#x5E38;&#x5904;&#x7406;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5728;CMD&#xFF08;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF09;&#x4E2D;&#xFF0C;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7684;&#x673A;&#x5236;&#x76F8;&#x5BF9;&#x6709;&#x9650;&#xFF0C;&#x56E0;&#x4E3A;CMD&#x4E3B;&#x8981;&#x662F;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;&#x548C;&#x6279;&#x5904;&#x7406;&#x811A;&#x672C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7528;&#x4E8E;&#x5F00;&#x53D1;&#x548C;&#x6267;&#x884C;&#x72EC;&#x7ACB;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x7136;&#x800C;&#xFF0C;&#x5728;CMD&#x4E2D;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x6280;&#x5DE7;&#x548C;&#x547D;&#x4EE4;&#x6765;&#x5B9E;&#x73B0;&#x57FA;&#x672C;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x548C;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x3002;</p>
+<ol>
+<li>
+<p>ERRORLEVEL &#x53D8;&#x91CF;&#xFF1A;CMD&#x4E2D;&#x7684;ERRORLEVEL&#x53D8;&#x91CF;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x4E0A;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;&#x901A;&#x8FC7;&#x68C0;&#x67E5;ERRORLEVEL&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x57FA;&#x672C;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x3002;&#x901A;&#x5E38;&#xFF0C;0&#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;&#x975E;&#x96F6;&#x503C;&#x8868;&#x793A;&#x5931;&#x8D25;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>dir
+if %ERRORLEVEL% NEQ 0 (
+    echo Command failed.
+    rem &#x5176;&#x4ED6;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x903B;&#x8F91;
+)
+</code></pre><p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5982;&#x679C;dir&#x547D;&#x4EE4;&#x5931;&#x8D25;&#xFF08;&#x5373;ERRORLEVEL&#x975E;&#x96F6;&#xFF09;&#xFF0C;&#x5219;&#x4F1A;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5E76;&#x6267;&#x884C;&#x5176;&#x4ED6;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
+</li>
+<li>
+<p>GOTO &#x8BED;&#x53E5;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;GOTO&#x8BED;&#x53E5;&#x8DF3;&#x8F6C;&#x5230;&#x7279;&#x5B9A;&#x7684;&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x6D41;&#x7A0B;&#x63A7;&#x5236;&#x548C;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>dir
+if %ERRORLEVEL% NEQ 0 (
+    echo Command failed.
+    goto ErrorHandler
+)
+rem &#x8FD0;&#x884C;&#x6210;&#x529F;&#x7684;&#x903B;&#x8F91;
+goto End
+
+:ErrorHandler
+rem &#x9519;&#x8BEF;&#x5904;&#x7406;&#x903B;&#x8F91;
+
+:End
+rem &#x7ED3;&#x675F;&#x5904;&#x7406;
+</code></pre><p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5982;&#x679C;dir&#x547D;&#x4EE4;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x4F1A;&#x8DF3;&#x8F6C;&#x5230;ErrorHandler&#x6807;&#x7B7E;&#x4F4D;&#x7F6E;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
+</li>
+</ol>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x53EA;&#x662F;CMD&#x4E2D;&#x7B80;&#x5355;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x573A;&#x666F;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x66F4;&#x590D;&#x6742;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x6216;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x5EFA;&#x8BAE;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x5982;Python&#x3001;C++&#x3001;Java&#x7B49;&#xFF0C;&#x5B83;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x4E30;&#x5BCC;&#x548C;&#x7075;&#x6D3B;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x548C;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x673A;&#x5236;&#x3002;</p>
+<h2 class="mume-header" id="%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
+
+<p><a href="#cmd%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
+&#x5F53;&#x7136;&#xFF01;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x7528;CMD&#xFF08;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF09;&#x547D;&#x4EE4;&#x7684;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x548C;&#x793A;&#x4F8B;&#x7528;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>
+<p><code>cd</code>&#xFF1A;&#x5207;&#x6362;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>cd C:\Users</code> &#x5C06;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x5207;&#x6362;&#x5230;C:\Users&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>dir</code>&#xFF1A;&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x5B50;&#x76EE;&#x5F55;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>dir</code> &#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x5B50;&#x76EE;&#x5F55;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>mkdir</code>&#xFF1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x76EE;&#x5F55;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>mkdir NewFolder</code> &#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x521B;&#x5EFA;&#x540D;&#x4E3A;NewFolder&#x7684;&#x65B0;&#x76EE;&#x5F55;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>rmdir</code>&#xFF1A;&#x5220;&#x9664;&#x7A7A;&#x76EE;&#x5F55;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>rmdir OldFolder</code> &#x5220;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x540D;&#x4E3A;OldFolder&#x7684;&#x7A7A;&#x76EE;&#x5F55;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>del</code>&#xFF1A;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>del myfile.txt</code> &#x5220;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x540D;&#x4E3A;myfile.txt&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>copy</code>&#xFF1A;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>copy file1.txt file2.txt</code> &#x5C06;file1.txt&#x590D;&#x5236;&#x5230;file2.txt&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>move</code>&#xFF1A;&#x79FB;&#x52A8;&#x6587;&#x4EF6;&#x6216;&#x91CD;&#x547D;&#x540D;&#x6587;&#x4EF6;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>move file1.txt folder1</code> &#x5C06;file1.txt&#x79FB;&#x52A8;&#x5230;&#x540D;&#x4E3A;folder1&#x7684;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>ren</code>&#xFF1A;&#x91CD;&#x547D;&#x540D;&#x6587;&#x4EF6;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>ren oldname.txt newname.txt</code> &#x5C06;oldname.txt&#x91CD;&#x547D;&#x540D;&#x4E3A;newname.txt&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>type</code>&#xFF1A;&#x663E;&#x793A;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>type readme.txt</code> &#x663E;&#x793A;&#x540D;&#x4E3A;readme.txt&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>echo</code>&#xFF1A;&#x6253;&#x5370;&#x6587;&#x672C;&#x6216;&#x53D8;&#x91CF;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>echo Hello, World!</code> &#x6253;&#x5370;&#x6587;&#x672C;&quot;Hello, World!&quot;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>set</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x6216;&#x663E;&#x793A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>set PATH</code> &#x663E;&#x793A;&#x540D;&#x4E3A;PATH&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>cls</code>&#xFF1A;&#x6E05;&#x7A7A;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x7A97;&#x53E3;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>cls</code> &#x6E05;&#x7A7A;&#x5F53;&#x524D;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x7A97;&#x53E3;&#x7684;&#x5185;&#x5BB9;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>shutdown</code>&#xFF1A;&#x5173;&#x95ED;&#x8BA1;&#x7B97;&#x673A;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>shutdown /s /t 0</code> &#x7ACB;&#x5373;&#x5173;&#x95ED;&#x8BA1;&#x7B97;&#x673A;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>tasklist</code>&#xFF1A;&#x5217;&#x51FA;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x8FDB;&#x7A0B;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>tasklist</code> &#x5217;&#x51FA;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>taskkill</code>&#xFF1A;&#x7EC8;&#x6B62;&#x8FDB;&#x7A0B;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>taskkill /IM notepad.exe</code> &#x7EC8;&#x6B62;&#x540D;&#x4E3A;notepad.exe&#x7684;&#x8FDB;&#x7A0B;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>ping</code>&#xFF1A;&#x6D4B;&#x8BD5;&#x4E0E;&#x6307;&#x5B9A;&#x4E3B;&#x673A;&#x7684;&#x8FDE;&#x63A5;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>ping www.google.com</code> &#x6D4B;&#x8BD5;&#x4E0E;www.google.com&#x7684;&#x8FDE;&#x63A5;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>ipconfig</code>&#xFF1A;&#x663E;&#x793A;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>ipconfig /all</code> &#x663E;&#x793A;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x8BE6;&#x7EC6;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>netstat</code>&#xFF1A;&#x663E;&#x793A;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x548C;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>netstat -a</code> &#x663E;&#x793A;&#x6240;&#x6709;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>systeminfo</code>&#xFF1A;&#x663E;&#x793A;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>systeminfo</code> &#x663E;&#x793A;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x8BE6;&#x7EC6;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p><code>help</code>&#xFF1A;&#x83B7;&#x53D6;&#x5173;&#x4E8E;&#x67D0;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x3002;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;<code>help dir</code> &#x83B7;&#x53D6;&#x6709;&#x5173;dir&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p>&#x8FD9;&#x4E9B;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;CMD&#x547D;&#x4EE4;&#x53CA;&#x5176;&#x793A;&#x4F8B;&#x7528;&#x6CD5;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x4E2D;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x5904;&#x7406;&#x3001;&#x76EE;&#x5F55;&#x7BA1;&#x7406;&#x3001;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x548C;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x67E5;&#x8BE2;&#x7B49;&#x5E38;&#x89C1;&#x4EFB;&#x52A1;&#x3002;</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
