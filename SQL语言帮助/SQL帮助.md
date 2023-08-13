@@ -373,6 +373,87 @@ CREATE TABLE employees (
 
 除了创建和删除表格之外，还可以使用ALTER TABLE语句来修改现有表格的结构，如添加列、修改列定义、添加约束等。
 
+## 约束
+[开头](#sql帮助文档)
+SQL（Structured Query Language）约束是用于定义和强制表中数据的规则和限制的规定。SQL约束有以下几种类型：
+
+1. 主键约束（Primary Key Constraint）：
+   主键约束用于标识表中的唯一记录，并且不能为空。一个表一般只能有一个主键。主键的值必须唯一，用于快速访问和识别表中的记录。
+   语法示例：
+   ```sql
+   CREATE TABLE table_name (
+       column1 datatype PRIMARY KEY,
+       ...
+   );
+   ```
+
+2. 外键约束（Foreign Key Constraint）：
+   外键约束用于在一个表中引用另一个表的主键，创建表之间的关系。它用于维护数据的完整性，确保关联表中的数据一致性。
+   语法示例：
+   ```sql
+   CREATE TABLE table1 (
+       column1 datatype,
+       FOREIGN KEY (column1) REFERENCES table2(primary_key_column)
+       ...
+   );
+   ```
+
+3. 唯一约束（Unique Constraint）：
+   唯一约束确保一个或多个列的值在表中是唯一的，用于防止重复的数据。
+   语法示例：
+   ```sql
+   CREATE TABLE table_name (
+       column1 datatype,
+       column2 datatype,
+       ...
+       UNIQUE (column1, column2, ...)
+   );
+   ```
+
+4. 非空约束（Not Null Constraint）：
+   非空约束指定该列的值不能为NULL，确保列中的数据不能为空。
+   语法示例：
+   ```sql
+   CREATE TABLE table_name (
+       column1 datatype NOT NULL,
+       ...
+   );
+   ```
+
+5. 默认约束（Default Constraint）：
+   默认约束用于在插入新记录时为列提供默认值。
+   语法示例：
+   ```sql
+   CREATE TABLE table_name (
+       column1 datatype DEFAULT default_value,
+       ...
+   );
+   ```
+
+6. 检查约束（Check Constraint）：
+   检查约束用于定义列级别的条件，确保插入或更新的数据满足该条件。
+   语法示例：
+   ```sql
+   CREATE TABLE table_name (
+       column1 datatype CHECK (condition),
+       ...
+   );
+   ```
+
+7. 自动增量约束（Auto Increment Constraint）：
+   自动增量约束用于在插入新记录时自动生成唯一的递增值，常用于主键列。
+   语法示例：
+   ```sql
+   CREATE TABLE table_name (
+       column1 datatype AUTO_INCREMENT,
+       ...
+   );
+   ```
+
+以上是SQL常用的约束类型及其语法示例。通过使用这些约束，可以确保数据库中的数据遵循特定的规则和约束，以提高数据的完整性和准确性。
+
+
+
 ## 基础查询语句
 [开头](#sql帮助文档)
 当使用SQL的SELECT语句时，可以从一个或多个表中检索数据并返回所需的结果集。SELECT语句是SQL中最常用和最重要的语句之一，让我们逐步介绍其各个组成部分：
@@ -746,6 +827,140 @@ WHERE department = 'HR';
 4. 可以使用各种运算符和函数来计算要更新的值。
 
 总之，使用UPDATE语句可以对SQL表中的数据进行更新操作。
+## 指定返回行数
+[开头](#sql帮助文档)
+在SQL中，你可以使用`LIMIT`语句来指定返回结果的行数。`LIMIT`语句用于限制查询结果的返回行数，它通常用于分页查询或获取前几条结果。以下是详细解释和代码示例。
+
+`LIMIT`语法如下：
+```sql
+SELECT column1, column2, ...
+FROM table_name
+LIMIT {count}
+```
+或者
+```sql
+SELECT column1, column2, ...
+FROM table_name
+LIMIT {offset}, {count}
+```
+
+- `{count}`指定返回的行数，表示最多返回的行数。
+- `{offset}`指定要跳过的行数，然后再返回指定数量的行。
+
+示例 1：
+```sql
+-- 返回前10行
+SELECT column1, column2, ...
+FROM table_name
+LIMIT 10;
+```
+上述示例将返回查询结果中的前10行。
+
+示例 2：
+```sql
+-- 返回从第6行开始的10行
+SELECT column1, column2, ...
+FROM table_name
+LIMIT 5, 10;
+```
+上述示例将跳过前5行，然后返回从第6行开始的10行。
+
+需要注意的是，在某些数据库中，`LIMIT`语句的写法可能有所不同。例如，MySQL也支持使用`OFFSET`关键字来指定跳过的行数，像这样：`LIMIT {count} OFFSET {offset}`。
+
+另外，还有一些数据库系统使用不同的语法来实现类似的功能。例如，Oracle数据库使用`ROWNUM`关键字来限制行数。
+
+## 修改表结构
+[开头](#sql帮助文档)
+当修改表结构时，可以使用ALTER TABLE语句。以下是ALTER TABLE语句的语法：
+
+```
+ALTER TABLE 表名
+    [ALTER COLUMN 列名 { SET DEFAULT 默认值 | DROP DEFAULT }]
+    [ADD 列定义 | DROP COLUMN 列名 | MODIFY 列定义 | RENAME COLUMN 列名 TO 新列名];
+```
+
+现在，我将为您提供一些常见的修改表结构的代码示例。
+
+1. 添加新列：
+要向表中添加新列，可以使用以下代码：
+
+```sql
+ALTER TABLE 表名
+ADD 列名 数据类型;
+```
+
+例如，要在Students表中添加一个新列"Age"，数据类型为整型：
+
+```sql
+ALTER TABLE Students
+ADD Age INT;
+```
+
+2. 修改列的数据类型：
+要修改列的数据类型，可以使用以下代码：
+
+```sql
+ALTER TABLE 表名
+ALTER COLUMN 列名 TYPE 新数据类型;
+```
+
+例如，要将Students表中的"Age"列的数据类型更改为浮点型：
+
+```sql
+ALTER TABLE Students
+ALTER COLUMN Age FLOAT;
+```
+
+3. 修改列名：
+要修改列的名称，可以使用以下代码：
+
+```sql
+ALTER TABLE 表名
+RENAME COLUMN 旧列名 TO 新列名;
+```
+
+例如，要将Students表中的"Age"列的名称更改为"Years"：
+
+```sql
+ALTER TABLE Students
+RENAME COLUMN Age TO Years;
+```
+
+4. 删除列：
+要删除表中的列，可以使用以下代码：
+
+```sql
+ALTER TABLE 表名
+DROP COLUMN 列名;
+```
+
+例如，要从Students表中删除"Age"列：
+
+```sql
+ALTER TABLE Students
+DROP COLUMN Age;
+```
+
+5. 修改列的默认值：
+要修改列的默认值，可以使用以下代码：
+
+```sql
+ALTER TABLE 表名
+ALTER COLUMN 列名 SET DEFAULT 新默认值;
+```
+
+例如，要将Students表中的"Age"列的默认值更改为20：
+
+```sql
+ALTER TABLE Students
+ALTER COLUMN Age SET DEFAULT 20;
+```
+
+请注意，上述代码示例中的"表名"应替换为您要修改的实际表的名称，"列名"应替换为要修改或删除的实际列的名称，"新数据类型"、"新列名"和"新默认值"应替换为您所需的实际值。
+
+此外，具体的语法和支持的操作可能因不同的数据库管理系统而有所差异，请根据您使用的数据库系统进行适当的调整。
+
+
 
 ## 删除语句
 [开头](#sql帮助文档)
@@ -774,6 +989,46 @@ WHERE department = 'HR';
 
 
 总之，使用DELETE FROM语句可以删除表中满足删除条件的数据行
+
+## 查询语句书写顺序
+[开头](#sql帮助文档)
+在SQL中，SELECT语句用于查询表中的数据。下面是一个详细的解释和示例，展示了SELECT语句及其相关语句的书写顺序。
+
+在一条典型的SELECT语句中，可以包含以下几个关键字和子句，它们的书写顺序如下：
+
+1. SELECT：指定要返回的列或表达式。
+2. FROM：指定要查询的表。
+3. WHERE：指定查询的条件。
+4. GROUP BY：按照指定的列对结果进行分组。
+5. HAVING：指定对分组后的结果进行筛选的条件。
+6. ORDER BY：按照指定的列对结果进行排序。
+7. LIMIT（可选）：指定返回结果的行数。
+
+一般来说，SELECT语句的书写顺序是按照上述顺序进行，但并不是所有的子句都是必需的，你可以根据查询的需求来决定是否使用它们。
+
+以下是一个示例，包含了典型的SELECT语句及其相关语句：
+
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition
+GROUP BY column1
+HAVING condition
+ORDER BY column1, column2
+LIMIT offset, count;
+```
+
+示例中，逐行解释了每个关键字和子句的作用：
+
+1. `SELECT column1, column2, ...`：指定要返回的列或表达式，可以使用通配符`*`表示所有列。
+2. `FROM table_name`：指定要查询的表，可以是单个表或多个表的组合。
+3. `WHERE condition`：指定查询的条件，用于过滤符合条件的行。
+4. `GROUP BY column1`：按照指定的列对结果进行分组。
+5. `HAVING condition`：指定对分组后的结果进行筛选的条件，类似于WHERE但作用于分组后的结果。
+6. `ORDER BY column1, column2`：按照指定的列对结果进行排序，可以指定多个列，并可以使用升序（ASC，默认）或降序（DESC）排序。
+7. `LIMIT offset, count`：指定返回结果的行数，可选择跳过一定数量的行（offset）并返回指定数量的行（count）。
+
+需要注意的是，并非所有的子句在每个查询中都是必需的。根据实际需求，你可以根据自己的需要选择使用哪些子句或以不同的顺序组合它们。
 
 ## 源文件与多文件编程
 [开头](#sql帮助文档)
@@ -1415,7 +1670,7 @@ FROM table2;
 上述语句将返回table1中存在但table2中不存在的id和name列的行。
 
 ## 联结
-## 内联结
+### 内联结
 [开头](#sql帮助文档)
 在SQL中，内联结（Inner Join）是一种将两个或多个表根据一定的条件进行连接的操作。内联结基于两个表中的共享列值，将它们的行关联起来，返回满足连接条件的行。
 
@@ -1448,7 +1703,7 @@ ON customers.customer_id = orders.customer_id;
 
 除了INNER JOIN，还有其他类型的JOIN操作，例如LEFT JOIN、RIGHT JOIN和FULL JOIN，它们具有不同的连接行为和结果。INNER JOIN是连接操作中最常用的一种。
 
-## 外联结
+### 外联结
 [开头](#sql帮助文档)
 在SQL中，外联结（Outer Join）是一种将两个或多个表根据一定的条件进行连接的操作，同时保留不满足连接条件的行。
 
@@ -1609,7 +1864,8 @@ FROM orders;
 
 通过使用这些窗口函数，你可以对查询结果进行更复杂的计算和分析，而不需要额外的子查询或多个查询。通过合理地配置窗口范围和排序规则，可以快速有效地处理数据，并获取所需的分析结果。
 
-## ROLLUP
+## 扩展
+### ROLLUP
 [开头](#sql帮助文档)
 在SQL中，ROLLUP是一种用于生成部分汇总报表的GROUP BY扩展。它可以创建多个层次的汇总数据，包括总计和子总计。
 
@@ -1653,7 +1909,7 @@ B       |        | 2000
 
 通过使用ROLLUP，可以方便地生成多层次的汇总数据，以满足不同级别的需求分析。
 
-## GROUPING函数
+### GROUPING函数
 [开头](#sql帮助文档)
 在SQL中，GROUPING函数用于确定聚合结果是来自于基本数据还是来自于GROUPING SETS的一个或多个空值。
 
@@ -1681,7 +1937,7 @@ GROUP BY region;
 
 GROUPING函数对于基于 GROUPING SETS 进行多级汇总时特别有用，可以用来确定每个列在结果中的汇总级别。
 
-## CUBE
+### CUBE
 [开头](#sql帮助文档)
 在 SQL 中，CUBE 是一种用于生成多维汇总报表的 GROUP BY 扩展。它可以生成包含全面汇总数据的报表，涵盖了所有可能的组合。
 
@@ -1727,7 +1983,7 @@ B       |        | 2000
 
 通过使用 CUBE，可以方便地生成多维度的汇总数据，用于进行更全面的分析和报表生成。
 
-## GROUPING SET
+### GROUPING SET
 [开头](#sql帮助文档)
 在 SQL 中，GROUPING SETS 是一种用于生成自定义汇总报表的 GROUP BY 扩展。它允许指定多个不同的分组集合，以生成灵活的报表结果。
 
