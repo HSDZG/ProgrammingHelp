@@ -195,6 +195,8 @@ int main()
      ```
 
 注释可以提高代码的可读性和可维护性，帮助他人或自己更好地理解代码的目的和实现。它们可以用于解释算法、描述函数功能、标记代码段以进行暂时禁用或调试，或在文档中生成代码示例。建议在编写代码时通过注释来解释代码的目的、功能和实现细节，以方便未来的阅读和维护。
+
+
 ## 标识符
 [开头](#c帮助文档)
 在C++中，标识符是用来给变量、函数、类、对象和其他用户定义的实体命名的。它们由字母、数字和下划线组成，但必须符合一些规则。以下是关于C++标识符的一些基本知识：
@@ -1538,7 +1540,315 @@ int main() {
 需要强调的是，虽然`goto`语句在某些特定情况下可能有用，但在大多数情况下，使用结构化的控制流语句（如循环和条件语句）会更好地组织和管理代码。这样可以提高代码的可读性和可维护性。
 
 ## 函数
-### 一般函数
+### 库函数
+在C++中，库函数（Library Functions）是事先编写好并打包在库文件中的可重用代码模块，用于实现常见的功能和算法。这些库函数提供了一系列的接口和操作，可以方便地在程序中调用和使用。
+
+C++的库函数分为两种类型：
+
+1. **标准库函数**：也称为C++标准库（C++ Standard Library），是由C++语言规范所定义的标准库。它包含了大量的类、函数和算法，按照功能可分为以下几个头文件：
+
+   - **iostream**：用于输入输出操作，包括控制台输入输出、文件输入输出等。
+   - **string**：用于字符串操作，包括字符串处理、查找、替换等。
+   - **vector**：用于动态数组操作，包括数组的增删改查、排序等。
+   - **algorithm**：提供了常用的算法函数，如排序、查找、计数等。
+   - **map** 和 **unordered_map**：用于创建键值对映射的容器。
+   - **set** 和 **unordered_set**：用于创建不重复元素的容器。
+   - 还有其他头文件，提供了更多功能和数据结构的支持。
+
+2. **扩展库函数**：由第三方开发者或组织提供的库函数，用于实现特定的功能或算法。这些库函数可能是一些常见任务的封装，也可能是一些特定领域的库函数，如图形处理、网络编程、数据库访问等。常见的扩展库包括Boost、Qt、OpenCV等。
+
+使用库函数可以大大简化程序开发过程，避免重复编写相同的代码，提高开发效率和代码的可重用性。在编写C++程序时，可以根据需要引入相应的库函数，并根据库函数的文档和接口规范来调用和使用。
+#### iostream
+[开头](#c帮助文档)
+以下是C++ `iostream`头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| cin | istream& cin | 标准输入流对象，用于从控制台或其他输入源读取数据。 | int num; cin >> num; |
+| cout | ostream& cout | 标准输出流对象，用于将数据输出到控制台或其他输出源。 | cout << "Hello, world!"; |
+| cerr | ostream& cerr | 标准错误流对象，用于将错误信息输出到控制台或其他错误输出源。 | cerr << "Error occurred"; |
+| clog | ostream& clog | 标准日志流对象，用于将日志信息输出到控制台或其他日志输出源。 | clog << "Log message"; |
+| endl | ostream& endl(ostream& os) | 在输出流中插入换行符，并刷新流。 | cout << "Hello" << endl; |
+| flush | ostream& flush(ostream& os) | 刷新输出流，确保缓冲区中的数据写入目标设备。 | cout << "Flush" << flush; |
+| get | istream& get(char& c) | 从输入流中获取下一个字符并存储到变量中。 | char ch; cin.get(ch); |
+| getline | istream& getline(istream& is, string& str) | 从输入流中按行读取字符串。 | string line; getline(cin, line); |
+| put | ostream& put(char c) | 将字符写入输出流。 | cout.put('A'); |
+| write | ostream& write(const char* s, streamsize n) | 将指定长度的字符写入输出流。 | const char* text = "Hello"; cout.write(text, 5); |
+| ignore | istream& ignore(streamsize n = 1, int delim = EOF) | 从输入流中忽略指定数量的字符。 | cin.ignore(100, '\n'); |
+| peek | int peek() | 返回当前输入流的下一个字符，但不提取它。 | if (cin.peek() == 'A') { // do something } |
+| read | istream& read(char* s, streamsize n) | 从输入流中读取指定长度的字符并存储到字符数组中。 | char buffer[256]; cin.read(buffer, 255); |
+| seekg | istream& seekg(streampos pos) | 在输入流中设置当前读取位置。 | ifstream file("example.txt"); file.seekg(10); |
+| seekp | ostream& seekp(streampos pos) | 在输出流中设置当前写入位置。 | ofstream file("output.txt"); file.seekp(5); |
+| tellg | streampos tellg() | 返回当前输入流的读取位置。 | ifstream file("example.txt"); streampos pos = file.tellg(); |
+| tellp | streampos tellp() | 返回当前输出流的写入位置。 | ofstream file("output.txt"); streampos pos = file.tellp(); |
+| putback | istream& putback(char c) | 将字符放回到输入流中。 | char ch = cin.get(); cin.putback(ch); |
+| sync | void sync() | 刷新所有关联的输入和输出流。 | cin.sync(); cout.sync(); |
+| tie | ostream* tie(ostream* stream) | 关联一个输出流，使得当任何输入操作时，被关联的输出流自动刷新。 | cout << "Hello, world!" << endl; cout.tie(&cerr); |
+| rdbuf | streambuf* rdbuf() | 返回与流对象关联的底层字符缓冲区。 | ofstream file("output.txt"); streambuf* buffer = file.rdbuf(); |
+
+这是完整的C++ iostream头文件中的函数列表，包含了更多的函数以及它们的描述和使用示例。
+#### iomanip
+[开头](#c帮助文档)
+以下是C++ `iomanip`头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| setprecision | ostream& setprecision(int n) | 设置浮点数的精度。 | cout << setprecision(2) << fixed << 3.14159; |
+| setw | ostream& setw(int n) | 设置下一个输出字段的宽度。 | cout << setw(8) << "Hello"; |
+| setfill | ostream& setfill(char c) | 设置用于填充字段的字符。 | cout << setfill('-') << setw(10) << "Hello"; |
+| left | ostream& left | 设置输出字段为左对齐方式。 | cout << left << setw(10) << "Hello"; |
+| right | ostream& right | 设置输出字段为右对齐方式。 | cout << right << setw(10) << "Hello"; |
+| internal | ostream& internal | 设置输出字段为内部对齐方式（正负数符号在字段内部）。 | cout << showpos << internal << setw(6) << 12; |
+| boolalpha | ostream& boolalpha | 输出布尔值时，将其显示为"true"或"false"。 | cout << boolalpha << true; |
+| noboolalpha | ostream& noboolalpha | 恢复布尔值的默认输出方式。 | cout << noboolalpha << true; |
+| showbase | ostream& showbase | 输出整数值时显示其进制前缀。 | cout << showbase << hex << 42; |
+| noshowbase | ostream& noshowbase | 恢复整数值的默认输出方式。 | cout << noshowbase << hex << 42; |
+| showpoint | ostream& showpoint | 显示浮点数的小数点和尾随零。 | cout << showpoint << fixed << 3.14; |
+| noshowpoint | ostream& noshowpoint | 恢复浮点数的默认输出方式。 | cout << noshowpoint << fixed << 3.14; |
+| showpos | ostream& showpos | 显示正数的正号。 | cout << showpos << 12; |
+| noshowpos | ostream& noshowpos | 恢复正数的默认输出方式。 | cout << noshowpos << 12; |
+| uppercase | ostream& uppercase | 将16进制数的字母输出为大写。 | cout << uppercase << hex << 10; |
+| nouppercase | ostream& nouppercase | 恢复16进制数的默认输出方式。 | cout << nouppercase << hex << 10; |
+| fixed | ostream& fixed | 输出浮点数以固定点表示法显示。 | cout << fixed << 3.14; |
+| scientific | ostream& scientific | 输出浮点数以科学计数法显示。 | cout << scientific << 3.14; |
+| hex | ostream& hex | 输出整数值为16进制。 | cout << hex << 42; |
+| dec | ostream& dec | 恢复整数值的默认输出方式。 | cout << dec << 42; |
+| oct | ostream& oct | 输出整数值为8进制。 | cout << oct << 42; |
+| resetiosflags | ostream& resetiosflags(ios_base::fmtflags flags) | 将指定的输出格式标志复位为默认值。 | cout << resetiosflags(ios::scientific); |
+
+这是C++ `iomanip`头文件中的所有函数的详细信息。
+#### fstream
+[开头](#c帮助文档)
+以下是C++ `fstream`头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| open | void open(const char* filename, ios_base::openmode mode = ios_base::in\|ios_base::out) | 打开文件，并将其与流对象关联。 | fstream file; file.open("example.txt", ios::in); |
+| is_open | bool is_open() const | 检查文件是否成功打开。 | ifstream file; if (file.is_open()) { // do something } |
+| close | void close() | 关闭与流对象关联的文件。 | ofstream file; file.open("output.txt"); file.close(); |
+| flush | ostream& flush() | 刷新输出流，确保缓冲区中的数据写入文件。 | ofstream file; file << "Hello"; file.flush(); |
+| tellg | streampos tellg() | 返回当前读取位置在文件中的绝对位置。 | ifstream file; streampos pos = file.tellg(); |
+| seekg | istream& seekg(streampos pos) | 设置当前读取位置在文件中的绝对位置。 | ifstream file; file.seekg(100); |
+| tellp | streampos tellp() | 返回当前写入位置在文件中的绝对位置。 | ofstream file; streampos pos = file.tellp(); |
+| seekp | ostream& seekp(streampos pos) | 设置当前写入位置在文件中的绝对位置。 | ofstream file; file.seekp(200); |
+| write | ostream& write(const char* s, streamsize n) | 将指定长度的字符写入文件。 | ofstream file; const char* text = "Hello"; file.write(text, 5); |
+| read | istream& read(char* s, streamsize n) | 从文件中读取指定长度的字符。 | ifstream file; char buffer[256]; file.read(buffer, 255); |
+| getline | istream& getline(istream& is, string& str) | 从文件中按行读取字符串。 | ifstream file; string line; getline(file, line); |
+| operator<< | ostream& operator<<(ostream& os, T& val) | 重载输出操作符，用于将数据写入文件。 | ofstream file; int num = 42; file << num; |
+| operator>> | istream& operator>>(istream& is, T& val) | 重载输入操作符，用于从文件中读取数据。 | ifstream file; int num; file >> num; |
+| good | bool good() const | 检测流对象是否处于可用状态。 | fstream file; if (file.good()) { // do something } |
+| bad | bool bad() const | 检测流对象是否处于错误状态。 | fstream file; if (file.bad()) { // handle error } |
+| fail | bool fail() const | 检测流对象是否处于失败状态。 | fstream file; if (file.fail()) { // handle failure } |
+| eof | bool eof() const | 检测流对象是否已达到文件末尾。 | fstream file; if (file.eof()) { // handle end of file } |
+| clear | void clear(iostate state = goodbit) | 清除流对象的状态标志。 | fstream file; file.clear(); |
+
+这是C++ `fstream`头文件中的所有函数的详细信息。
+#### cmath
+[开头](#c帮助文档)
+以下是C++ `cmath`头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| abs | int abs(int x) <br> long abs(long x) <br> float abs(float x) <br> double abs(double x) <br> long double abs(long double x) | 返回参数的绝对值。 | int result = abs(-5); |
+| acos | double acos(double x) | 返回参数的反余弦值，以弧度表示。 | double result = acos(0.5); |
+| asin | double asin(double x) | 返回参数的反正弦值，以弧度表示。 | double result = asin(0.5); |
+| atan | double atan(double x) | 返回参数的反正切值，以弧度表示。 | double result = atan(0.5); |
+| atan2 | double atan2(double y, double x) | 返回给定的直角坐标(x, y)对应的极坐标角度值，以弧度表示。 | double result = atan2(1.0, 1.0); |
+| ceil | double ceil(double x) | 返回大于或等于参数的最小整数值。 | double result = ceil(3.14); |
+| cos | double cos(double x) | 返回参数的余弦值，以弧度表示。 | double result = cos(0.5); |
+| cosh | double cosh(double x) | 返回参数的双曲余弦值。 | double result = cosh(0.5); |
+| exp | double exp(double x) | 返回自然对数的指数。 | double result = exp(1.0); |
+| fabs | float fabs(float x) <br> double fabs(double x) <br> long double fabs(long double x) | 返回参数的绝对值。 | double result = fabs(-3.14); |
+| floor | double floor(double x) | 返回小于或等于参数的最大整数值。 | double result = floor(3.14); |
+| fmod | double fmod(double x, double y) | 返回参数与除数的浮点余数。 | double result = fmod(10.5, 3.2); |
+| log | double log(double x) | 返回参数的自然对数。 | double result = log(2.71828); |
+| log10 | double log10(double x) | 返回参数的以10为底的对数。 | double result = log10(100.0); |
+| pow | double pow(double x, double y) | 返回x的y次幂。 | double result = pow(2.0, 3.0); |
+| sqrt | double sqrt(double x) | 返回参数的平方根。 | double result = sqrt(16.0); |
+| sin | double sin(double x) | 返回参数的正弦值，以弧度表示。 | double result = sin(0.5); |
+| sinh | double sinh(double x) | 返回参数的双曲正弦值。 | double result = sinh(0.5); |
+| tan | double tan(double x) | 返回参数的正切值，以弧度表示。 | double result = tan(0.5); |
+| tanh | double tanh(double x) | 返回参数的双曲正切值。 | double result = tanh(0.5); |
+| frexp | double frexp(double value, int* exp) <br> float frexp(float value, int* exp) <br> long double frexp(long double value, int* exp) | 将浮点数拆分为尾数和指数，并将指数存储在`exp`指针所指向的整型变量中。返回尾数值。 | double x = 123.45; int exponent; double mantissa = frexp(x, &exponent); |
+| modf | double modf(double value, double* intpart) <br> float modf(float value, float* intpart) <br> long double modf(long double value, long double* intpart) | 将浮点数拆分为整数部分和小数部分，并将整数部分存储在`intpart`指针所指向的变量中。返回小数部分值。 | double x = 123.45; double intpart; double fracpart = modf(x, &intpart); |
+
+这是C++ `cmath`头文件中的所有函数的详细信息。
+#### algorithm
+[开头](#c帮助文档)
+以下是C++ `algorithm`头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| all_of | bool all_of(InputIt first, InputIt last, UnaryPredicate p) | 检查给定范围内的所有元素是否都满足谓词`p`，如果是则返回`true`，否则返回`false`。 | vector<int> nums = {1, 2, 3, 4, 5}; bool result = all_of(nums.begin(), nums.end(), [](int x) { return x > 0; }); |
+| any_of | bool any_of(InputIt first, InputIt last, UnaryPredicate p) | 检查给定范围内的任意元素是否满足谓词`p`，如果有满足的元素则返回`true`，否则返回`false`。 | vector<int> nums = {1, 2, 3, 4, 5}; bool result = any_of(nums.begin(), nums.end(), [](int x) { return x % 2 == 0; }); |
+| none_of | bool none_of(InputIt first, InputIt last, UnaryPredicate p) | 检查给定范围内的所有元素是否都不满足谓词`p`，如果是则返回`true`，否则返回`false`。 | vector<int> nums = {1, 2, 3, 4, 5}; bool result = none_of(nums.begin(), nums.end(), [](int x) { return x < 0; }); |
+| for_each | Function for_each(InputIt first, InputIt last, UnaryFunction f) | 对给定范围内的每个元素执行函数`f`。 | vector<int> nums = {1, 2, 3, 4, 5}; for_each(nums.begin(), nums.end(), [](int x) { cout << x << " "; }); |
+| find | InputIt find(InputIt first, InputIt last, const T& value) | 在给定范围内查找值为`value`的元素，返回指向找到的元素的迭代器，如果找不到则返回`last`。 | vector<int> nums = {1, 2, 3, 4, 5}; auto it = find(nums.begin(), nums.end(), 3); |
+| find_if | InputIt find_if(InputIt first, InputIt last, UnaryPredicate p) | 在给定范围内查找满足谓词`p`的元素，返回指向找到的元素的迭代器，如果找不到则返回`last`。 | vector<int> nums = {1, 2, 3, 4, 5}; auto it = find_if(nums.begin(), nums.end(), [](int x) { return x > 3; }); |
+| find_if_not | InputIt find_if_not(InputIt first, InputIt last, UnaryPredicate p) | 在给定范围内查找不满足谓词`p`的元素，返回指向找到的元素的迭代器，如果找不到则返回`last`。 | vector<int> nums = {1, 2, 3, 4, 5}; auto it = find_if_not(nums.begin(), nums.end(), [](int x) { return x < 3; }); |
+| count | DifferenceType count(InputIt first, InputIt last, const T& value) | 统计给定范围内值为`value`的元素个数。 | vector<int> nums = {1, 2, 2, 3, 2, 4, 5}; int result = count(nums.begin(), nums.end(), 2); |
+| count_if | DifferenceType count_if(InputIt first, InputIt last, UnaryPredicate p) | 统计给定范围内满足谓词`p`的元素个数。 | vector<int> nums = {1, 2, 3, 4, 5}; int result = count_if(nums.begin(), nums.end(), [](int x) { return x % 2 == 0; }); |
+| transform | OutputIt transform(InputIt1 first1, InputIt1 last1, InputIt2 first2, OutputIt d_first, BinaryOperation op) | 对给定范围内的两个序列进行操作，并将结果存储在输出迭代器`d_first`指向的位置。 | vector<int> nums1 = {1, 2, 3, 4, 5}; vector<int> nums2 = {10, 20, 30, 40, 50}; vector<int> result(nums1.size()); transform(nums1.begin(), nums1.end(), nums2.begin(), result.begin(), [](int x, int y) { return x + y; }); |
+| sort | void sort(RandomIt first, RandomIt last) | 对给定范围内的元素进行升序排序。 | vector<int> nums = {5, 3, 1, 4, 2}; sort(nums.begin(), nums.end()); |
+| reverse | void reverse(BidirIt first, BidirIt last) | 反转给定范围内的元素顺序。 | vector<int> nums = {1, 2, 3, 4, 5}; reverse(nums.begin(), nums.end()); |
+| unique | ForwardIt unique(ForwardIt first, ForwardIt last) | 移除给定范围内的重复元素，并返回指向新范围末尾的迭代器。 | vector<int> nums = {1, 2, 2, 3, 3, 4, 4, 5}; auto it = unique(nums.begin(), nums.end()); |
+| binary_search | bool binary_search(ForwardIt first, ForwardIt last, const T& value) | 判断给定范围内是否存在值为`value`的元素，返回`true`表示找到，`false`表示未找到。范围必须是已排序的。 | vector<int> nums = {1, 2, 3, 4, 5}; bool result = binary_search(nums.begin(), nums.end(), 3); |
+| merge | void merge(ForwardIt1 first1, ForwardIt1 last1, ForwardIt2 first2, ForwardIt2 last2, OutputIt d_first) | 将已排序的两个范围合并到输出迭代器`d_first`指向的位置。 | vector<int> nums1 = {1, 3, 5}; vector<int> nums2 = {2, 4, 6}; vector<int> result(nums1.size() + nums2.size()); merge(nums1.begin(), nums1.end(), nums2.begin(), nums2.end(), result.begin()); |
+| max_element | ForwardIt max_element(ForwardIt first, ForwardIt last) | 返回给定范围内的最大元素的迭代器。 | vector<int> nums = {1, 3, 2, 5, 4}; auto it = max_element(nums.begin(), nums.end()); |
+| min_element | ForwardIt min_element(ForwardIt first, ForwardIt last) | 返回给定范围内的最小元素的迭代器。 | vector<int> nums = {1, 3, 2, 5, 4}; auto it = min_element(nums.begin(), nums.end()); |
+
+这是C++ `algorithm`头文件中的所有函数的详细信息。
+
+#### cstdlib
+[开头](#c帮助文档)
+以下是C++ `cstdlib` 头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| atoi | int atoi(const char* str) | 将字符串转换为整数。 | const char* str = "12345"; int num = atoi(str); |
+| atof | double atof(const char* str) | 将字符串转换为浮点数。 | const char* str = "3.14"; double num = atof(str); |
+| strtol | long int strtol(const char* str, char** endptr, int base) | 将字符串转换为长整型数。 | const char* str = "12345"; char* endptr; long int num = strtol(str, &endptr, 10); |
+| strtoul | unsigned long int strtoul(const char* str, char** endptr, int base) | 将字符串转换为无符号长整型数。 | const char* str = "12345"; char* endptr; unsigned long num = strtoul(str, &endptr, 10); |
+| srand | void srand(unsigned int seed) | 设置随机数生成器的种子。 | srand(time(NULL)); |
+| rand | int rand() | 产生一个伪随机整数。 | int num = rand(); |
+| calloc | void* calloc(size_t num, size_t size) | 分配并初始化一个大小为 `num * size` 的内存块。 | int* arr = (int*)calloc(5, sizeof(int)); |
+| malloc | void* malloc(size_t size) | 分配一个大小为 `size` 的内存块。 | int* arr = (int*)malloc(5 * sizeof(int)); |
+| realloc | void* realloc(void* ptr, size_t size) | 重新分配已分配内存块的大小。 | int* arr = (int*)malloc(5 * sizeof(int)); arr = (int*)realloc(arr, 10 * sizeof(int)); |
+| free | void free(void* ptr) | 释放先前通过 `malloc`、`calloc` 或 `realloc` 分配的内存块。 | int* arr = (int*)malloc(5 * sizeof(int)); free(arr); |
+| system | int system(const char* command) | 在操作系统上执行命令。 | const char* command = "ls -l"; int exit_code = system(command); |
+
+这是C++ `cstdlib` 头文件中的所有函数的详细信息。
+
+#### vector
+[开头](#c帮助文档)
+以下是C++ `vector` 头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| vector | vector\<T, Allocator\> | 默认构造函数，创建一个空的 `vector` 对象。 | vector\<int\> myVector; |
+| vector | vector\<T, Allocator\>(size_type n) | 构造函数，创建一个具有 `n` 个默认构造的元素的 `vector` 对象。 | vector\<int\> myVector(5); |
+| vector | vector\<T, Allocator\>(size_type n, const T& value) | 构造函数，创建一个具有 `n` 个值为 `value` 的元素的 `vector` 对象。 | vector\<int\> myVector(5, 10); |
+| vector | vector\<T, Allocator\>(const vector& other) | 拷贝构造函数，创建一个与 `other` 一样的 `vector` 对象。 | vector\<int\> myVector(otherVector); |
+| ~vector | ~vector() | 析构函数，销毁 `vector` 对象，并释放占用的内存。 | 在对象不再使用时自动调用。 |
+| assign | void assign(InputIterator first, InputIterator last) | 将迭代器范围 `[first, last)` 内的元素赋值给 `vector` 对象。 | vector\<int\> myVector; myVector.assign(beginVec, endVec); |
+| assign | void assign(size_type n, const T& value) | 将 `n` 个值为 `value` 的元素赋值给 `vector` 对象。 | vector\<int\> myVector; myVector.assign(5, 10); |
+| at | reference at(size_type pos) | 返回位于位置 `pos` 的元素的引用，并进行边界检查。 | int value = myVector.at(2); |
+| operator[] | reference operator[](size_type pos) | 重载操作符 `[]`，返回位于位置 `pos` 的元素的引用。 | int value = myVector[2]; |
+| front | reference front() | 返回首个元素的引用。 | int value = myVector.front(); |
+| back | reference back() | 返回最后一个元素的引用。 | int value = myVector.back(); |
+| data | T* data() | 返回指向底层数组的指针。 | int* ptr = myVector.data(); |
+| empty | bool empty() | 检查 `vector` 是否为空。 | if (myVector.empty()) { ... } |
+| size | size_type size() | 返回 `vector` 中元素的个数。 | size_type count = myVector.size(); |
+| max_size | size_type max_size() | 返回 `vector` 可以容纳的最大元素数。 | size_type maxSize = myVector.max_size(); |
+| clear | void clear() | 清空 `vector` 中的所有元素。 | myVector.clear(); |
+| insert | iterator insert(const_iterator pos, const T& value) | 在指定位置 `pos` 前插入值为 `value` 的元素，并返回指向插入的元素的迭代器。 | iterator it = myVector.insert(myVector.begin() + 3, 20); |
+| erase | iterator erase(const_iterator pos) | 移除指定位置 `pos` 处的元素，并返回指向下一个位置的迭代器。 | iterator it = myVector.erase(myVector.begin() + 2); |
+| push_back | void push_back(const T& value) | 在尾部添加一个值为 `value` 的元素。 | myVector.push_back(30); |
+| pop_back | void pop_back() | 移除尾部的元素。 | myVector.pop_back(); |
+| resize | void resize(size_type n) | 更改 `vector` 的大小，使其包含 `n` 个元素。如果新的大小大于当前大小，将默认构造新元素。 | myVector.resize(10); |
+| swap | void swap(vector& other) | 交换两个 `vector` 对象的内容。 | myVector.swap(otherVector); |
+
+这是C++ `vector` 头文件中的所有函数的详细信息。
+#### ctime
+[开头](#c帮助文档)
+以下是C++ `ctime` 头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| time | time_t time(time_t* arg) | 获取当前的系统时间，并将其以自纪元时间秒数形式存储到 `arg` 所指的对象中（如果 `arg` 不为 `nullptr`）。 | time_t currentTime = time(nullptr); |
+| localtime | tm* localtime(const time_t* timer) | 将自纪元时间秒数表示的时间转换为当地时间，并返回一个指向 `tm` 结构的指针，其中包含了当地的时间和日期信息。 | time_t currentTime = time(nullptr); tm* localTime = localtime(&currentTime); |
+| gmtime | tm* gmtime(const time_t* timer) | 将自纪元时间秒数表示的时间转换为 UTC 时间（格林尼治标准时间），并返回一个指向 `tm` 结构的指针，其中包含了 UTC 的时间和日期信息。 | time_t currentTime = time(nullptr); tm* utcTime = gmtime(&currentTime); |
+| mktime | time_t mktime(tm* timeptr) | 将一个包含时间和日期信息的 `tm` 结构转换为自纪元时间秒数的形式。 | tm localTime; localTime.tm_sec = 30; localTime.tm_min = 15; localTime.tm_hour = 9; time_t epochTime = mktime(&localTime); |
+| strftime | size_t strftime(char* str, size_t count, const char* format, const tm* timeptr) | 根据格式字符串 `format`，将 `tm` 结构表示的时间转换为字符串，并将其存储在 `str` 所指的位置。 | char buffer[80]; time_t currentTime = time(nullptr); tm* localTime = localtime(&currentTime); strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", localTime); |
+| asctime | char* asctime(const tm* timeptr) | 将 `tm` 结构表示的时间转换为字符串，并返回一个指向表示时间的静态字符数组的指针。 | time_t currentTime = time(nullptr); tm* localTime = localtime(&currentTime); char* timeString = asctime(localTime); |
+| ctime | char* ctime(const time_t* timer) | 将自纪元时间秒数表示的时间转换为字符串，并返回一个指向表示时间的静态字符数组的指针。 | time_t currentTime = time(nullptr); char* timeString = ctime(&currentTime); |
+| difftime | double difftime(time_t time1, time_t time2) | 计算从时间 `time1` 到时间 `time2` 的时间差（以秒为单位）。 | time_t startTime = time(nullptr); // Some operations time_t endTime = time(nullptr); double elapsedSeconds = difftime(endTime, startTime); |
+
+这是C++ `ctime` 头文件中的所有函数的详细信息。
+#### cstring
+[开头](#c帮助文档)
+以下是C++ `cstring` 头文件中的所有函数的详细信息（包括函数名、函数原型、描述和使用示例）：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| strlen | size_t strlen(const char* str) | 返回以空字符 `\0` 结尾的字符串 `str` 的长度，不包括空字符本身。 | const char* str = "Hello World"; size_t length = strlen(str); |
+| strcat | char* strcat(char* dest, const char* src) | 将字符串 `src` 连接到字符串 `dest` 的末尾，并返回指向 `dest` 的指针。 | char dest[30] = "Hello"; const char* src = "World"; char* result = strcat(dest, src); |
+| strcpy | char* strcpy(char* dest, const char* src) | 将字符串 `src` 复制到字符串 `dest`，包括空字符 `\0`，并返回指向 `dest` 的指针。 | char dest[30]; const char* src = "Hello"; char* result = strcpy(dest, src); |
+| strncpy | char* strncpy(char* dest, const char* src, size_t count) | 将字符串 `src` 的最多 `count` 个字符复制到字符串 `dest`，如果 `src` 的长度小于 `count`，则用空字符 `\0` 填充剩余的字符，并返回指向 `dest` 的指针。 | char dest[30]; const char* src = "Hello"; char* result = strncpy(dest, src, 3); |
+| strcmp | int strcmp(const char* str1, const char* str2) | 按字典顺序比较两个字符串 `str1` 和 `str2`。 | const char* str1 = "Hello"; const char* str2 = "World"; int result = strcmp(str1, str2); |
+| strncmp | int strncmp(const char* str1, const char* str2, size_t count) | 按字典顺序比较两个字符串 `str1` 和 `str2` 的最多 `count` 个字符。 | const char* str1 = "Hello"; const char* str2 = "World"; int result = strncmp(str1, str2, 3); |
+| strchr | char* strchr(const char* str, int character) | 在字符串 `str` 中查找字符 `character` 的第一次出现，返回指向该字符的指针，如果没有找到，则返回 `nullptr`。 | const char* str = "Hello World"; char* result = strchr(str, 'W'); |
+| strrchr | char* strrchr(const char* str, int character) | 在字符串 `str` 中逆向查找字符 `character` 的最后一次出现，返回指向该字符的指针，如果没有找到，则返回 `nullptr`。 | const char* str = "Hello World"; char* result = strrchr(str, 'o'); |
+| strstr | char* strstr(const char* str1, const char* str2) | 在字符串 `str1` 中查找字符串 `str2` 的第一次出现，返回指向该位置的指针，如果没有找到，则返回 `nullptr`。 | const char* str1 = "Hello World"; const char* str2 = "World"; char* result = strstr(str1, str2); |
+| strtok | char* strtok(char* str, const char* delimiters) | 将字符串 `str` 分解为一系列标记（由 `delimiters` 包含的字符分隔），返回指向每个标记的指针。首次调用时，`str` 不为空，后续调用传递 `nullptr` 作为第一个参数。 | char str[] = "Hello,World"; const char* delimiters = ","; char* token = strtok(str, delimiters); |
+| memcmp | int memcmp(const void* ptr1, const void* ptr2, size_t count) | 按字节比较 `ptr1` 和 `ptr2` 所指向的内存块的前 `count` 个字节。 | const char str1[] = "Hello"; const char str2[] = "World"; int result = memcmp(str1, str2, 3); |
+| memcpy | void* memcpy(void* dest, const void* src, size_t count) | 将 `src` 所指向的内存块的前 `count` 个字节复制到 `dest` 所指向的内存块，并返回指向 `dest` 的指针。 | char dest[30]; const char* src = "Hello"; void* result = memcpy(dest, src, 5); |
+| memmove | void* memmove(void* dest, const void* src, size_t count) | 将 `src` 所指向的内存块的前 `count` 个字节复制到 `dest` 所指向的内存块，即使两个内存块有重叠，也能正确工作。 | char str[30] = "Hello World"; void* result = memmove(str + 6, str, 5); |
+| memset | void* memset(void* ptr, int value, size_t count) | 将内存块 `ptr` 的前 `count` 个字节设置为给定的 `value`。 | char str[30]; void* result = memset(str, 'A', 5); |
+
+这是 C++ `cstring` 头文件中的所有函数的详细信息。
+#### string
+[开头](#c帮助文档)
+C++ 标准库中的 `string` 类提供了一组丰富的成员函数，用于操作字符串。以下是 `string` 类的所有成员函数的详细信息：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| 构造函数 | string() | 创建一个空字符串对象 | string str; |
+| | string(const string& str) | 创建一个字符串对象，并使用另一个字符串对象 `str` 进行初始化 | string str1 = "Hello"; string str2(str1); |
+| | string(const char* s) | 创建一个字符串对象，并使用 C 风格字符串 `s` 进行初始化 | const char* s = "Hello"; string str(s); |
+| | string(size_t count, char ch) | 创建一个由重复字符 `ch` 组成的字符串对象 | size_t count = 5; char ch = 'A'; string str(count, ch); |
+| 成员函数 | size_t size() const | 返回字符串的长度（字符数） | string str = "Hello"; size_t length = str.size(); |
+| | bool empty() const | 检查字符串是否为空 | string str = "Hello"; bool isEmpty = str.empty(); |
+| | const char* c_str() const | 返回指向以空字符结尾的字符数组的指针 | string str = "Hello"; const char* cString = str.c_str(); |
+| | string& operator=(const string& str) | 将字符串对象 `str` 赋值给当前对象 | string str1 = "Hello"; string str2; str2 = str1; |
+| | string& operator=(const char* s) | 将 C 风格字符串 `s` 赋值给当前对象 | const char* s = "Hello"; string str; str = s; |
+| | char& operator[](size_t pos) | 访问字符串中指定位置的字符 | string str = "Hello"; char& c = str[1]; |
+| | char& at(size_t pos) | 访问字符串中指定位置的字符，并进行边界检查 | string str = "Hello"; char& c = str.at(1); |
+| | string& operator+=(const string& str) | 在当前字符串末尾追加字符串 `str` | string str1 = "Hello"; string str2 = " World"; str1 += str2; |
+| | string& operator+=(const char* s) | 在当前字符串末尾追加 C 风格字符串 `s` | string str = "Hello"; str += " World"; |
+| | string& append(const string& str) | 在当前字符串末尾追加字符串 `str` | string str1 = "Hello"; string str2 = " World"; str1.append(str2); |
+| | string& append(const char* s) | 在当前字符串末尾追加 C 风格字符串 `s` | string str = "Hello"; str.append(" World"); |
+| | string& append(const char* s, size_t count) | 在当前字符串末尾追加 `count` 个字符 | string str = "Hello"; str.append(" World", 5); |
+| | string& insert(size_t pos, const string& str) | 在指定位置插入字符串 `str` | string str1 = "Hello"; string str2 = " World"; str1.insert(5, str2); |
+| | string& insert(size_t pos, const char* s) | 在指定位置插入 C 风格字符串 `s` | string str = "Hello"; str.insert(5, " World"); |
+| | string& insert(size_t pos, const char* s, size_t count) | 在指定位置插入 `count` 个字符 | string str = "Hello"; str.insert(5, " World", 5); |
+| | string& erase(size_t pos, size_t count) | 删除从指定位置开始的 `count` 个字符 | string str = "Hello World"; str.erase(6, 5); |
+| | void clear() | 清空字符串内容，使其成为空字符串 | string str = "Hello"; str.clear(); |
+| | int compare(const string& str) const | 比较两个字符串的大小，返回一个整数 | string str1 = "Hello"; string str2 = "World"; int result = str1.compare(str2); |
+| | int compare(const char* s) const | 比较字符串与 C 风格字符串的大小，返回一个整数 | string str = "Hello"; const char* s = "World"; int result = str.compare(s); |
+| | string substr(size_t pos, size_t count) const | 返回一个包含从位置 `pos` 开始的 `count` 个字符的子字符串 | string str = "Hello World"; string subStr = str.substr(6, 5); |
+| | void swap(string& str) | 交换当前字符串与另一个字符串 `str` 的内容 | string str1 = "Hello"; string str2 = "World"; str1.swap(str2); |
+| 静态函数 | static int compare(const string& str1, const string& str2) | 比较两个字符串的大小，返回一个整数 | string str1 = "Hello"; string str2 = "World"; int result = string::compare(str1, str2); |
+| | static string to_string(int value) | 将整数转换为字符串 | int num = 123; string str = string::to_string(num); |
+| | static int stoi(const string& str, size_t* pos = 0, int base = 10) | 将字符串转换为整数 | string str = "123"; int num = string::stoi(str); |
+| | static long stol(const string& str, size_t* pos = 0, int base = 10) | 将字符串转换为长整数 | string str = "123"; long num = string::stol(str); |
+| | static double stod(const string& str, size_t* pos = 0) | 将字符串转换为双精度浮点数 | string str = "3.14"; double num = string::stod(str); |
+
+这是 C++ 标准库中 `string` 类的所有成员函数的详细信息。
+#### cctype
+[开头](#c帮助文档)
+C++ 标准库中的 `<cctype>` 头文件提供了一组用于字符处理的函数和宏。以下是 `<cctype>` 头文件中的所有函数的详细信息：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| isalnum | int isalnum(int c) | 检查字符 `c` 是否是字母或数字字符 | char ch = 'A'; int result = isalnum(ch); |
+| isalpha | int isalpha(int c) | 检查字符 `c` 是否是字母字符 | char ch = 'A'; int result = isalpha(ch); |
+| isblank | int isblank(int c) | 检查字符 `c` 是否是空白字符（空格或制表符） | char ch = ' '; int result = isblank(ch); |
+| iscntrl | int iscntrl(int c) | 检查字符 `c` 是否是控制字符 | char ch = '\n'; int result = iscntrl(ch); |
+| isdigit | int isdigit(int c) | 检查字符 `c` 是否是数字字符 | char ch = '9'; int result = isdigit(ch); |
+| isgraph | int isgraph(int c) | 检查字符 `c` 是否是可打印字符（除空格之外的可见字符） | char ch = '!'; int result = isgraph(ch); |
+| islower | int islower(int c) | 检查字符 `c` 是否是小写字母字符 | char ch = 'a'; int result = islower(ch); |
+| isprint | int isprint(int c) | 检查字符 `c` 是否是可打印字符（包括空格） | char ch = ' '; int result = isprint(ch); |
+| ispunct | int ispunct(int c) | 检查字符 `c` 是否是标点符号字符 | char ch = '.'; int result = ispunct(ch); |
+| isspace | int isspace(int c) | 检查字符 `c` 是否是空白字符（包括空格、制表符、换行符等） | char ch = ' '; int result = isspace(ch); |
+| isupper | int isupper(int c) | 检查字符 `c` 是否是大写字母字符 | char ch = 'A'; int result = isupper(ch); |
+| isxdigit | int isxdigit(int c) | 检查字符 `c` 是否是十六进制数字字符 | char ch = 'F'; int result = isxdigit(ch); |
+| tolower | int tolower(int c) | 将字符 `c` 转换为小写字母字符 | char ch = 'A'; int result = tolower(ch); |
+| toupper | int toupper(int c) | 将字符 `c` 转换为大写字母字符 | char ch = 'a'; int result = toupper(ch); |
+
+这是 C++ `<cctype>` 头文件中的所有函数的详细信息。
+
+### 自定义函数
 [开头](#c帮助文档)
 在C++中，函数是一种可重复使用的代码段，用于完成特定的任务。函数提供了代码的模块化和组织化，可以使程序更容易理解、调试和维护。在C++中定义和调用函数很简单。
 
@@ -2498,3 +2808,103 @@ delete[] arr;               // 释放动态数组的内存空间
    ```
 
 友元和异常处理是C++中非常有用的功能，它们能够提供更大的灵活性和控制能力。然而，在使用友元时需谨慎保护封装性，使用异常处理时需考虑异常的类型和处理方式，以保证程序的正确性和可靠性。
+
+## 编写与调用dll文件
+[开头](#c帮助文档)
+以下是关于C++中的DLL文件的详细解释、编写DLL文件示例，使用Visual Studio 2022环境：
+**DLL文件**：
+DLL（Dynamic Link Library）文件是一种在Windows操作系统中常用的动态链接库文件。它包含一组功能函数和数据，可以被多个程序共享和调用，并且能够在运行时被动态加载和链接到程序中。通过使用DLL文件，可以实现代码的模块化和重用，减小程序的体积。
+
+**编写DLL文件示例**：
+以下是使用Visual Studio 2022编写DLL文件的示例，包括求和、排序、显示"Hello, World!"的函数以及一个数学函数类，注释，导出类与函数。
+
+1. 创建一个新的C++项目（选择“空项目”）。
+2. 在解决方案资源管理器中，右键单击项目并选择“添加” -> “新建项”。
+3. 在弹出的对话框中选择“代码” -> “C++头文件”。
+4. 命名文件为`fun.h`，然后在文件中编写以下代码：
+
+```cpp
+#ifdef FUN_EXPORTS
+#define DLL_API __declspec(dllexport)
+#else
+#define DLL_API __declspec(dllimport)
+#endif
+
+// 这是一个数学函数类
+class DLL_API MathFunctions
+{
+public:
+    // 求和函数
+    // 参数: a和b为相加的两个整数
+    // 返回值: 返回a和b的和
+    int Sum(int a, int b);
+
+    // 排序函数
+    // 参数: array为待排序的数组, size为数组大小
+    // 无返回值
+    void Sort(int* array, int size);
+};
+
+// 显示"Hello, World!"的函数
+// 无参数和返回值
+DLL_API void HelloWorld();
+```
+
+5. 在解决方案资源管理器中，右键单击项目并选择“添加” -> “新建项”。
+6. 在弹出的对话框中选择“代码” -> “C++文件”。
+7. 命名文件为`fun.cpp`，然后在文件中编写以下代码：
+
+```cpp
+#include "fun.h"
+#include <iostream>
+
+int MathFunctions::Sum(int a, int b)
+{
+    return a + b;
+}
+
+void MathFunctions::Sort(int* array, int size)
+{
+    // 这里写排序逻辑，例如使用快速排序算法
+}
+
+void HelloWorld()
+{
+    std::cout << "Hello, World!" << std::endl;
+}
+```
+
+在上述示例中，我们使用`__declspec(dllexport)`和`__declspec(dllimport)`来指定函数和类的导入和导出属性，以便在DLL文件和其他程序之间正确地进行函数和类的动态链接。同时，我们在注释中添加了关于函数和类的说明，以便他人理解和使用。
+
+**调用DLL文件函数示例**：
+以下是一个使用Visual Studio 2022调用DLL文件中函数的示例，
+
+1. 创建一个新的C++项目（选择“控制台应用程序”）。
+2. 在解决方案资源管理器中，右键单击项目并选择“添加” -> “现有项”。
+3. 将创建的.dll文件以及.lib文件还有定义的.h头文件,拷贝至我们需要测试的新项目的目录下。
+4. 将拷贝的头文件`fun.h`添加到空白项目中
+5. 在属性—链接器—输入—附加依赖项中添加我们拷贝过来的.lib文件
+6. 在解决方案资源管理器中，右键单击项目并选择“添加” -> “现有项”。
+7. 选择`fun.h`文件，然后点击“添加”。
+8. 在解决方案资源管理器中的`main.cpp
+9. 在`main.cpp`文件中编写以下代码：
+
+```cpp
+#include "fun.h"
+
+int main()
+{
+    MathFunctions math;
+
+    int sum = math.Sum(2, 3);
+    math.Sort(nullptr, 0);
+    HelloWorld();
+
+    return 0;
+}
+```
+
+在上述示例中，我们通过包含`fun.h`头文件，在`main.cpp`文件中直接调用了DLL文件中的函数。我们创建了一个`MathFunctions`对象，并调用了其`Sum`函数进行求和，调用了`Sort`函数进行排序，以及调用了`HelloWorld`函数打印"Hello, World!"。
+
+请注意，为了使用DLL文件中的函数，需要将DLL文件添加到项目中并包含相应的头文件。在`main`函数内，我们创建了一个`MathFunctions`对象，因此我们可以直接调用该对象的成员函数。函数调用和使用与常规的C++函数调用相同。
+

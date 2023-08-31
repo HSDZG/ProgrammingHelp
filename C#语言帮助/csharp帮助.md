@@ -61,8 +61,19 @@ C#作为一种现代编程语言，具有以下特点：
 ```csharp
 using System;
 ```
+C# 中的 System 命名空间是包含了大量常用的类和类型。以下是一些常用的 System 命名空间中的类：
 
-2. `System.Collections`：提供了各种集合类，如列表（`List<T>`）、字典（`Dictionary<TKey, TValue>`）、队列（`Queue<T>`）、堆栈（`Stack<T>`）等，用于存储和操作数据的集合。
+- **System.IO**：用于文件和流的输入输出操作的类，包括 FileStream、StreamReader、StreamWriter 等。
+- **System.Collections**：用于处理集合和数据结构的类，包括 ArrayList、Hashtable、Queue、Stack 等。
+- **System.Text**：用于字符编码和字符串处理的类，包括 Encoding、StringBuilder、StringReader、StringWriter 等。
+- **System.Net**：用于网络通信的类，包括 WebClient、HttpWebRequest、TcpClient、UdpClient 等。
+- **System.Threading**：用于多线程编程的类，包括 Thread、ThreadPool、Mutex、Semaphore 等。
+- **System.Xml**：用于 XML 处理的类，包括 XmlDocument、XmlReader、XmlWriter 等。
+- **System.Reflection**：用于程序集和类型的反射操作的类，包括 Assembly、Type、MethodInfo、PropertyInfo 等。
+- **System.Diagnostics**：用于进程和性能监控的类，包括 Process、EventLog、PerformanceCounter 等。
+- **System.Linq**：用于 LINQ 查询和操作的类，包括 Enumerable、Queryable、GroupBy、OrderBy 等。
+
+1. `System.Collections`：提供了各种集合类，如列表（`List<T>`）、字典（`Dictionary<TKey, TValue>`）、队列（`Queue<T>`）、堆栈（`Stack<T>`）等，用于存储和操作数据的集合。
 
 ```csharp
 using System.Collections;
@@ -227,6 +238,195 @@ public int MyMethod(string arg)
 注意，XML注释需要使用特定的标记（如`<summary>`、`<param>`、`<returns>`等）来表示不同类型的注释内容。
 
 注释是良好的编程实践的一部分，它可以提高代码的可读性和可维护性。在编写代码时，应该适当添加注释来解释代码的意图和逻辑，并帮助其他人（包括自己）理解代码的功能。
+## XML注释
+[开头](#c帮助文档)
+在C#中，XML注释是一种用于对代码进行文档化的特殊注释格式。它允许开发人员为类、方法、属性等成员添加描述性文档，并提供有关参数、返回值、异常等的信息。以下是关于C#中XML注释的详细说明：
+
+**XML注释的语法格式**
+
+XML注释使用特定的标记语法来注解代码。每个注释应紧跟在要注释的代码之前，并使用`///`作为注释的开头。以下是一些常见的XML注释标记和它们的用途：
+
+- `<summary>`：用于提供成员的概述性描述。
+- `<param>`：用于描述方法参数的含义和用途。
+- `<returns>`：用于描述方法返回值的含义和用途。
+- `<exception>`：用于描述方法可能引发的异常情况。
+- `<seealso>`：用于指定与当前成员相关的其他成员。
+
+**XML注释的编写示例**
+
+以下是一个包含XML注释的C#代码示例：
+
+```csharp
+namespace MyNamespace
+{
+    /// <summary>
+    /// 这是一个示例类，演示XML注释的用法。
+    /// </summary>
+    public class MyExampleClass
+    {
+        /// <summary>
+        /// 这是一个示例方法，用于计算两个整数的和。
+        /// </summary>
+        /// <param name="a">第一个整数</param>
+        /// <param name="b">第二个整数</param>
+        /// <returns>两个整数的和</returns>
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+        
+        /// <summary>
+        /// 这是一个示例属性，用于获取或设置一个字符串。
+        /// </summary>
+        public string MyProperty { get; set; }
+    }
+}
+```
+生成了XML注释文档后，您可以在使用代码时查看注释内容。当您在代码中使用了注释的成员时，将触发IntelliSense功能并显示相关的注释文本。
+## 修饰符
+[开头](#c帮助文档)
+在C#中，修饰符用于控制和调整类型、成员和代码的行为和可见性。以下是C#中常用的修饰符及其详细解释，以及相关的代码示例：
+
+1. **`public`**  
+   - 修饰类、结构、接口、枚举、方法、字段、属性和事件
+   - 公共的修饰符，表示对外公开，可以在任何地方访问
+   - 示例：
+
+   ```csharp
+   public class MyClass
+   {
+       public int MyPublicField;
+       public void MyPublicMethod()
+       {
+           // 公共方法的实现
+       }
+   }
+   ```
+
+2. **`private`**  
+   - 修饰类、结构、接口、枚举、方法、字段、属性和事件
+   - 私有的修饰符，表示仅在所属类或结构中可访问
+   - 示例：
+
+   ```csharp
+   public class MyClass
+   {
+       private int myPrivateField; // 私有字段
+       
+       private void MyPrivateMethod()
+       {
+           // 私有方法的实现
+       }
+   }
+   ```
+
+3. **`protected`**  
+   - 修饰字段、属性、方法和事件
+   - 受保护的修饰符，表示仅在所属类或从该类派生的子类中可访问
+   - 示例：
+
+   ```csharp
+   public class MyBaseClass
+   {
+       protected int myProtectedField; // 受保护字段
+   }
+
+   public class MyDerivedClass : MyBaseClass
+   {
+       public void MyMethod()
+       {
+           myProtectedField = 10; // 可以访问受保护字段
+       }
+   }
+   ```
+
+4. **`internal`**  
+   - 修饰类、结构、接口、枚举、方法、属性和事件
+   - 内部的修饰符，表示仅在同一程序集内可访问
+   - 示例：
+
+   ```csharp
+   internal class MyInternalClass
+   {
+       // 内部类的实现
+   }
+   
+   public class MyClass
+   {
+       internal int myInternalField; // 内部字段
+   }
+   ```
+
+5. **`protected internal`**  
+   - 修饰类、结构、接口、枚举、方法、属性和事件
+   - 受保护内部的修饰符，表示既可以在当前程序集内访问，也可以在派生类中访问
+   - 示例：
+
+   ```csharp
+   public class MyBaseClass
+   {
+       protected internal int myProtectedInternalField; // 受保护的内部字段
+   }
+
+   public class MyDerivedClass : MyBaseClass
+   {
+       public void MyMethod()
+       {
+           myProtectedInternalField = 10; // 可以访问受保护的内部字段
+       }
+   }
+   ```
+
+6. **`readonly`**  
+   - 修饰字段
+   - 只读的修饰符，表示字段的值只能在声明时或构造函数中被赋值，以后不可修改
+   - 示例：
+
+   ```csharp
+   public class MyClass
+   {
+       public readonly int MyReadOnlyField; // 只读字段
+       
+       public MyClass()
+       {
+           MyReadOnlyField = 10; // 可以在构造函数中赋值
+       }
+   }
+   ```
+
+7. **`const`**  
+   - 修饰字段
+   - 常量的修饰符，表示字段的值在声明时被赋值，并且在后续不能更改
+   - 示例：
+
+   ```csharp
+   public class MyClass
+   {
+       public const int MyConstantField = 10; // 常量字段
+   }
+   ```
+
+8. **`static`**  
+   - 修饰类、字段、方法、属性和事件
+   - 静态的修饰符，表示成员在类级别上进行共享，可通过类名直接访问，而无需实例化类
+   - 示例：
+
+   ```csharp
+   public class MyClass
+   {
+       public static int MyStaticField; // 静态字段
+
+       public static void MyStaticMethod()
+       {
+           // 静态方法的实现
+       }
+   }
+   
+   int value = MyClass.MyStaticField; // 可以通过类名直接访问静态字段
+   MyClass.MyStaticMethod(); // 可以通过类名直接调用静态方法
+   ```
+
+以上是C#中常用的一些修饰符及其示例。请注意，在实际编程中，修饰符的使用应根据具体需求和设计原则进行选择，以确保代码的正确性和可维护性。
 
 ## 标识符
 [开头](#c帮助文档)
@@ -1513,8 +1713,337 @@ end:
 当程序执行到`end`标签处时，它会输出 "这是终点"，然后继续执行程序的下一条语句。
 
 需要注意的是，过度使用`goto`语句可能导致代码变得难以理解和维护。因此，在实际编程中，我们通常建议避免过多地使用`goto`语句，而是尽可能使用结构化的控制流语句（如`if`、`while`、`for`等）来实现程序逻辑。
+## 库函数
+[开头](#c帮助文档)
+当涉及到C#中的库函数概念时，有几个关键点值得注意：
 
-## 函数
+1. **命名空间（Namespaces）**：C#使用命名空间来组织类、接口和其他相关类型。命名空间用于避免类型名冲突，并提供一种逻辑上的层次结构。库函数通常通过使用命名空间来进行组织和访问。
+
+2. **.NET Framework**：C#是一种托管语言，其库函数主要是通过.NET Framework提供的。.NET Framework是一个广泛使用的软件开发平台，提供了大量的类库和函数，用于开发各种类型的应用程序。它包含了许多命名空间，如System、System.IO、System.Collections等，每个命名空间中都包含了一系列相关的库函数。
+
+3. **System命名空间**：System命名空间是C#中最基本的命名空间之一，提供了许多核心库函数。它包含了许多常用的类和函数，如Console类、String类、Math类等。这些库函数用于处理输入输出、数学计算、字符串操作等常见任务。
+
+4. **第三方库函数**：为了满足特定需求，C#开发者经常使用第三方库函数。这些库函数由独立的开发者或组织提供，并经过广泛的测试和优化。常见的第三方库函数有Json.NET用于处理JSON数据、Entity Framework用于数据库操作、NuGet用于包管理等。
+
+5. **调用和使用库函数**：要使用库函数，首先需要将相关的命名空间导入（使用`using`关键字），然后通过函数名和参数调用库函数。使用库函数可以大大提高开发效率，避免重复编写已经实现好的功能。
+
+总结一下，C#中的库函数是通过命名空间进行组织和访问的，包括.NET Framework提供的库函数和第三方库函数。它们可以通过导入命名空间并调用函数来使用。库函数起到了简化开发、提高效率的作用。请注意，这只是对库函数概念的一个简要介绍，实际上C#中的库函数非常丰富和多样化，涵盖了很多领域。
+### Object
+[开头](#c帮助文档)
+Object类是所有类的基类，因此这些方法适用于所有C#类。
+
+作用：Object类提供了一些基本的成员和方法，供所有C#类继承和使用。
+
+| 方法名 | 方法原型 | 描述 | 使用示例 |
+| ------ | ------- | ---- | -------- |
+| ToString | public virtual string ToString() | 返回一个表示当前对象的字符串。 | object obj = new Object(); Console.WriteLine(obj.ToString()); |
+| Equals | public virtual bool Equals(object obj) | 确定当前对象是否等于另一个对象。 | object obj1 = new Object(); object obj2 = new Object(); bool result = obj1.Equals(obj2); |
+| GetHashCode | public virtual int GetHashCode() | 获取当前对象的哈希代码。 | object obj = new Object(); int hashCode = obj.GetHashCode(); |
+| GetType | public Type GetType() | 获取当前对象的类型。 | object obj = new Object(); Type type = obj.GetType(); |
+| Finalize | protected virtual void Finalize() | 在垃圾回收器回收对象之前执行对象清理操作。 | ~Object() |
+| MemberwiseClone | protected object MemberwiseClone() | 创建当前对象的浅表副本。 | object obj = new Object(); object objCopy = obj.MemberwiseClone(); |
+
+这是 C# `Object` 类的所有成员函数的详细信息。
+### Console
+[开头](#c帮助文档)
+C# 中的 `Console` 类提供了一组用于在控制台应用程序中进行输入和输出的静态成员函数。以下是 `Console` 类的所有成员函数的详细信息：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| Write | void Write(bool value) | 在控制台上输出一个布尔值 | bool flag = true; Console.Write(flag); |
+| | void Write(char value) | 在控制台上输出一个字符 | char ch = 'A'; Console.Write(ch); |
+| | void Write(char[] buffer) | 在控制台上输出字符数组的内容 | char[] buffer = {'H', 'e', 'l', 'l', 'o'}; Console.Write(buffer); |
+| | void Write(decimal value) | 在控制台上输出一个十进制数 | decimal num = 3.14m; Console.Write(num); |
+| | void Write(double value) | 在控制台上输出一个双精度浮点数 | double num = 3.14; Console.Write(num); |
+| | void Write(float value) | 在控制台上输出一个单精度浮点数 | float num = 3.14f; Console.Write(num); |
+| | void Write(int value) | 在控制台上输出一个整数 | int num = 123; Console.Write(num); |
+| | void Write(long value) | 在控制台上输出一个长整数 | long num = 123456789; Console.Write(num); |
+| | void Write(object value) | 在控制台上输出一个对象的字符串表示 | object obj = "Hello"; Console.Write(obj); |
+| | void Write(string value) | 在控制台上输出一个字符串 | string str = "Hello"; Console.Write(str); |
+| | void WriteLine() | 在控制台上输出一个空行 | Console.WriteLine(); |
+| WriteLine | void WriteLine(bool value) | 在控制台上输出一个布尔值，并换行 | bool flag = true; Console.WriteLine(flag); |
+| | void WriteLine(char value) | 在控制台上输出一个字符，并换行 | char ch = 'A'; Console.WriteLine(ch); |
+| | void WriteLine(char[] buffer) | 在控制台上输出字符数组的内容，并换行 | char[] buffer = {'H', 'e', 'l', 'l', 'o'}; Console.WriteLine(buffer); |
+| | void WriteLine(decimal value) | 在控制台上输出一个十进制数，并换行 | decimal num = 3.14m; Console.WriteLine(num); |
+| | void WriteLine(double value) | 在控制台上输出一个双精度浮点数，并换行 | double num = 3.14; Console.WriteLine(num); |
+| | void WriteLine(float value) | 在控制台上输出一个单精度浮点数，并换行 | float num = 3.14f; Console.WriteLine(num); |
+| | void WriteLine(int value) | 在控制台上输出一个整数，并换行 | int num = 123; Console.WriteLine(num); |
+| | void WriteLine(long value) | 在控制台上输出一个长整数，并换行 | long num = 123456789; Console.WriteLine(num); |
+| | void WriteLine(object value) | 在控制台上输出一个对象的字符串表示，并换行 | object obj = "Hello"; Console.WriteLine(obj); |
+| | void WriteLine(string value) | 在控制台上输出一个字符串，并换行 | string str = "Hello"; Console.WriteLine(str); |
+| Read | int Read() | 从控制台读取下一个字符的 ASCII 值 | int ascii = Console.Read(); |
+| | ConsoleKeyInfo ReadKey() | 从控制台读取下一个键的信息 | ConsoleKeyInfo keyInfo = Console.ReadKey(); |
+| | string ReadLine() | 从控制台读取当前行的字符串 | string line = Console.ReadLine(); |
+| Clear | void Clear() | 清除控制台上的所有内容 | Console.Clear(); |
+| SetCursorPosition | void SetCursorPosition(int left, int top) | 设置光标位置的左上角坐标 | Console.SetCursorPosition(10, 5); |
+| CursorLeft | int CursorLeft { get; set; } | 获取或设置光标在当前行的水平位置 | int left = Console.CursorLeft; Console.CursorLeft = 10; |
+| CursorTop | int CursorTop { get; set; } | 获取或设置光标在当前行的垂直位置 | int top = Console.CursorTop; Console.CursorTop = 5; |
+
+这是 C# `Console` 类的所有成员函数的详细信息。
+### string
+[开头](#c帮助文档)
+C# 中的 `string` 类是用于处理字符串的类。下面是 `string` 类的所有成员函数的详细信息：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| Length | int Length { get; } | 获取字符串中的字符数 | string str = "Hello"; int length = str.Length; |
+| Concat | static string Concat(params string[] values) | 将多个字符串连接成一个字符串 | string str1 = "Hello"; string str2 = "World"; string result = string.Concat(str1, str2); |
+| | static string Concat(object arg0, object arg1) | 将两个对象连接成一个字符串 | string str1 = "Hello"; int num = 123; string result = string.Concat(str1, num); |
+| | static string Concat(string str0, string str1) | 连接两个字符串 | string str1 = "Hello"; string str2 = "World"; string result = string.Concat(str1, str2); |
+| Contains | bool Contains(string value) | 判断字符串是否包含指定的字符串 | string str = "Hello, World"; bool result = str.Contains("World"); |
+| IndexOf | int IndexOf(char value) | 返回指定字符在字符串中第一次出现的索引 | string str = "Hello, World"; int index = str.IndexOf('W'); |
+| | int IndexOf(string value) | 返回指定字符串在字符串中第一次出现的索引 | string str = "Hello, World"; int index = str.IndexOf("World"); |
+| | int IndexOf(char value, int startIndex) | 返回指定字符在字符串中从指定位置开始第一次出现的索引 | string str = "Hello, World"; int index = str.IndexOf('o', 5); |
+| | int IndexOf(string value, int startIndex) | 返回指定字符串在字符串中从指定位置开始第一次出现的索引 | string str = "Hello, World"; int index = str.IndexOf("World", 6); |
+| Substring | string Substring(int startIndex) | 返回从指定位置开始到字符串末尾的子字符串 | string str = "Hello, World"; string sub = str.Substring(7); |
+| | string Substring(int startIndex, int length) | 返回从指定位置开始指定长度的子字符串 | string str = "Hello, World"; string sub = str.Substring(7, 5); |
+| ToLower | string ToLower() | 将字符串转换为小写形式 | string str = "Hello"; string lower = str.ToLower(); |
+| ToUpper | string ToUpper() | 将字符串转换为大写形式 | string str = "Hello"; string upper = str.ToUpper(); |
+| Trim | string Trim() | 移除字符串开头和结尾的空白字符 | string str = "   Hello   "; string trimmed = str.Trim(); |
+| Replace | string Replace(char oldChar, char newChar) | 将字符串中的指定字符替换为新字符 | string str = "Hello, World"; string replaced = str.Replace('o', '0'); |
+| | string Replace(string oldValue, string newValue) | 将字符串中的指定子字符串替换为新字符串 | string str = "Hello, World"; string replaced = str.Replace("World", "Universe"); |
+| Split | string[] Split(params char[] separator) | 将字符串分割为子字符串数组 | string str = "Hello, World"; string[] parts = str.Split(','); |
+| | string[] Split(char[] separator, int count) | 将字符串分割为指定个数的子字符串数组 | string str = "Hello, World"; string[] parts = str.Split(',', 2); |
+| | string[] Split(string[] separator, StringSplitOptions options) | 将字符串分割为子字符串数组，并进行空白处理 | string str = "Hello, World"; string[] parts = str.Split(new string[] {", "}, StringSplitOptions.RemoveEmptyEntries); |
+|Compare|	static int Compare(string strA, string strB)|	比较两个字符串，并返回一个表示它们在排序顺序中的相对位置的整数	|string str1 = “hello”; string str2 = “world”; int result = string.Compare(str1, str2);|
+||static int Compare(string strA, string strB, bool ignoreCase)	|比较两个字符串，并返回一个表示它们在排序顺序中的相对位置的整数，可以指定是否忽略大小写	|string str1 = “hello”; string str2 = “world”; int result = string.Compare(str1, str2, true);|
+||static int Compare(string strA, string strB, StringComparison comparisonType)	|比较两个字符串，并返回一个表示它们在排序顺序中的相对位置的整数，可以指定比较规则	|string str1 = “hello”; string str2 = “world”; int result = string.Compare(str1, str2, StringComparison.Ordinal);|
+这是 C# `string` 类的所有成员函数的详细信息。
+### math
+[开头](#c帮助文档)
+C# 中的 `Math` 类是用于执行数学运算的类，提供了一组用于数值计算的静态方法和常量。以下是 `Math` 类的所有成员函数的详细信息：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| Abs | static decimal Abs(decimal value) | 计算指定十进制数的绝对值 | decimal num = -3.14m; decimal result = Math.Abs(num); |
+| | static double Abs(double value) | 计算指定双精度浮点数的绝对值 | double num = -3.14; double result = Math.Abs(num); |
+| | static float Abs(float value) | 计算指定单精度浮点数的绝对值 | float num = -3.14f; float result = Math.Abs(num); |
+| | static int Abs(int value) | 计算指定整数的绝对值 | int num = -5; int result = Math.Abs(num); |
+| | static long Abs(long value) | 计算指定长整数的绝对值 | long num = -10000000000L; long result = Math.Abs(num); |
+| | static sbyte Abs(sbyte value) | 计算指定有符号字节的绝对值 | sbyte num = -5; sbyte result = Math.Abs(num); |
+| | static short Abs(short value) | 计算指定短整数的绝对值 | short num = -100; short result = Math.Abs(num); |
+| Acos | static double Acos(double d) | 返回指定角度余弦的反余弦值 | double angle = 0.5; double result = Math.Acos(angle); |
+| Asin | static double Asin(double d) | 返回指定角度正弦的反正弦值 | double angle = 0.5; double result = Math.Asin(angle); |
+| Atan | static double Atan(double d) | 返回指定角度的反正切值 | double angle = 0.5; double result = Math.Atan(angle); |
+| Atan2 | static double Atan2(double y, double x) | 返回 y 和 x 坐标的反正切值 | double y = 0.5; double x = 0.3; double result = Math.Atan2(y, x); |
+| Ceiling | static decimal Ceiling(decimal d) | 返回大于或等于指定十进制数的最小整数 | decimal num = 3.14m; decimal result = Math.Ceiling(num); |
+| | static double Ceiling(double a) | 返回大于或等于指定双精度浮点数的最小整数 | double num = 3.14; double result = Math.Ceiling(num); |
+| | static double Cos(double d) | 返回指定角度的余弦值 | double angle = 0.5; double result = Math.Cos(angle); |
+| Cosh | static double Cosh(double value) | 返回指定角度的双曲余弦值 | double angle = 0.5; double result = Math.Cosh(angle); |
+| Exp | static double Exp(double d) | 返回指定数值的指数值 | double value = 2.0; double result = Math.Exp(value); |
+| Floor | static decimal Floor(decimal d) | 返回小于或等于指定十进制数的最大整数 | decimal num = 3.14m; decimal result = Math.Floor(num); |
+| | static double Floor(double d) | 返回小于或等于指定双精度浮点数的最大整数 | double num = 3.14; double result = Math.Floor(num); |
+| | static int IEEERemainder(double x, double y) | 返回指定数字除以另一个数字的余数 | double dividend = 10; double divisor = 3; double result = Math.IEEERemainder(dividend, divisor); |
+| Log | static double Log(double d) | 返回指定数值的自然对数（以 e 为底） | double value = 2.0; double result = Math.Log(value); |
+| | static double Log(double a, double newBase) | 返回指定数值的对数（以指定底为底） | double value = 2.0; double baseValue = 10.0; double result = Math.Log(value, baseValue); |
+| Log10 | static double Log10(double d) | 返回指定数值的以 10 为底的对数 | double value = 100.0; double result = Math.Log10(value); |
+| Max | static decimal Max(decimal val1, decimal val2) | 返回两个十进制数中较大的值 | decimal num1 = 3.14m; decimal num2 = 2.71m; decimal result = Math.Max(num1, num2); |
+| | static double Max(double val1, double val2) | 返回两个双精度浮点数中较大的值 | double num1 = 3.14; double num2 = 2.71; double result = Math.Max(num1, num2); |
+| | static float Max(float val1, float val2) | 返回两个单精度浮点数中较大的值 | float num1 = 3.14f; float num2 = 2.71f; float result = Math.Max(num1, num2); |
+| | static int Max(int val1, int val2) | 返回两个整数中较大的值 | int num1 = 5; int num2 = 10; int result = Math.Max(num1, num2); |
+| | static long Max(long val1, long val2) | 返回两个长整数中较大的值 | long num1 = 10000000000L; long num2 = 50000000000L; long result = Math.Max(num1, num2); |
+| | static T Max\<T>(T val1, T val2) | 返回两个值中较大的值（泛型方法） | int num1 = 5; int num2 = 10; int result = Math.Max<int>(num1, num2); |
+| Min | static decimal Min(decimal val1, decimal val2) | 返回两个十进制数中较小的值 | decimal num1 = 3.14m; decimal num2 = 2.71m; decimal result = Math.Min(num1, num2); |
+| | static double Min(double val1, double val2) | 返回两个双精度浮点数中较小的值 | double num1 = 3.14; double num2 = 2.71; double result = Math.Min(num1, num2); |
+| | static float Min(float val1, float val2) | 返回两个单精度浮点数中较小的值 | float num1 = 3.14f; float num2 = 2.71f; float result = Math.Min(num1, num2); |
+| | static int Min(int val1, int val2) | 返回两个整数中较小的值 | int num1 = 5; int num2 = 10; int result = Math.Min(num1, num2); |
+| | static long Min(long val1, long val2) | 返回两个长整数中较小的值 | long num1 = 10000000000L; long num2 = 50000000000L; long result = Math.Min(num1, num2); |
+| | static T Min\<T>(T val1, T val2) | 返回两个值中较小的值（泛型方法） | int num1 = 5; int num2 = 10; int result = Math.Min<int>(num1, num2); |
+| Pow | static double Pow(double x, double y) | 返回指定数的指定次幂值 | double num = 2.0; double power = 3.0; double result = Math.Pow(num, power); |
+| Round | static decimal Round(decimal d) | 返回指定十进制数的四舍五入值 | decimal num = 3.14m; decimal result = Math.Round(num); |
+| | static decimal Round(decimal d, int decimals) | 返回指定十进制数的指定精度的四舍五入值 | decimal num = 3.14159m; int precision = 2; decimal result = Math.Round(num, precision); |
+| | static decimal Round(decimal d, MidpointRounding mode) | 返回指定十进制数的四舍五入值，以指定的中间舍入规则确定 | decimal num = 3.14m; MidpointRounding mode = MidpointRounding.AwayFromZero; decimal result = Math.Round(num, mode); |
+| | static decimal Round(decimal d, int decimals, MidpointRounding mode) | 返回指定十进制数的指定精度的四舍五入值，以指定的中间舍入规则确定 | decimal num = 3.14159m; int precision = 2; MidpointRounding mode = MidpointRounding.AwayFromZero; decimal result = Math.Round(num, precision, mode); |
+| | static double Round(double a) | 返回指定双精度浮点数的四舍五入值 | double num = 3.14; double result = Math.Round(num); |
+| | static double Round(double value, int digits) | 返回指定双精度浮点数的指定精度的四舍五入值 | double num = 3.14159; int precision = 2; double result = Math.Round(num, precision); |
+| | static double Round(double value, MidpointRounding mode) | 返回指定双精度浮点数的四舍五入值，以指定的中间舍入规则确定 | double num = 3.14; MidpointRounding mode = MidpointRounding.AwayFromZero; double result = Math.Round(num, mode); |
+| | static double Round(double value, int digits, MidpointRounding mode) | 返回指定双精度浮点数的指定精度的四舍五入值，以指定的中间舍入规则确定 | double num = 3.14159; int precision = 2; MidpointRounding mode = MidpointRounding.AwayFromZero; double result = Math.Round(num, precision, mode); |
+| Sign | static int Sign(decimal value) | 返回十进制数的符号 | decimal num = -3.14m; int result = Math.Sign(num); |
+| | static int Sign(double value) | 返回双精度浮点数的符号 | double num = -3.14; int result = Math.Sign(num); |
+| | static int Sign(float value) | 返回单精度浮点数的符号 | float num = -3.14f; int result = Math.Sign(num); |
+| | static int Sign(int value) | 返回整数的符号 | int num = -5; int result = Math.Sign(num); |
+| | static int Sign(long value) | 返回长整数的符号 | long num = -10000000000L; int result = Math.Sign(num); |
+| | static int Sign(sbyte value) | 返回有符号字节的符号 | sbyte num = -5; int result = Math.Sign(num); |
+| | static int Sign(short value) | 返回短整数的符号 | short num = -100; int result = Math.Sign(num); |
+| Sin | static double Sin(double a) | 返回指定角度的正弦值 | double angle = 0.5; double result = Math.Sin(angle); |
+| Sinh | static double Sinh(double value) | 返回指定角度的双曲正弦值 | double angle = 0.5; double result = Math.Sinh(angle); |
+| Sqrt | static double Sqrt(double d) | 返回指定数的平方根 | double num = 16.0; double result = Math.Sqrt(num); |
+| Tan | static double Tan(double a) | 返回指定角度的正切值 | double angle = 0.5; double result = Math.Tan(angle); |
+| Tanh | static double Tanh(double value) | 返回指定角度的双曲正切值 | double angle = 0.5; double result = Math.Tanh(angle); |
+| Truncate | static decimal Truncate(decimal d) | 返回十进制数的整数部分 | decimal num = 3.14m; decimal result = Math.Truncate(num); |
+| | static double Truncate(double d) | 返回双精度浮点数的整数部分 | double num = 3.14; double result = Math.Truncate(num); |
+
+这是 C# `Math` 类的所有成员函数的详细信息。
+### DateTime
+[开头](#c帮助文档)
+DateTime类是C#中用于操作日期和时间的类，提供了多个函数用于日期和时间的计算、比较和格式化等操作。以下是C# DateTime类中的所有函数的详细信息：
+| 函数名              | 函数原型                                    | 描述                                                                                                                              | 使用示例                                                                                                                   |
+|--------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| Add                | DateTime Add(TimeSpan value)             | 将指定的时间间隔加到当前 DateTime 实例的值上。                                                                                           | DateTime now = DateTime.Now; now = now.Add(TimeSpan.FromDays(2));                                                          |
+| AddDays            | DateTime AddDays(double value)           | 将指定的天数加到当前 DateTime 实例的值上。                                                                                               | DateTime now = DateTime.Now; now = now.AddDays(10);                                                                        |
+| AddHours           | DateTime AddHours(double value)          | 将指定的小时数加到当前 DateTime 实例的值上。                                                                                              | DateTime now = DateTime.Now; now = now.AddHours(2);                                                                        |
+| AddMinutes         | DateTime AddMinutes(double value)        | 将指定的分钟数加到当前 DateTime 实例的值上。                                                                                              | DateTime now = DateTime.Now; now = now.AddMinutes(30);                                                                     |
+| AddMonths          | DateTime AddMonths(int months)           | 将指定的月份数加到当前 DateTime 实例的值上。                                                                                            | DateTime now = DateTime.Now; now = now.AddMonths(3);                                                                       |
+| AddSeconds         | DateTime AddSeconds(double value)        | 将指定的秒数加到当前 DateTime 实例的值上。                                                                                               | DateTime now = DateTime.Now; now = now.AddSeconds(45);                                                                     |
+| AddTicks           | DateTime AddTicks(long value)            | 将指定的刻度数加到当前 DateTime 实例的值上。                                                                                             | DateTime now = DateTime.Now; now = now.AddTicks(10000000);                                                                 |
+| AddYears           | DateTime AddYears(int value)             | 将指定的年份数加到当前 DateTime 实例的值上。                                                                                            | DateTime now = DateTime.Now; now = now.AddYears(1);                                                                         |
+| Compare            | int Compare(DateTime t1, DateTime t2)    | 比较两个 DateTime 值并返回一个指示其相对值的整数。                                                                                    | int result = DateTime.Compare(dateTime1, dateTime2);                                                                       |
+| CompareTo          | int CompareTo(DateTime value)             | 将当前 DateTime 实例与指定的 DateTime 值进行比较并返回一个指示其相对值的整数。                                                               | int result = dateTime1.CompareTo(dateTime2);                                                                               |
+| DaysInMonth        | int DaysInMonth(int year, int month)     | 返回指定年份和月份中的天数。                                                                                                            | int daysInMonth = DateTime.DaysInMonth(2023, 2);                                                                            |
+| Equals             | bool Equals(DateTime value)               | 指示当前 DateTime 实例和指定的对象是否表示同一个值。                                                                                     | bool isEquals = dateTime1.Equals(dateTime2);                                                                               |
+| FromBinary         | DateTime FromBinary(long dateData)       | 从序列化的 64 位有符号整数指定的日期和时间重建 DateTime 实例。                                                                            | DateTime dateTime = DateTime.FromBinary(636537450120000000);                                                               |
+| FromFileTime       | DateTime FromFileTime(long fileTime)     | 将表示 Windows 文件时间的文件时间值转换为等效的本地时间。                                                                                  | DateTime dateTime = DateTime.FromFileTime(129458150001000000);                                                             |
+| FromFileTimeUtc    | DateTime FromFileTimeUtc(long fileTime)  | 将表示 Windows 文件时间的文件时间值转换为等效的 UTC 时间。                                                                                 | DateTime dateTime = DateTime.FromFileTimeUtc(129458150001000000);                                                          |
+| FromOADate         | DateTime FromOADate(double d)            | 将 OLE 自 1899 年 12 月 30 日午夜以来的天数转换为 DateTime。                                                                                | DateTime dateTime = DateTime.FromOADate(43863.5);                                                                          |
+| IsLeapYear         | bool IsLeapYear(int year)                 | 指示指定的年份是否为闰年。                                                                                                             | bool isLeap = DateTime.IsLeapYear(2024);                                                                                    |
+| Now                | static DateTime Now                       | 获取表示当前日期和时间的 DateTime 对象。                                                                                                 | DateTime now = DateTime.Now;                                                                                                |
+| Substract          | TimeSpan Substract(DateTime value)        | 返回一个新的 TimeSpan 对象，该对象表示当前 DateTime 实例的值减去指定的 DateTime 值的差异。                                                   | TimeSpan diff = dateTime1.Substract(dateTime2);                                                                             |
+| ToBinary           | long ToBinary()                          | 将当前 DateTime 对象转换为序列化的 64 位有符号整数表示形式。                                                                              | long binaryData = dateTime.ToBinary();                                                                                     |
+| ToFileTime         | long ToFileTime()                        | 将当前 DateTime 对象的值转换为表示 Windows 文件时间的文件时间值。                                                                         | long fileTime = dateTime.ToFileTime();                                                                                     |
+| ToFileTimeUtc      | long ToFileTimeUtc()                     | 将当前 DateTime 对象的值转换为表示 UTC 时间的表示形式的 Windows 文件时间值。                                                               | long fileTimeUtc = dateTime.ToFileTimeUtc();                                                                               |
+| ToLongDateString   | string ToLongDateString()                | 将当前 DateTime 对象的值转换为其等效的长日期字符串表示形式。                                                                             | string longDate = dateTime.ToLongDateString();                                                                              |
+| ToLongTimeString   | string ToLongTimeString()                | 将当前 DateTime 对象的值转换为其等效的长时间字符串表示形式。                                                                             | string longTime = dateTime.ToLongTimeString();                                                                              |
+| ToOADate           | double ToOADate()                        | 将当前 DateTime 对象的值转换为 OLE 自 1899 年 12 月 30 日午夜以来的天数。                                                                   | double oadate = dateTime.ToOADate();                                                                                        |
+| ToShortDateString  | string ToShortDateString()               | 将当前 DateTime 对象的值转换为其等效的短日期字符串表示形式。                                                                             | string shortDate = dateTime.ToShortDateString();                                                                            |
+| ToShortTimeString  | string ToShortTimeString()               | 将当前 DateTime 对象的值转换为其等效的短时间字符串表示形式。                                                                             | string shortTime = dateTime.ToShortTimeString();                                                                            |
+| ToString           | string ToString()                        | 返回当前 DateTime 对象的字符串表示形式。                                                                                              | string str = dateTime.ToString();                                                                                           |
+| ToString           | string ToString(string format)           | 返回当前 DateTime 对象的字符串表示形式，使用指定的格式。                                                                                 | string str = dateTime.ToString("yyyy-MM-dd HH:mm:ss");                                                                      |
+| TryParse           | bool TryParse(string s, out DateTime result) | 将表示日期和时间的字符串转换为它的 DateTime 等效项，并返回一个指示转换是否成功的布尔值。                                                    | bool isSuccess = DateTime.TryParse("2023-08-15", out DateTime date);                                                       |
+| TryParseExact      | bool TryParseExact(string s, string format, IFormatProvider provider, DateTimeStyles style, out DateTime result) | 将指定的字符串表示形式的日期和时间转换为它的等效 DateTime，并返回一个指示转换是否成功的布尔值。                       | bool isSuccess = DateTime.TryParseExact("2023-08-15", "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date); |
+
+这是 C# `DateTime` 类的所有成员函数的详细信息。
+### File
+[开头](#c帮助文档)
+File类是用于操作文件的静态类，提供了一系列静态方法来创建、复制、删除、移动文件等操作。
+
+| 函数名                      | 函数原型                                                                             | 描述                                 | 使用示例                                                       |
+|---------------------------|-----------------------------------------------------------------------------|--------------------------------------|-----------------------------------------------------------------|
+| AppendAllText             | public static void AppendAllText(string path, string contents)                 | 将指定的字符串追加到文件末尾         | File.AppendAllText("file.txt", "text to append");               |
+| AppendText                | public static StreamWriter AppendText(string path)                             | 以追加的方式打开文本文件进行写入操作 | StreamWriter writer = File.AppendText("file.txt");              |
+| Copy                      | public static void Copy(string sourceFileName, string destFileName)            | 复制文件                             | File.Copy("source.txt", "destination.txt");                     |
+| Create                    | public static FileStream Create(string path)                                   | 创建或覆盖指定文件                   | FileStream file = File.Create("file.txt");                      |
+| Delete                    | public static void Delete(string path)                                         | 删除指定文件                         | File.Delete("file.txt");                                        |
+| Exists                    | public static bool Exists(string path)                                         | 判断文件是否存在                     | if (File.Exists("file.txt")) { /* file exists */ }              |
+| GetAttributes             | public static FileAttributes GetAttributes(string path)                        | 获取文件的属性                       | FileAttributes attributes = File.GetAttributes("file.txt");      |
+| Move                      | public static void Move(string sourceFileName, string destFileName)            | 移动文件                             | File.Move("source.txt", "destination.txt");                     |
+| ReadAllBytes              | public static byte[] ReadAllBytes(string path)                                 | 以字节数组形式读取文件内容           | byte[] data = File.ReadAllBytes("file.txt");                    |
+| ReadAllLines              | public static string[] ReadAllLines(string path)                               | 以字符串数组形式读取文件内容           | string[] lines = File.ReadAllLines("file.txt");                  |
+| ReadAllText               | public static string ReadAllText(string path)                                  | 以字符串形式读取文件内容               | string text = File.ReadAllText("file.txt");                     |
+| Replace                   | public static void Replace(string sourceFileName, string destinationFileName, string destinationBackupFileName) | 替换文件               | File.Replace("source.txt", "destination.txt", "backup.txt");    |
+| WriteAllBytes             | public static void WriteAllBytes(string path, byte[] bytes)                     | 将字节数组写入文件                   | File.WriteAllBytes("file.txt", data);                            |
+| WriteAllLines             | public static void WriteAllLines(string path, string[] contents)                | 将字符串数组写入文件                 | File.WriteAllLines("file.txt", lines);                           |
+| WriteAllText              | public static void WriteAllText(string path, string contents)                   | 将字符串写入文件                     | File.WriteAllText("file.txt", text);                            |
+
+这是 C# `File` 类的所有成员函数的详细信息。
+### Directory
+[开头](#c帮助文档)
+Directory类是用于操作目录的静态类，提供了一系列静态方法来创建、删除、移动目录等操作。
+
+| 函数名                      | 函数原型                                                                             | 描述                                 | 使用示例                                                       |
+|---------------------------|-----------------------------------------------------------------------------|--------------------------------------|-----------------------------------------------------------------|
+| CreateDirectory           | public static DirectoryInfo CreateDirectory(string path)                      | 创建目录                             | Directory.CreateDirectory("path/to/directory");                 |
+| Delete                    | public static void Delete(string path)                                         | 删除空目录                           | Directory.Delete("path/to/directory");                          |
+| Exists                    | public static bool Exists(string path)                                         | 判断目录是否存在                     | if (Directory.Exists("path/to/directory")) { /* directory exists */ } |
+| GetDirectories            | public static string[] GetDirectories(string path)                             | 获取指定目录的所有子目录               | string[] directories = Directory.GetDirectories("path/to/directory"); |
+| GetFiles                  | public static string[] GetFiles(string path)                                   | 获取指定目录中的所有文件               | string[] files = Directory.GetFiles("path/to/directory");       |
+| GetFileSystemEntries      | public static string[] GetFileSystemEntries(string path)                       | 获取指定目录中的所有文件和子目录       | string[] entries = Directory.GetFileSystemEntries("path/to/directory"); |
+| Move                      | public static void Move(string sourceDirName, string destDirName)              | 移动目录                             | Directory.Move("source/directory", "destination/directory");     |
+| SetLastAccessTime         | public static void SetLastAccessTime(string path, DateTime lastAccessTime)      | 设置指定目录的最后访问时间             | Directory.SetLastAccessTime("path/to/directory", DateTime.Now);  |
+| SetLastWriteTime          | public static void SetLastWriteTime(string path, DateTime lastWriteTime)        | 设置指定目录的最后写入时间             | Directory.SetLastWriteTime("path/to/directory", DateTime.Now);   |
+这是 C# `Directory` 类的所有成员函数的详细信息。
+### StreamReader
+[开头](#c帮助文档)
+StreamReader类用于从文本数据流中读取字符。
+
+| 函数名                       | 函数原型                                                                                                     | 描述                                                                                                                            | 使用示例                                                                                                                                  |
+|----------------------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| StreamReader              | public StreamReader(Stream stream)                                                                         | 使用默认编码从给定的流创建StreamReader对象                                                                                        | using StreamReader reader = new StreamReader(stream);                                                                                   |
+| Close                      | public void Close()                                                                                        | 关闭StreamReader对象和基础流                                                                                                       | reader.Close();                                                                                                                          |
+| DiscardBufferedData        | public void DiscardBufferedData()                                                                          | 清除缓冲区的数据                                                                                                                  | reader.DiscardBufferedData();                                                                                                            |
+| EndOfStream                | public bool EndOfStream { get; }                                                                           | 获取一个值，指示是否已到达流的末尾                                                                                                | while (!reader.EndOfStream) { /* read from the stream */ }                                                                               |
+| Peek                       | public int Peek()                                                                                          | 返回下一个字符但不移动读取位置                                                                                                      | int nextChar = reader.Peek();                                                                                                            |
+| Read                       | public int Read()                                                                                          | 从输入流中读取下一个字符                                                                                                            | int nextChar = reader.Read();                                                                                                            |
+| ReadAsync                  | public Task<int> ReadAsync()                                                                               | 异步从输入流中读取下一个字符                                                                                                      | int nextChar = await reader.ReadAsync();                                                                                                 |
+| ReadBlock                  | public int ReadBlock(char[] buffer, int index, int count)                                                  | 将指定数量的字符读取到缓冲区中                                                                                                    | int bytesRead = reader.ReadBlock(buffer, index, count);                                                                                   |
+| ReadLine                   | public string ReadLine()                                                                                   | 从输入流中读取下一行字符                                                                                                            | string line = reader.ReadLine();                                                                                                         |
+| ReadLineAsync              | public Task<string> ReadLineAsync()                                                                        | 异步从输入流中读取下一行字符                                                                                                      | string line = await reader.ReadLineAsync();                                                                                              |
+| ReadToEnd                  | public string ReadToEnd()                                                                                   | 从当前位置读取到输入流的末尾，并返回所有字符                                                                                      | string content = reader.ReadToEnd();                                                                                                     |
+| ReadToEndAsync             | public Task<string> ReadToEndAsync()                                                                        | 异步从当前位置读取到输入流的末尾，并返回所有字符                                                                                | string content = await reader.ReadToEndAsync();                                                                                          |
+| PeekAsync                  | public Task<int> PeekAsync()                                                                               | 异步返回下一个字符但不移动读取位置                                                                                                | int nextChar = await reader.PeekAsync();                                                                                                 |
+| ReadAsync                  | public Task<int> ReadAsync(char[] buffer, int index, int count)                                            | 异步从输入流中读取指定数量的字符                                                                                                | int bytesRead = await reader.ReadAsync(buffer, index, count);                                                                              |
+| ReadBlockAsync             | public Task<int> ReadBlockAsync(char[] buffer, int index, int count)                                      | 异步将指定数量的字符读取到缓冲区中                                                                                            | int bytesRead = await reader.ReadBlockAsync(buffer, index, count);                                                                         |
+| ReadLineAsync              | public Task<string> ReadLineAsync(char[] buffer, int index, int count)                                     | 异步从输入流中读取下一行字符至缓冲区                                                                                            | string line = await reader.ReadLineAsync(buffer, index, count);                                                                            |
+| ReadAsync                  | public virtual ValueTask<int> ReadAsync(Memory<char> buffer, CancellationToken cancellationToken = default) | 异步从输入流中读取一定数量的字符到缓冲区                                                                                        | int bytesRead = await reader.ReadAsync(buffer, cancellationToken);                                                                        |
+| ReadBlockAsync             | public virtual ValueTask<int> ReadBlockAsync(Memory<char> buffer, CancellationToken cancellationToken = default) | 异步将一定数量的字符从输入流读取到缓冲区                                                                                      | int bytesRead = await reader.ReadBlockAsync(buffer, cancellationToken);                                                                  |
+| ReadLineAsync              | public virtual ValueTask<string> ReadLineAsync(CancellationToken cancellationToken = default)                | 异步从输入流中读取下一行字符                                                                                                      | string line = await reader.ReadLineAsync(cancellationToken);                                                                               |
+| ReadToEndAsync             | public virtual ValueTask<string> ReadToEndAsync(CancellationToken cancellationToken = default)                | 异步从当前位置读取到输入流的末尾，并返回所有字符                                                                            | string content = await reader.ReadToEndAsync(cancellationToken);                                                                           |
+| PeekAsync                  | public virtual ValueTask<int> PeekAsync(Memory<char> buffer, CancellationToken cancellationToken = default)  | 异步返回下一个字符但不移动读取位置                                                                                                | int nextChar = await reader.PeekAsync(buffer, cancellationToken);                                                                        |
+| ReadAsync                  | public virtual ValueTask<int> ReadAsync(Span<char> buffer, CancellationToken cancellationToken = default)   | 异步从输入流中读取一定数量的字符到缓冲区                                                                                        | int bytesRead = await reader.ReadAsync(buffer, cancellationToken);                                                                        |
+| ReadBlockAsync             | public virtual ValueTask<int> ReadBlockAsync(Span<char> buffer, CancellationToken cancellationToken = default) | 异步将一定数量的字符从输入流读取到缓冲区                                                                                      | int bytesRead = await reader.ReadBlockAsync(buffer, cancellationToken);                                                                  |
+| ReadLineAsync              | public virtual ValueTask<string> ReadLineAsync(CancellationToken cancellationToken = default)                | 异步从输入流中读取下一行字符                                                                                                      | string line = await reader.ReadLineAsync(cancellationToken);                                                                               |
+| ReadToEndAsync             | public virtual ValueTask<string> ReadToEndAsync(CancellationToken cancellationToken = default)                | 异步从当前位置读取到输入流的末尾，并返回所有字符                                                                            | string content = await reader.ReadToEndAsync(cancellationToken);                                                                           |
+| Dispose                   | public void Dispose()                                                                                      | 释放StreamReader对象使用的所有资源                                                                                                | reader.Dispose();                                                                                                                        |
+这是 C# `StreamReader` 类的所有成员函数的详细信息。
+### StreamWriter
+[开头](#c帮助文档)
+StreamWriter类提供了一个用于向文本文件写入字符的方便方法。
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| ---- | ---- | ---- | ---- |
+| Close | void Close() | 关闭当前StreamWriter对象和基础流。 | StreamWriter writer = new StreamWriter("file.txt");<br/> writer.Close(); |
+| Dispose | void Dispose() | 释放由 StreamWriter 使用的所有资源。 | using (StreamWriter writer = new StreamWriter("file.txt"))<br/> {<br/> &nbsp;&nbsp;// 使用writer的代码<br/> } |
+| Flush | void Flush() | 将缓冲区数据写入基础流。 | writer.Flush(); |
+| Write | void Write(string value) | 将指定的字符串写入基础流。 | writer.Write("Hello World!"); |
+| WriteLine | void WriteLine(string value) | 将指定的字符串及其后面的行结束符写入基础流。 | writer.WriteLine("Hello World!"); |
+| WriteAsync | Task WriteAsync(string value) | 将指定的字符串异步地写入基础流。 | await writer.WriteAsync("Hello World!"); |
+| WriteLineAsync | Task WriteLineAsync(string value) | 异步地将指定的字符串及其后面的行结束符写入基础流。 | await writer.WriteLineAsync("Hello World!"); |
+| FlushAsync | Task FlushAsync() | 异步将所有缓冲的数据写入基础流。 | await writer.FlushAsync(); |
+| AutoFlush | bool AutoFlush { get; set; } | 获取或设置一个值，该值指示 StreamWriter 在每次调用 Write 方法后是否自动刷新缓冲区。 | writer.AutoFlush = true; |
+| NewLine | string NewLine { get; set; } | 获取或设置字符串，该字符串用于表示换行符。 | writer.NewLine = "\n"; |
+这是 C# `StreamWriter` 类的所有成员函数的详细信息。
+### FileStream
+[开头](#c帮助文档)
+C# FileStream类用于实现对文件的输入和输出操作，它提供了一系列用于读写文件的函数。下面是FileStream类的常用函数及其说明：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| FileStream | FileStream(string path, FileMode mode) | 使用指定路径和打开模式创建一个FileStream实例。 | FileStream fileStream = new FileStream("file.txt", FileMode.OpenOrCreate); |
+| Read | int Read(byte[] buffer, int offset, int count) | 从文件中读取指定数量的字节，并将其存储在指定的缓冲区中。返回实际读取的字节数。 | int bytesRead = fileStream.Read(buffer, 0, bufferSize); |
+| Write | void Write(byte[] buffer, int offset, int count) | 将指定数量的字节从指定的缓冲区写入文件。 | fileStream.Write(buffer, 0, buffer.Length); |
+| Flush | void Flush() | 清空缓冲区，并将缓冲中的数据立即写入文件。 | fileStream.Flush(); |
+| Seek | long Seek(long offset, SeekOrigin origin) | 在文件中移动当前位置到指定位置。 | fileStream.Seek(0, SeekOrigin.Begin); |
+| Close | void Close() | 关闭FileStream对象，并释放相关资源。 | fileStream.Close(); |
+这是 C# `FileStream` 类的所有成员函数的详细信息。
+### WebClient
+[开头](#c帮助文档)
+C# WebClient类用于实现与 Web 服务器之间的通信，它提供了一系列用于发送 HTTP 请求并获取响应的函数。下面是WebClient类的常用函数及其说明：
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| WebClient | WebClient() | 创建一个WebClient实例。 | WebClient webClient = new WebClient(); |
+| DownloadData | byte[] DownloadData(string address) | 从指定的网址下载数据并返回字节数组。 | byte[] data = webClient.DownloadData("http://example.com/file.txt"); |
+| DownloadString | string DownloadString(string address) | 从指定的网址下载数据并返回字符串。 | string content = webClient.DownloadString("http://example.com/page.html"); |
+| UploadData | byte[] UploadData(string address, byte[] data) | 将指定的字节数组上传到指定的网址，并返回响应数据的字节数组。 | byte[] response = webClient.UploadData("http://example.com/upload", data); |
+| UploadString | string UploadString(string address, string data) | 将指定的字符串上传到指定的网址，并返回响应数据的字符串。 | string response = webClient.UploadString("http://example.com/submit", "name=John&age=25"); |
+| UploadFile | byte[] UploadFile(string address, string fileName) | 将指定的文件上传到指定的网址，并返回响应数据的字节数组。 | byte[] response = webClient.UploadFile("http://example.com/upload", "file.txt"); |
+| UploadValues | byte[] UploadValues(string address, NameValueCollection data) | 将指定的名称/值集合上传到指定的网址，并返回响应数据的字节数组。 | byte[] response = webClient.UploadValues("http://example.com/submit", formData); |
+| Dispose | void Dispose() | 释放WebClient对象使用的资源。 | webClient.Dispose(); |
+这是 C# `WebClient` 类的所有成员函数的详细信息。
+### Thread
+[开头](#c帮助文档)
+C# Thread类是用于多线程编程的类，它提供了一系列用于线程管理和控制的函数。以下是Thread类的常用函数及其说明：
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| Start | void Start() | 启动线程，使其开始执行线程函数。 | thread.Start(); |
+| Join | void Join() | 等待线程的结束。 | thread.Join(); |
+| Sleep | static void Sleep(int millisecondsTimeout) | 挂起当前线程一段时间（毫秒）。 | Thread.Sleep(1000); |
+| Abort | void Abort() | 强制结束线程的执行。 | thread.Abort(); |
+| Resume | void Resume() | 恢复一个被挂起的线程。 | thread.Resume(); |
+| Suspend | void Suspend() | 挂起一个线程的执行。 | thread.Suspend(); |
+| Interrupt | void Interrupt() | 中断线程的等待状态。 | thread.Interrupt(); |
+| GetState | ThreadState GetState() | 获取线程的当前状态。 | ThreadState state = thread.GetState(); |
+| SetName | void SetName(string name) | 设置线程的名称。 | thread.SetName("WorkerThread"); |
+| GetCurrentThread | static Thread GetCurrentThread() | 获取当前正在执行的线程对象。 | Thread currentThread = Thread.GetCurrentThread(); |
+这是 C# `Thread` 类的所有成员函数的详细信息。
+## 自定义函数
 [开头](#c帮助文档)
 在C#中，函数用于封装可重用的代码块，以便在程序的不同部分重复使用。下面是C#中定义和使用函数的基本示例：
 
@@ -2733,5 +3262,112 @@ if (condition)
 在上述示例中，如果 `condition` 满足，则会抛出一个带有指定异常消息的异常对象。
 
 通过合理地处理异常，你可以优化程序的健壮性，避免程序在发生异常时崩溃，并提供有用的错误信息或处理方法。同时，使用适当的异常处理，可以更好地理解代码和问题，并改进应用程序的质量。
+
+## 编写和调用dll文件
+[开头](#c帮助文档)
+在C#中，DLL（Dynamic Link Library）是一种可重用的代码库，它包含已编译的函数、类、数据和资源，可以在多个应用程序中共享和调用。以下是关于编写DLL文件、调用DLL函数的详细说明和示例代码：
+
+**编写DLL文件**
+
+假设我们要编写一个包含以下函数的DLL文件（fun.cs）：
+
+```csharp
+using System;
+
+namespace MyDLL
+{
+    public class MathFunctions
+    {
+        /// <summary>
+        /// 求和函数
+        /// </summary>
+        /// <param name="a">第一个数字</param>
+        /// <param name="b">第二个数字</param>
+        /// <returns>两个数字的和</returns>
+        public static int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        /// <summary>
+        /// 排序函数，使用冒泡排序算法
+        /// </summary>
+        /// <param name="arr">待排序的整数数组</param>
+        public static void BubbleSort(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 显示"Hello World!"的函数
+        /// </summary>
+        public static void DisplayHelloWorld()
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+**编译DLL文件**
+
+在Visual Studio 2022中，按照以下步骤编译DLL文件：
+
+1. 打开Visual Studio 2022，并创建一个新的C#类库项目。
+2. 将上述代码（fun.cs）添加到项目中的一个类文件中。
+3. 构建项目，生成DLL文件。
+
+编译后将生成一个名为"MyDLL.dll"的DLL文件。
+
+**C#调用DLL文件函数**
+
+现在，我们将演示如何在C#代码中调用上述DLL文件中的函数（main.cs）：
+
+```csharp
+using System;
+using MyDLL;
+
+namespace MyApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int sum = MathFunctions.Add(2, 3);
+            Console.WriteLine("Sum: " + sum);
+
+            int[] numbers = { 5, 2, 8, 1, 9 };
+            MathFunctions.BubbleSort(numbers);
+            Console.WriteLine("Sorted Numbers:");
+            foreach (int num in numbers)
+            {
+                Console.WriteLine(num);
+            }
+
+            MathFunctions.DisplayHelloWorld();
+        }
+    }
+}
+```
+
+- 在C#代码中，我们首先使用`using`语句导入DLL文件的命名空间（MyDLL）。
+- 然后，我们可以直接调用DLL文件中的静态函数（例如`MathFunctions.Add`、`MathFunctions.BubbleSort`和`MathFunctions.DisplayHelloWorld`）。
+- 在编译时，需要将DLL文件("MyDLL.dll")添加为项目的引用。
+
+希望以上回答能满足您的需求。如有任何进一步的问题，请随时提问。
+
+
 
 

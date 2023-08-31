@@ -1006,6 +1006,75 @@ Finish:
 在上述示例中，使用 `GoTo` 语句实现了一个简单的循环。输出从 1 到 5 的数字，然后跳转到标签 `Finish`，输出 "Done"。
 
 需要注意的是，滥用 `GoTo` 语句可能导致不易阅读、理解和维护的代码。在大多数情况下，可以通过其他的循环语句（如 `For`、`While`、`Do While` 等）或条件语句（如 `If`、`Select Case`）来实现逻辑控制，而避免使用 `GoTo`。
+## 内置函数
+[开头](#vbs帮助文档)
+在 VBS（Visual Basic Script）中，内置函数是指已经预定义并内置在语言中的函数。这些函数提供了丰富的功能和操作方法，使程序员能够更方便地进行各种处理和计算。
+### 数学函数
+[开头](#vbs帮助文档)
+VBS 中的数学函数提供了各种用于数值计算和数学操作的函数。以下是 VBS 中常用的数学函数及其描述：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| Abs | Abs(number) | 返回指定数值的绝对值。 | result = Abs(-10) |
+| Sgn | Sgn(number) | 返回指定数值的符号。如果为负数，则返回 -1；如果为0，则返回 0；如果为正数，则返回 1。 | sign = Sgn(5) |
+| Int | Int(number) | 返回不大于指定数值的最大整数。 | integerPart = Int(3.78) |
+| Fix | Fix(number) | 返回向零舍入的指定数值。 | fixedPart = Fix(4.56) |
+| Round | Round(number[, numdecimalplaces]) | 返回指定数值的四舍五入值。可指定要保留的小数位数。 | roundedValue = Round(10.345, 2) |
+| Exp | Exp(number) | 返回 e 的指定次幂。 | result = Exp(2) |
+| Log | Log(number) | 返回指定数值的自然对数（底数为 e）。 | logarithm = Log(10) |
+| Sqr | Sqr(number) | 返回指定数值的平方根。 | squareRoot = Sqr(25) |
+| Sin | Sin(number) | 返回指定角度的正弦值。 | sine = Sin(45) |
+| Cos | Cos(number) | 返回指定角度的余弦值。 | cosine = Cos(60) |
+| Tan | Tan(number) | 返回指定角度的正切值。 | tangent = Tan(30) |
+
+请注意，上述示例中的 number 是用于示范的数值参数。这些函数只是 VBS 数学函数的一部分，还有其他函数可供使用。你可以查阅 VBS 官方文档以获取完整的函数列表和详细说明。
+### 字符串函数
+[开头](#vbs帮助文档)
+在 VBS（Visual Basic Script）中，字符串函数用于处理和操作字符串。以下是 VBS 字符串函数的示例及其说明：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| Len | Len(string) | 返回指定字符串的长度。 | Dim str : str = "Hello" : Dim length : length = Len(str) |
+| Left | Left(string, length) | 从指定字符串的左侧开始，返回指定长度的字符。 | Dim str : str = "Hello" : Dim substring : substring = Left(str, 3) |
+| Right | Right(string, length) | 从指定字符串的右侧开始，返回指定长度的字符。 | Dim str : str = "Hello" : Dim substring : substring = Right(str, 2) |
+| Mid | Mid(string, start, length) | 从指定字符串的指定位置开始，返回指定长度的子字符串。 | Dim str : str = "Hello" : Dim substring : substring = Mid(str, 2, 3) |
+| InStr | InStr([start, ]string1, string2[, compare]) | 在指定字符串中搜索另一个字符串，并返回第一个匹配项的位置。 | Dim position : position = InStr(1, "Hello, World!", "World") |
+| Replace | Replace(expression, find, replace[, [start[, count[, compare]]]]) | 在字符串中替换指定的子字符串，并返回替换后的结果。 | Dim newStr : newStr = Replace("Hello, World!", "World", "Universe") |
+| LCase | LCase(string) | 将指定字符串转换为小写。 | Dim str : str = "Hello" : Dim lowerStr : lowerStr = LCase(str) |
+| UCase | UCase(string) | 将指定字符串转换为大写。 | Dim str : str = "Hello" : Dim upperStr : upperStr = UCase(str) |
+
+请注意，在使用函数时，需要将示例代码嵌入到适当的 VBS 代码段中以确保语法正确性。
+### 日期和时间
+[开头](#vbs帮助文档)
+在 VBS（Visual Basic Script）中，日期和时间函数用于处理和操作日期、时间以及日期时间格式。以下是 VBS 日期和时间函数的示例及其说明：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| Date | Date | 返回当前日期。 | Dim currentDate : currentDate = Date |
+| Time | Time | 返回当前时间。 | Dim currentTime : currentTime = Time |
+| Now | Now | 返回当前日期和时间。 | Dim currentDateTime : currentDateTime = Now |
+| DateSerial | DateSerial(year, month, day) | 根据给定的年、月、日，返回一个日期值。 | Dim dateValue : dateValue = DateSerial(2022, 5, 15) |
+| TimeSerial | TimeSerial(hour, minute, second) | 根据给定的时、分、秒，返回一个时间值。 | Dim timeValue : timeValue = TimeSerial(12, 30, 0) |
+| DateAdd | DateAdd(interval, number, date) | 根据指定的时间间隔，将指定的数量添加到给定的日期值上。 | Dim newDate : newDate = DateAdd("m", 3, Date) |
+| DateDiff | DateDiff(interval, date1, date2[, firstdayofweek[, firstweekofyear]]) | 计算指定两个日期之间的时间差，并返回结果。 | Dim daysDiff : daysDiff = DateDiff("d", date1, date2) |
+| FormatDateTime | FormatDateTime(date[, namedformat]) | 将指定的日期时间值按照指定的命名格式进行格式化。 | Dim formattedDateTime : formattedDateTime = FormatDateTime(currentDateTime, 2) |
+
+请注意，在使用函数时，需要将示例代码嵌入到适当的 VBS 代码段中以确保语法正确性。同时，VBS 中还提供了其他一些日期和时间相关的函数，您可以通过查阅相关文档来了解更多信息。
+### 系统函数
+[开头](#vbs帮助文档)
+在 VBS（Visual Basic Script）中，系统函数用于与操作系统进行交互，执行系统级任务，获取系统信息等。以下是 VBS 系统函数的示例及其说明：
+
+| 函数名 | 函数原型 | 描述 | 使用示例 |
+| --- | --- | --- | --- |
+| MsgBox | MsgBox(prompt[, buttons[, title[, helpfile, context]]]) | 显示一个消息框，并等待用户响应。 | MsgBox("Hello, World!") |
+| InputBox | InputBox(prompt[, title[, default[, xpos[, ypos[, helpfile, context]]]]]) | 显示一个输入框，并等待用户输入。 | Dim input : input = InputBox("Please enter your name.") |
+| Shell | Shell(command[, windowstyle]) | 执行指定的命令，并在新窗口中显示命令输出。 | Shell("notepad.exe") |
+| CreateObject | CreateObject(classname[, location]) | 创建并返回一个对指定 COM 类的引用。 | Dim fs : Set fs = CreateObject("Scripting.FileSystemObject") |
+| WScript.Echo | WScript.Echo(arg) | 在命令行窗口或弹窗中显示指定的文本。 | WScript.Echo("Hello, World!") |
+| WScript.Arguments | WScript.Arguments | 获取命令行参数的集合，用于接收外部传入的参数。 | Set args = WScript.Arguments : Dim arg : arg = args(0) |
+| WScript.Quit | WScript.Quit([exitcode]) | 终止脚本的执行，并返回指定的退出代码。 | WScript.Quit(0) |
+|WScript.Sleep|	WScript.Sleep(milliseconds)	|让程序暂停指定的毫秒数。|	WScript.Sleep(2000)|
+请注意，在使用函数时，需要将示例代码嵌入到适当的 VBS 代码段中以确保语法正确性。同时，VBS 还提供了其他一些系统相关的函数和对象，例如文件操作、注册表操作等，您可以通过查阅相关文档来了解更多信息。
 
 ## 函数
 [开头](#vbs帮助文档)

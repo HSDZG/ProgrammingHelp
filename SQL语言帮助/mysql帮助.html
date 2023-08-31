@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\ms\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="file:///c:\Users\ms\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.10\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
       
       
       
@@ -1287,7 +1287,6 @@ age <span class="token operator">=</span> <span class="token keyword keyword-VAL
 salary <span class="token operator">=</span> <span class="token keyword keyword-VALUES">VALUES</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre><p>&#x4E0A;&#x8FF0;&#x8BED;&#x53E5;&#x5C06;&#x4EE5;id&#x4F5C;&#x4E3A;&#x552F;&#x4E00;&#x952E;&#xFF0C;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;&#x5230;employees&#x8868;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x9047;&#x5230;&#x91CD;&#x590D;&#x7684;id&#xFF0C;&#x5C06;&#x66F4;&#x65B0;&#x76F8;&#x5E94;&#x7684;name&#x3001;age&#x548C;salary&#x5217;&#x7684;&#x503C;&#x3002;</p>
 <p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x63D2;&#x5165;&#x7684;&#x503C;&#x5FC5;&#x987B;&#x4E0E;&#x8868;&#x4E2D;&#x5BF9;&#x5E94;&#x5217;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x517C;&#x5BB9;&#x3002;&#x5982;&#x679C;&#x67D0;&#x4E9B;&#x5217;&#x5177;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x5728;INSERT INTO&#x8BED;&#x53E5;&#x4E2D;&#x672A;&#x6307;&#x5B9A;&#x503C;&#xFF0C;&#x5C06;&#x63D2;&#x5165;&#x76F8;&#x5E94;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
-<p>&#x5E0C;&#x671B;&#x4EE5;&#x4E0A;&#x4FE1;&#x606F;&#x5BF9;&#x4F60;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#xFF01;&#x5982;&#x679C;&#x6709;&#x5176;&#x4ED6;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x968F;&#x65F6;&#x63D0;&#x95EE;&#x3002;</p>
 <h2 class="mume-header" id="%E6%9B%B4%E6%96%B0%E8%AF%AD%E5%8F%A5">&#x66F4;&#x65B0;&#x8BED;&#x53E5;</h2>
 
 <p><a href="#mysql%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
@@ -1538,61 +1537,45 @@ ROLLBACK&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;&#xFF0C;
 <h2 class="mume-header" id="%E8%A7%86%E5%9B%BE">&#x89C6;&#x56FE;</h2>
 
 <p><a href="#mysql%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
-MySQL&#x4E2D;&#xFF0C;&#x89C6;&#x56FE;&#x662F;&#x57FA;&#x4E8E;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x8868;&#x7684;&#x865A;&#x62DF;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x4F7F;&#x7528;&#x8868;&#x4E00;&#x6837;&#x67E5;&#x8BE2;&#x5B83;&#x4EEC;&#x3002;&#x89C6;&#x56FE;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x7B80;&#x5316;&#x548C;&#x91CD;&#x7528;&#x590D;&#x6742;&#x67E5;&#x8BE2;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x4EE5;&#x4E0B;&#x662F;MySQL&#x4E2D;&#x89C6;&#x56FE;&#x7684;&#x6240;&#x6709;&#x8BED;&#x6CD5;&#x8BE6;&#x89E3;&#x548C;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#x3002;</p>
-<p><strong>&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-VIEW">VIEW</span> view_name <span class="token punctuation">[</span><span class="token punctuation">(</span>column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-<span class="token keyword keyword-AS">AS</span>
-<span class="token keyword keyword-SELECT">SELECT</span> column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword keyword-FROM">FROM</span> table_name
-<span class="token punctuation">[</span><span class="token keyword keyword-WHERE">WHERE</span> condition<span class="token punctuation">]</span><span class="token punctuation">;</span>
-</pre><p><strong>&#x4FEE;&#x6539;&#x89C6;&#x56FE;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-ALTER">ALTER</span> <span class="token keyword keyword-VIEW">VIEW</span> view_name <span class="token punctuation">[</span><span class="token punctuation">(</span>column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-<span class="token keyword keyword-AS">AS</span>
-<span class="token keyword keyword-SELECT">SELECT</span> column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword keyword-FROM">FROM</span> table_name
-<span class="token punctuation">[</span><span class="token keyword keyword-WHERE">WHERE</span> condition<span class="token punctuation">]</span><span class="token punctuation">;</span>
-</pre><p><strong>&#x5220;&#x9664;&#x89C6;&#x56FE;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-VIEW">VIEW</span> view_name<span class="token punctuation">;</span>
-</pre><p><strong>&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-SELECT">SELECT</span> <span class="token operator">*</span> <span class="token keyword keyword-FROM">FROM</span> view_name<span class="token punctuation">;</span>
-</pre><p><strong>&#x89C6;&#x56FE;&#x7684;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</strong></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token comment">-- &#x521B;&#x5EFA;&#x89C6;&#x56FE;</span>
-<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-VIEW">VIEW</span> employees_view <span class="token keyword keyword-AS">AS</span>
-<span class="token keyword keyword-SELECT">SELECT</span> employee_id<span class="token punctuation">,</span> first_name<span class="token punctuation">,</span> last_name<span class="token punctuation">,</span> hire_date
-<span class="token keyword keyword-FROM">FROM</span> employees
-<span class="token keyword keyword-WHERE">WHERE</span> hire_date <span class="token operator">&gt;=</span> <span class="token string">&apos;2020-01-01&apos;</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- &#x4FEE;&#x6539;&#x89C6;&#x56FE;</span>
-<span class="token keyword keyword-ALTER">ALTER</span> <span class="token keyword keyword-VIEW">VIEW</span> employees_view <span class="token keyword keyword-AS">AS</span>
-<span class="token keyword keyword-SELECT">SELECT</span> employee_id<span class="token punctuation">,</span> first_name<span class="token punctuation">,</span> last_name<span class="token punctuation">,</span> hire_date
-<span class="token keyword keyword-FROM">FROM</span> employees
-<span class="token keyword keyword-WHERE">WHERE</span> hire_date <span class="token operator">&gt;=</span> <span class="token string">&apos;2021-01-01&apos;</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- &#x5220;&#x9664;&#x89C6;&#x56FE;</span>
-<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-VIEW">VIEW</span> employees_view<span class="token punctuation">;</span>
-
-<span class="token comment">-- &#x4F7F;&#x7528;&#x89C6;&#x56FE;</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token operator">*</span> <span class="token keyword keyword-FROM">FROM</span> employees_view<span class="token punctuation">;</span>
-</pre><p><strong>&#x8BE6;&#x7EC6;&#x8BB2;&#x89E3;&#xFF1A;</strong></p>
+&#x5F53;&#x4F7F;&#x7528;MySQL&#x6570;&#x636E;&#x5E93;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#x6765;&#x7B80;&#x5316;&#x590D;&#x6742;&#x7684;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x5E76;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x3002;&#x4E0B;&#x9762;&#x662F;MySQL&#x4E2D;&#x521B;&#x5EFA;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x4F7F;&#x7528;&#x548C;&#x5220;&#x9664;&#x89C6;&#x56FE;&#x7684;&#x8BED;&#x6CD5;&#x793A;&#x4F8B;&#xFF1A;</p>
 <ul>
-<li>
-<p><strong>&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#xFF08;CREATE VIEW&#xFF09;&#xFF1A;</strong><br>
-&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;CREATE VIEW&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x89C6;&#x56FE;&#x7684;&#x540D;&#x79F0;&#xFF08;view_name&#xFF09;&#x3002;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6027;&#x5730;&#x6307;&#x5B9A;&#x89C6;&#x56FE;&#x7684;&#x5217;&#x540D;&#xFF0C;&#x5217;&#x540D;&#x7528;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x5E76;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x9694;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x4F7F;&#x7528;AS&#x5173;&#x952E;&#x8BCD;&#x6307;&#x5B9A;&#x89C6;&#x56FE;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x4ECE;&#x54EA;&#x4E2A;&#x8868;&#xFF08;table_name&#xFF09;&#x4EE5;&#x53CA;&#x6761;&#x4EF6;&#xFF08;WHERE condition&#xFF09;&#x4E2D;&#x9009;&#x62E9;&#x6570;&#x636E;&#x5217;&#x3002;</p>
-</li>
-<li>
-<p><strong>&#x4FEE;&#x6539;&#x89C6;&#x56FE;&#xFF08;ALTER VIEW&#xFF09;&#xFF1A;</strong><br>
-ALTER VIEW&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x4FEE;&#x6539;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x89C6;&#x56FE;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x901A;&#x8FC7;ALTER VIEW&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x89C6;&#x56FE;&#x4E2D;&#x7684;&#x67E5;&#x8BE2;&#x903B;&#x8F91;&#xFF0C;&#x4F8B;&#x5982;&#x66F4;&#x6539;&#x5217;&#x540D;&#x3001;&#x66F4;&#x6539;&#x9009;&#x62E9;&#x6761;&#x4EF6;&#x7B49;&#x3002;&#x4FEE;&#x6539;&#x89C6;&#x56FE;&#x7684;&#x8BED;&#x6CD5;&#x7C7B;&#x4F3C;&#x4E8E;&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#x7684;&#x8BED;&#x6CD5;&#x3002;&#x53EA;&#x9700;&#x4F7F;&#x7528;ALTER VIEW&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x89C6;&#x56FE;&#x540D;&#x79F0;&#x3001;&#x65B0;&#x7684;&#x5217;&#x540D;&#x4EE5;&#x53CA;&#x65B0;&#x7684;SELECT&#x8BED;&#x53E5;&#x3002;</p>
-</li>
-<li>
-<p><strong>&#x5220;&#x9664;&#x89C6;&#x56FE;&#xFF08;DROP VIEW&#xFF09;&#xFF1A;</strong><br>
-&#x4F7F;&#x7528;DROP VIEW&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x3002;&#x5220;&#x9664;&#x89C6;&#x56FE;&#x4E0D;&#x4F1A;&#x5220;&#x9664;&#x5B9E;&#x9645;&#x7684;&#x8868;&#x6216;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x662F;&#x5220;&#x9664;&#x4E86;&#x8BE5;&#x89C6;&#x56FE;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
-</li>
-<li>
-<p><strong>&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#xFF08;SELECT&#xFF09;&#xFF1A;</strong><br>
-&#x4F7F;&#x7528;SELECT&#x8BED;&#x53E5;&#x5BF9;&#x89C6;&#x56FE;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x5C31;&#x50CF;&#x5BF9;&#x8868;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x4E00;&#x6837;&#x3002;&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#x7684;&#x540D;&#x79F0;&#x6765;&#x66FF;&#x4EE3;&#x8868;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5728;FROM&#x5B50;&#x53E5;&#x4E2D;&#x6307;&#x5B9A;&#x89C6;&#x56FE;&#x540D;&#x79F0;&#x5373;&#x53EF;&#x3002;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6240;&#x6709;&#x5217;&#x6216;&#x6307;&#x5B9A;&#x7279;&#x5B9A;&#x7684;&#x5217;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;</p>
-</li>
+<li>&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#xFF1A;</li>
 </ul>
-<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x89C6;&#x56FE;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x8868;&#xFF0C;&#x4E0D;&#x5B58;&#x50A8;&#x5B9E;&#x9645;&#x7684;&#x6570;&#x636E;&#x3002;&#x67E5;&#x8BE2;&#x89C6;&#x56FE;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4F1A;&#x6839;&#x636E;&#x89C6;&#x56FE;&#x7684;&#x5B9A;&#x4E49;&#x52A8;&#x6001;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x3002;</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-VIEW">VIEW</span> view_name <span class="token keyword keyword-AS">AS</span>
+<span class="token keyword keyword-SELECT">SELECT</span> column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword keyword-FROM">FROM</span> table_name
+<span class="token keyword keyword-WHERE">WHERE</span> condition<span class="token punctuation">;</span>
+</pre><p>&#x5176;&#x4E2D;&#xFF0C;<code>view_name</code>&#x4E3A;&#x89C6;&#x56FE;&#x540D;&#x79F0;&#xFF0C;<code>column1, column2, ...</code>&#x4E3A;&#x8981;&#x9009;&#x62E9;&#x7684;&#x5217;&#xFF0C;<code>table_name</code>&#x4E3A;&#x89C6;&#x56FE;&#x7684;&#x57FA;&#x8868;&#xFF0C;<code>condition</code>&#x4E3A;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x3002;</p>
+<ul>
+<li>&#x4FEE;&#x6539;&#x89C6;&#x56FE;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-ALTER">ALTER</span> <span class="token keyword keyword-VIEW">VIEW</span> view_name <span class="token keyword keyword-AS">AS</span>
+<span class="token keyword keyword-SELECT">SELECT</span> column1<span class="token punctuation">,</span> column2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword keyword-FROM">FROM</span> table_name
+<span class="token keyword keyword-WHERE">WHERE</span> condition<span class="token punctuation">;</span>
+</pre><p>&#x4F7F;&#x7528;<code>ALTER VIEW</code>&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x89C6;&#x56FE;&#xFF0C;&#x8BED;&#x6CD5;&#x4E0E;&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#x7C7B;&#x4F3C;&#x3002;</p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-SELECT">SELECT</span> <span class="token operator">*</span> <span class="token keyword keyword-FROM">FROM</span> view_name<span class="token punctuation">;</span>
+</pre><p>&#x901A;&#x8FC7;<code>SELECT</code>&#x8BED;&#x53E5;&#x6765;&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#xFF0C;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;&#x8BE5;&#x89C6;&#x56FE;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x3002;</p>
+<ul>
+<li>&#x5220;&#x9664;&#x89C6;&#x56FE;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-VIEW">VIEW</span> view_name<span class="token punctuation">;</span>
+</pre><p>&#x4F7F;&#x7528;<code>DROP VIEW</code>&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7684;&#x89C6;&#x56FE;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>employees</code>&#x7684;&#x8868;&#xFF0C;&#x5305;&#x542B;&#x5982;&#x4E0B;&#x5217;&#xFF1A;<code>id, name, age, department</code>&#x3002;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#xFF0C;&#x53EA;&#x5305;&#x542B;<code>name</code>&#x548C;<code>age</code>&#x5217;&#xFF0C;&#x5E76;&#x4E14;&#x7B5B;&#x9009;&#x51FA;&#x5E74;&#x9F84;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;30&#x7684;&#x5458;&#x5DE5;&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x521B;&#x5EFA;&#x89C6;&#x56FE;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-VIEW">VIEW</span> senior_employees <span class="token keyword keyword-AS">AS</span>
+<span class="token keyword keyword-SELECT">SELECT</span> name<span class="token punctuation">,</span> age
+<span class="token keyword keyword-FROM">FROM</span> employees
+<span class="token keyword keyword-WHERE">WHERE</span> age <span class="token operator">&gt;=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+</pre><p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x89C6;&#x56FE;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-SELECT">SELECT</span> <span class="token operator">*</span> <span class="token keyword keyword-FROM">FROM</span> senior_employees<span class="token punctuation">;</span>
+</pre><p>&#x6700;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x8BE5;&#x89C6;&#x56FE;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#x5220;&#x9664;&#x5B83;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-VIEW">VIEW</span> senior_employees<span class="token punctuation">;</span>
+</pre><p>&#x6CE8;&#x610F;&#xFF0C;&#x89C6;&#x56FE;&#x662F;&#x57FA;&#x4E8E;&#x57FA;&#x8868;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x800C;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x57FA;&#x8868;&#x7684;&#x66F4;&#x6539;&#x4F1A;&#x81EA;&#x52A8;&#x53CD;&#x6620;&#x5728;&#x89C6;&#x56FE;&#x4E2D;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x89C6;&#x56FE;&#x672C;&#x8EAB;&#x4E0D;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x662F;&#x4FDD;&#x5B58;&#x4E86;&#x67E5;&#x8BE2;&#x903B;&#x8F91;&#xFF0C;&#x56E0;&#x6B64;&#x6BCF;&#x6B21;&#x67E5;&#x8BE2;&#x89C6;&#x56FE;&#x65F6;&#x90FD;&#x4F1A;&#x751F;&#x6210;&#x6700;&#x65B0;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
 <h2 class="mume-header" id="%E5%AD%90%E6%9F%A5%E8%AF%A2">&#x5B50;&#x67E5;&#x8BE2;</h2>
 
 <p><a href="#mysql%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
@@ -2404,7 +2387,8 @@ MySQL&#x4E2D;&#x7684;&#x5173;&#x8054;&#x5B50;&#x67E5;&#x8BE2;&#x662F;&#x4E00;&#x
 <h3 class="mume-header" id="%E5%AE%9A%E4%B9%89">&#x5B9A;&#x4E49;</h3>
 
 <p>&#x5728;MySQL&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>CREATE FUNCTION</code>&#x8BED;&#x53E5;&#x6765;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5B8C;&#x6574;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x8BED;&#x6CD5;&#x7684;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>CREATE FUNCTION function_name ([&#x53C2;&#x6570;&#x5217;&#x8868;]) RETURNS &#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B; [DETERMINISTIC]
+<pre data-role="codeBlock" data-info class="language-"><code>DELIMITER //
+CREATE FUNCTION function_name ([&#x53C2;&#x6570;&#x5217;&#x8868;]) RETURNS &#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B; [DETERMINISTIC]
 [SQL DATA ACCESS {CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA}]
 [COMMENT &apos;&#x5907;&#x6CE8;&apos;]
 BEGIN
@@ -2412,8 +2396,10 @@ BEGIN
     DECLARE &#x53D8;&#x91CF;&#x5B9A;&#x4E49;;
     -- &#x5176;&#x4ED6;&#x903B;&#x8F91;&#x548C;&#x64CD;&#x4F5C;
     RETURN &#x8FD4;&#x56DE;&#x503C;;
-END
+END //
+DELIMITER ;
 </code></pre><ul>
+<li><code>DELIMITER //</code> &#x548C; <code>DELIMITER</code> ; &#x662F;&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x5206;&#x9694;&#x7B26;&#x7684;&#xFF0C;&#x5C06;&#x666E;&#x901A;&#x7684;&#x5206;&#x53F7; <code>;</code> &#x66FF;&#x6362;&#x4E3A; <code>//</code> &#x6765;&#x786E;&#x4FDD;&#x51FD;&#x6570;&#x4F53;&#x5185;&#x7684;&#x5206;&#x53F7;&#x4E0D;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x7ED3;&#x675F;&#x7B26;&#x53F7;&#x3002;</li>
 <li><code>function_name</code>: &#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
 <li><code>&#x53C2;&#x6570;&#x5217;&#x8868;</code>: &#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x5305;&#x542B;&#x53C2;&#x6570;&#x540D;&#x548C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x3002;</li>
 <li><code>&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;</code>: &#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</li>
@@ -2432,12 +2418,14 @@ END
 <li><code>RETURN</code>&#x5173;&#x952E;&#x5B57;: &#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</li>
 </ul>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x5C55;&#x793A;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5B83;&#x4EEC;&#x7684;&#x548C;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> add_numbers<span class="token punctuation">(</span>a <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> b <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> add_numbers<span class="token punctuation">(</span>a <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> b <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
 <span class="token keyword keyword-BEGIN">BEGIN</span>
     <span class="token keyword keyword-DECLARE">DECLARE</span> sum <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-SET">SET</span> sum <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
     <span class="token keyword keyword-RETURN">RETURN</span> sum<span class="token punctuation">;</span>
-<span class="token keyword keyword-END">END</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
 </pre><p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>add_numbers</code>&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x53C2;&#x6570;<code>a</code>&#x548C;<code>b</code>&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x76F8;&#x52A0;&#x540E;&#x8FD4;&#x56DE;&#x3002;&#x5728;&#x51FD;&#x6570;&#x4F53;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;<code>DECLARE</code>&#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;<code>sum</code>&#x6765;&#x5B58;&#x50A8;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;<code>SET</code>&#x8BED;&#x53E5;&#x7ED9;&#x53D8;&#x91CF;&#x8D4B;&#x503C;&#xFF0C;&#x5E76;&#x6700;&#x540E;&#x4F7F;&#x7528;<code>RETURN</code>&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002;</p>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x8BA1;&#x7B97;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x7684;&#x548C;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-SELECT">SELECT</span> add_numbers<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">-- &#x8FD4;&#x56DE; 15</span>
@@ -2448,16 +2436,19 @@ END
 <p><a href="#mysql%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">&#x5F00;&#x5934;</a><br>
 <strong>&#x4FEE;&#x6539;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x8BED;&#x6CD5;</strong></p>
 <p>&#x5728;MySQL&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>ALTER FUNCTION</code>&#x8BED;&#x53E5;&#x6765;&#x4FEE;&#x6539;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4FEE;&#x6539;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x8BF4;&#x660E;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>ALTER FUNCTION function_name([&#x53C2;&#x6570;&#x5217;&#x8868;]) [RETURNS &#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;] [DETERMINISTIC]
+<pre data-role="codeBlock" data-info class="language-"><code>DELIMITER //
+ALTER FUNCTION function_name([&#x53C2;&#x6570;&#x5217;&#x8868;]) [RETURNS &#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;] [DETERMINISTIC]
 [SQL DATA ACCESS {CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA}]
 [COMMENT &apos;&#x5907;&#x6CE8;&apos;]
 BEGIN
     -- &#x51FD;&#x6570;&#x4F53;
     -- &#x4FEE;&#x6539;&#x903B;&#x8F91;&#x548C;&#x64CD;&#x4F5C;
     RETURN &#x8FD4;&#x56DE;&#x503C;;
-END
+END //
+DELIMITER ;
 </code></pre><p><strong>&#x8BED;&#x6CD5;&#x8BF4;&#x660E;</strong></p>
 <ul>
+<li><code>DELIMITER //</code> &#x662F;&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x5206;&#x9694;&#x7B26;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5C06;&#x5206;&#x9694;&#x7B26;&#x5B9A;&#x4E49;&#x4E3A; <code>//</code>&#x3002;</li>
 <li><code>function_name</code>: &#x8981;&#x4FEE;&#x6539;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
 <li><code>&#x53C2;&#x6570;&#x5217;&#x8868;</code>&#xFF08;&#x53EF;&#x9009;&#xFF09;: &#x4FEE;&#x6539;&#x51FD;&#x6570;&#x7684;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3002;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x5305;&#x542B;&#x53C2;&#x6570;&#x540D;&#x548C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x3002;</li>
 <li><code>RETURNS &#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;</code>&#xFF08;&#x53EF;&#x9009;&#xFF09;: &#x4FEE;&#x6539;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x3002;</li>
@@ -2476,19 +2467,23 @@ END
 </ul>
 <p><strong>&#x793A;&#x4F8B;</strong></p>
 <p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;<code>add_numbers</code>&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5B83;&#x4EEC;&#x7684;&#x548C;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> add_numbers<span class="token punctuation">(</span>a <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> b <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> add_numbers<span class="token punctuation">(</span>a <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> b <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
 <span class="token keyword keyword-BEGIN">BEGIN</span>
     <span class="token keyword keyword-DECLARE">DECLARE</span> sum <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-SET">SET</span> sum <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
     <span class="token keyword keyword-RETURN">RETURN</span> sum<span class="token punctuation">;</span>
-<span class="token keyword keyword-END">END</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
 </pre><p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>ALTER FUNCTION</code>&#x8BED;&#x53E5;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x51B3;&#x5B9A;&#x5C06;&#x51FD;&#x6570;&#x6539;&#x4E3A;&#x4E58;&#x6CD5;&#x8FD0;&#x7B97;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-ALTER">ALTER</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> add_numbers<span class="token punctuation">(</span>a <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> b <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-ALTER">ALTER</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> add_numbers<span class="token punctuation">(</span>a <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> b <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
 <span class="token keyword keyword-BEGIN">BEGIN</span>
     <span class="token keyword keyword-DECLARE">DECLARE</span> product <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-SET">SET</span> product <span class="token operator">=</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
     <span class="token keyword keyword-RETURN">RETURN</span> product<span class="token punctuation">;</span>
-<span class="token keyword keyword-END">END</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
 </pre><p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x5C06;&#x51FD;&#x6570;<code>add_numbers</code>&#x7684;&#x8BA1;&#x7B97;&#x903B;&#x8F91;&#x4FEE;&#x6539;&#x4E3A;&#x4E58;&#x6CD5;&#x8FD0;&#x7B97;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x7684;&#x4E58;&#x79EF;&#x3002;</p>
 <p>&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>ALTER FUNCTION</code>&#x8BED;&#x53E5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x5220;&#x9664;&#x51FD;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4FEE;&#x6539;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x4F7F;&#x5176;&#x9002;&#x5E94;&#x65B0;&#x7684;&#x9700;&#x6C42;&#x6216;&#x4FEE;&#x590D;&#x9519;&#x8BEF;&#x3002;</p>
 <h3 class="mume-header" id="%E5%88%A0%E9%99%A4">&#x5220;&#x9664;</h3>

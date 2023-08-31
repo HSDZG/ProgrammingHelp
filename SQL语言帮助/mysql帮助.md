@@ -870,7 +870,6 @@ salary = VALUES(salary);
 
 需要注意的是，插入的值必须与表中对应列的数据类型兼容。如果某些列具有默认值，并且在INSERT INTO语句中未指定值，将插入相应的默认值。
 
-希望以上信息对你有所帮助！如果有其他问题，请随时提问。
 
 ## 更新语句
 [开头](#mysql帮助文档)
@@ -1196,72 +1195,59 @@ ROLLBACK语句用于回滚事务，撤销已执行的所有SQL语句的操作，
 
 ## 视图
 [开头](#mysql帮助文档)
-MySQL中，视图是基于一个或多个表的虚拟表，可以像使用表一样查询它们。视图提供了一种简化和重用复杂查询的方式。以下是MySQL中视图的所有语法详解和代码示例。
+当使用MySQL数据库时，我们可以使用视图来简化复杂的查询操作并提高代码的可读性。下面是MySQL中创建、修改、使用和删除视图的语法示例：
 
-**创建视图的语法：**
+- 创建视图：
 ```sql
-CREATE VIEW view_name [(column1, column2, ...)]
-AS
+CREATE VIEW view_name AS
 SELECT column1, column2, ...
 FROM table_name
-[WHERE condition];
+WHERE condition;
 ```
+其中，`view_name`为视图名称，`column1, column2, ...`为要选择的列，`table_name`为视图的基表，`condition`为筛选条件。
 
-**修改视图的语法：**
+- 修改视图：
 ```sql
-ALTER VIEW view_name [(column1, column2, ...)]
-AS
+ALTER VIEW view_name AS
 SELECT column1, column2, ...
 FROM table_name
-[WHERE condition];
+WHERE condition;
 ```
+使用`ALTER VIEW`语句可以修改已存在的视图，语法与创建视图类似。
 
-**删除视图的语法：**
-```sql
-DROP VIEW view_name;
-```
-
-**使用视图的语法：**
+- 使用视图：
 ```sql
 SELECT * FROM view_name;
 ```
+通过`SELECT`语句来使用视图，将会返回该视图的查询结果。
 
-**视图的代码示例：**
+- 删除视图：
 ```sql
--- 创建视图
-CREATE VIEW employees_view AS
-SELECT employee_id, first_name, last_name, hire_date
+DROP VIEW view_name;
+```
+使用`DROP VIEW`语句可以删除指定的视图。
+
+下面是一个具体的示例：
+
+假设我们有一个名为`employees`的表，包含如下列：`id, name, age, department`。我们希望创建一个视图，只包含`name`和`age`列，并且筛选出年龄大于等于30的员工。
+
+首先，创建视图：
+```sql
+CREATE VIEW senior_employees AS
+SELECT name, age
 FROM employees
-WHERE hire_date >= '2020-01-01';
-
--- 修改视图
-ALTER VIEW employees_view AS
-SELECT employee_id, first_name, last_name, hire_date
-FROM employees
-WHERE hire_date >= '2021-01-01';
-
--- 删除视图
-DROP VIEW employees_view;
-
--- 使用视图
-SELECT * FROM employees_view;
+WHERE age >= 30;
+```
+然后，我们可以使用以下语句查询视图：
+```sql
+SELECT * FROM senior_employees;
+```
+最后，如果我们不再需要该视图，可以使用以下语句删除它：
+```sql
+DROP VIEW senior_employees;
 ```
 
-**详细讲解：**
-
-- **创建视图（CREATE VIEW）：**
-  创建视图时，使用CREATE VIEW语句，并指定视图的名称（view_name）。可以选择性地指定视图的列名，列名用括号括起来，并以逗号分隔。然后，使用AS关键词指定视图的定义，从哪个表（table_name）以及条件（WHERE condition）中选择数据列。
-
-- **修改视图（ALTER VIEW）：**
-  ALTER VIEW语句用于修改已存在的视图的定义。通过ALTER VIEW，可以更新视图中的查询逻辑，例如更改列名、更改选择条件等。修改视图的语法类似于创建视图的语法。只需使用ALTER VIEW语句，并指定要修改的视图名称、新的列名以及新的SELECT语句。
-
-- **删除视图（DROP VIEW）：**
-  使用DROP VIEW语句可以删除一个视图。删除视图不会删除实际的表或数据，只是删除了该视图的定义。
-
-- **使用视图（SELECT）：**
-  使用SELECT语句对视图进行查询，就像对表进行查询一样。使用视图的名称来替代表的名称，在FROM子句中指定视图名称即可。可以选择所有列或指定特定的列进行查询。
-
-需要注意的是，视图只是一个虚拟表，不存储实际的数据。查询视图时，数据库会根据视图的定义动态计算结果。
+注意，视图是基于基表的查询结果而创建的，因此对基表的更改会自动反映在视图中。另外，视图本身不存储数据，只是保存了查询逻辑，因此每次查询视图时都会生成最新的结果。
 
 ## 子查询
 [开头](#mysql帮助文档)
@@ -1510,6 +1496,7 @@ FROM departments;
 在MySQL中，可以使用`CREATE FUNCTION`语句来创建自定义函数。下面是完整的自定义函数语法的详细解释：
 
 ```
+DELIMITER //
 CREATE FUNCTION function_name ([参数列表]) RETURNS 返回值类型 [DETERMINISTIC]
 [SQL DATA ACCESS {CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA}]
 [COMMENT '备注']
@@ -1518,9 +1505,10 @@ BEGIN
     DECLARE 变量定义;
     -- 其他逻辑和操作
     RETURN 返回值;
-END
+END //
+DELIMITER ;
 ```
-
+- `DELIMITER //` 和 `DELIMITER` ; 是用来定义分隔符的，将普通的分号 `;` 替换为 `//` 来确保函数体内的分号不被解释为结束符号。
 - `function_name`: 自定义函数的名称。
 - `参数列表`: 定义函数的输入参数，可以包含零个或多个参数，每个参数都包含参数名和参数类型。
 - `返回值类型`: 定义函数的返回值的数据类型。
@@ -1538,12 +1526,14 @@ END
 下面是一个示例，展示如何创建一个简单的自定义函数，该函数接受两个整数作为参数，并返回它们的和：
 
 ```sql
+DELIMITER //
 CREATE FUNCTION add_numbers(a INT, b INT) RETURNS INT
 BEGIN
     DECLARE sum INT;
     SET sum = a + b;
     RETURN sum;
-END
+END //
+DELIMITER ;
 ```
 
 以上代码创建了一个名为`add_numbers`的函数，该函数接受两个整数参数`a`和`b`，并将它们相加后返回。在函数体中，使用`DECLARE`语句定义了一个局部变量`sum`来存储计算结果，然后使用`SET`语句给变量赋值，并最后使用`RETURN`语句返回结果。
@@ -1563,6 +1553,7 @@ SELECT add_numbers(8, 2); -- 返回 10
 在MySQL中，可以使用`ALTER FUNCTION`语句来修改已定义的自定义函数。下面是修改自定义函数的语法说明：
 
 ```
+DELIMITER //
 ALTER FUNCTION function_name([参数列表]) [RETURNS 返回值类型] [DETERMINISTIC]
 [SQL DATA ACCESS {CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA}]
 [COMMENT '备注']
@@ -1570,11 +1561,12 @@ BEGIN
     -- 函数体
     -- 修改逻辑和操作
     RETURN 返回值;
-END
+END //
+DELIMITER ;
 ```
 
 **语法说明**
-
+- `DELIMITER //` 是用来定义分隔符的命令，将分隔符定义为 `//`。
 - `function_name`: 要修改的自定义函数的名称。
 - `参数列表`（可选）: 修改函数的输入参数列表。参数列表中可以包含零个或多个参数，每个参数都包含参数名和参数类型。
 - `RETURNS 返回值类型`（可选）: 修改函数的返回值类型。
@@ -1593,23 +1585,27 @@ END
 假设我们有下面这个自定义函数`add_numbers`，它接受两个整数作为参数，并返回它们的和：
 
 ```sql
+DELIMITER //
 CREATE FUNCTION add_numbers(a INT, b INT) RETURNS INT
 BEGIN
     DECLARE sum INT;
     SET sum = a + b;
     RETURN sum;
-END
+END //
+DELIMITER ;
 ```
 
 如果我们想要修改这个函数的逻辑，可以使用`ALTER FUNCTION`语句。比如，我们决定将函数改为乘法运算：
 
 ```sql
+DELIMITER //
 ALTER FUNCTION add_numbers(a INT, b INT) RETURNS INT
 BEGIN
     DECLARE product INT;
     SET product = a * b;
     RETURN product;
-END
+END //
+DELIMITER ;
 ```
 
 以上代码将函数`add_numbers`的计算逻辑修改为乘法运算，并返回两个整数的乘积。
