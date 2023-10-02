@@ -3,12 +3,14 @@
 
 ## 概述
 [开头](#c帮助文档)
-C#（读作"C sharp"）是由微软公司开发的一种通用、面向对象的编程语言。下面将详细讲解C#的起源、发展历史和特点。
 
-**1. 起源**
+**创始人**
+C#语言的创始人是安德斯·海尔斯伯格（Anders Hejlsberg）。他于2000年创建了微软.NET框架，并负责开发C#编程语言。安德斯·海尔斯伯格是一位资深的软件开发者，他在开发Java和Visual Basic .NET的过程中积累了丰富的经验。他的领导和贡献使得C#成为了一种强大、灵活且易于使用的编程语言，广泛应用于各个领域的软件开发项目。
+
+**起源**
 C#的起源可以追溯到20世纪90年代中期，当时微软公司决定开发一种新的编程语言，以满足其在软件开发领域的需求。C#的设计师团队由Anders Hejlsberg领导，他之前曾参与Turbo Pascal和Delphi等编程语言的开发。
 
-**2. 发展历史**
+**发展历史**
 - 2000年，C#首次发布：C#的第一个版本于2000年发布，作为微软的.NET平台的一部分。C#的设计灵感主要来源于C++和Java，继承了C++的语法和面向对象特性，同时也引入了Java的垃圾回收机制和安全性。
 - 2003年，C#标准化：C#经过几年的发展，于2003年成为国际标准（ISO/IEC 23270），并得到了广泛的认可与应用。
 - 2008年，C# 3.0：C# 3.0引入了许多新特性，包括Lambda表达式、扩展方法、匿名类型等，使得编程变得更加灵活和高效。
@@ -18,7 +20,7 @@ C#的起源可以追溯到20世纪90年代中期，当时微软公司决定开�
 - 2017年，C# 7.0：C# 7.0加入了一些有用的功能，如元组（Tuples）、模式匹配、局部函数等，进一步提升了开发者的编程体验。
 - 2019年，C# 8.0：C# 8.0引入了许多新特性，包括可空引用类型、异步流、捕获中的模式、动态调用等，提升了类型安全性和编程效率。
 
-**3. 特点**
+**特点**
 C#作为一种现代编程语言，具有以下特点：
 - 简单易学：C#借鉴了许多C++和Java的语法结构，使得那些熟悉这些语言的开发者很容易上手。
 - 面向对象：C#是一种面向对象编程（OOP）语言，支持类、继承、多态等OOP的核心特性，使得代码更易维护、扩展和复用。
@@ -27,6 +29,32 @@ C#作为一种现代编程语言，具有以下特点：
 - 具有丰富的功能和库：C#拥有庞大、成熟的类库和框架，为开发者提供了丰富的功能组件，如ASP.NET用于Web开发、Windows Forms和WPF用于桌面应用程序开发等。
 
 总的来说，C#是一种功能丰富、易学易用的编程语言，与.NET平台和Visual Studio等工具结合使用，可以用于开发各种类型的应用程序，从桌面应用到Web应用和移动应用。
+
+**应用领域**
+
+1. **桌面应用程序开发**：C#可用于开发Windows桌面应用程序，如办公软件、图形图像处理工具、多媒体播放器等。它提供了丰富的用户界面控件和强大的功能，使开发者能够轻松构建出功能强大且易于使用的桌面应用程序。
+
+2. **Web应用程序开发**：C#可以与ASP.NET框架结合使用来开发Web应用程序。ASP.NET是一个用于构建Web应用程序的开发平台，它提供了丰富的控件和模型绑定功能，使开发者能够轻松地构建出高效、安全且可扩展的Web应用程序。
+
+3. **移动应用程序开发**：通过使用Xamarin框架，C#可以用于跨平台移动应用程序的开发。Xamarin允许开发者使用单一的代码库来构建iOS、Android和Windows Phone平台的应用程序，并提供了许多共享的UI组件和功能，以简化开发过程。
+
+4. **游戏开发**：C#也被广泛应用于游戏开发领域。Unity引擎就是使用C#作为其主要编程语言之一，开发者可以使用C#编写游戏逻辑、创建用户界面和处理游戏数据。C#的简洁性和强大的类型安全性为游戏开发提供了便利。
+
+5. **数据库编程**：ADO.NET是一组用于与关系型数据库进行通信的类库，其中C#是其主要编程语言。开发者可以使用C#编写代码来执行查询、插入、更新和删除等数据库操作。C#提供了强大的连接对象模型（Connection Object Model）和数据访问技术，使得与数据库的交互更加简单和高效。
+
+除了上述应用领域，C#还广泛应用于其他领域，如金融、医疗、教育和物联网等。它的简洁性、强大的类型安全性和丰富的类库使得C#成为了许多开发者的首选语言。
+
+## 著名应用程序
+[开头](#c帮助文档)
+以下是一些用C#编写的世界著名应用程序：
+
+- **Microsoft Office Suite**：Microsoft Office是一套包含Word、Excel、PowerPoint等应用程序的办公套件，其中一些应用程序是用C#编写的。
+- **Visual Studio**：Visual Studio是一款集成开发环境(IDE)，用于开发各种类型的应用程序，包括C#应用程序。它本身就是用C#编写的。
+- **Adobe Photoshop Elements**：Photoshop Elements是一款针对家庭用户的照片编辑软件，它的一些功能是用C#编写的。
+- **Unity3D**：Unity3D是一款跨平台的游戏引擎，用于开发视频游戏和其他交互式内容。虽然它的核心功能是用C++编写的，但在其编辑器界面和扩展插件中，也使用了C#进行开发。
+- **AutoCAD**：AutoCAD是一款用于计算机辅助设计和绘图的软件，它的部分功能和插件是用C#编写的。
+
+这些都只是一些例子，并不是全部。C#是一种十分流行的编程语言，在许多不同领域的应用程序开发中都有广泛的应用。
 
 ## 开发环境
 [开头](#c帮助文档)
@@ -479,7 +507,39 @@ using      virtual    void     volatile  while
 
 需要注意的是，C#的关键字是大小写敏感的，因此应使用相应的大小写来正确使用关键字。例如，`if`是关键字，而`If`或`IF`则是标识符。
 
-关键字是语言的一部分，掌握这些关键字的含义和使用方法对于编写有效和正确的C#代码非常重要。
+关键字是C#语言的一部分，掌握这些关键字的含义和使用方法对于编写有效和正确的C#代码非常重要。
+
+## 转义字符
+[开头](#c帮助文档)
+在C#中，转义字符是特殊的字符组合，用于表示一些特殊的字符或者控制字符，无法直接使用字面值表示。在字符串中，可以使用反斜杠（\）作为转义字符的前缀，后面跟着一个或多个字符来表示特定的含义。
+
+以下是一些常见的C#转义字符：
+
+- `\"`：双引号
+- `\'`：单引号
+- `\\`：反斜杠
+- `\n`：换行
+- `\r`：回车
+- `\t`：水平制表符
+- `\b`：退格
+- `\f`：换页
+- `\uXXXX`：表示一个 Unicode 字符，其中 XXXX 是字符的 16 进制编码值
+
+示例：
+
+```csharp
+string message = "Hello, \"World\"!";
+string path = "C:\\Program Files\\";
+string newLine = "First Line\nSecond Line";
+string unicode = "\u4F60\u597D"; // 你好
+```
+
+在上述示例中，我们使用了转义字符来表示一些特殊的字符。在字符串 `message` 中，我们使用了 `\"` 来表示双引号；在字符串 `path` 中，我们使用了 `\\` 来表示反斜杠；在字符串 `newLine` 中，我们使用了 `\n` 来表示换行；在字符串 `unicode` 中，我们使用了 `\u` 前缀，并跟随着字符的 Unicode 编码值。
+
+需要注意的是，转义字符可以在字符串中灵活使用，以表示需要的特殊字符或者控制字符。当需要输出一个转义字符本身时，可以使用两个连续的转义字符来实现，例如 `\\` 表示一个反斜杠字符。
+
+总之，在C#中，转义字符是特殊的字符组合，通过在字符串中使用反斜杠（\）作为前缀，后面跟随一个或多个字符，可以表示一些特定的含义和控制字符。使用转义字符可以灵活地处理特殊字符的表示和输出。
+
 
 ## 基本输入输出
 [开头](#c帮助文档)
@@ -770,36 +830,6 @@ Console.WriteLine(Message);
 
 总之，在C#中，使用`const`关键字可以声明常量，常量是固定不变的值，在声明后不能被修改。常量可以用于存储一些固定的数值或者字符串，并在后续的代码中使用。
 
-### 转义字符
-[开头](#c帮助文档)
-在C#中，转义字符是特殊的字符组合，用于表示一些特殊的字符或者控制字符，无法直接使用字面值表示。在字符串中，可以使用反斜杠（\）作为转义字符的前缀，后面跟着一个或多个字符来表示特定的含义。
-
-以下是一些常见的C#转义字符：
-
-- `\"`：双引号
-- `\'`：单引号
-- `\\`：反斜杠
-- `\n`：换行
-- `\r`：回车
-- `\t`：水平制表符
-- `\b`：退格
-- `\f`：换页
-- `\uXXXX`：表示一个 Unicode 字符，其中 XXXX 是字符的 16 进制编码值
-
-示例：
-
-```csharp
-string message = "Hello, \"World\"!";
-string path = "C:\\Program Files\\";
-string newLine = "First Line\nSecond Line";
-string unicode = "\u4F60\u597D"; // 你好
-```
-
-在上述示例中，我们使用了转义字符来表示一些特殊的字符。在字符串 `message` 中，我们使用了 `\"` 来表示双引号；在字符串 `path` 中，我们使用了 `\\` 来表示反斜杠；在字符串 `newLine` 中，我们使用了 `\n` 来表示换行；在字符串 `unicode` 中，我们使用了 `\u` 前缀，并跟随着字符的 Unicode 编码值。
-
-需要注意的是，转义字符可以在字符串中灵活使用，以表示需要的特殊字符或者控制字符。当需要输出一个转义字符本身时，可以使用两个连续的转义字符来实现，例如 `\\` 表示一个反斜杠字符。
-
-总之，在C#中，转义字符是特殊的字符组合，通过在字符串中使用反斜杠（\）作为前缀，后面跟随一个或多个字符，可以表示一些特定的含义和控制字符。使用转义字符可以灵活地处理特殊字符的表示和输出。
 
 ### 复合类型
 #### 数组
@@ -1808,6 +1838,7 @@ C# 中的 `string` 类是用于处理字符串的类。下面是 `string` 类的
 |Compare|	static int Compare(string strA, string strB)|	比较两个字符串，并返回一个表示它们在排序顺序中的相对位置的整数	|string str1 = “hello”; string str2 = “world”; int result = string.Compare(str1, str2);|
 ||static int Compare(string strA, string strB, bool ignoreCase)	|比较两个字符串，并返回一个表示它们在排序顺序中的相对位置的整数，可以指定是否忽略大小写	|string str1 = “hello”; string str2 = “world”; int result = string.Compare(str1, str2, true);|
 ||static int Compare(string strA, string strB, StringComparison comparisonType)	|比较两个字符串，并返回一个表示它们在排序顺序中的相对位置的整数，可以指定比较规则	|string str1 = “hello”; string str2 = “world”; int result = string.Compare(str1, str2, StringComparison.Ordinal);|
+
 这是 C# `string` 类的所有成员函数的详细信息。
 ### math
 [开头](#c帮助文档)
@@ -1950,6 +1981,7 @@ Directory类是用于操作目录的静态类，提供了一系列静态方法�
 | Move                      | public static void Move(string sourceDirName, string destDirName)              | 移动目录                             | Directory.Move("source/directory", "destination/directory");     |
 | SetLastAccessTime         | public static void SetLastAccessTime(string path, DateTime lastAccessTime)      | 设置指定目录的最后访问时间             | Directory.SetLastAccessTime("path/to/directory", DateTime.Now);  |
 | SetLastWriteTime          | public static void SetLastWriteTime(string path, DateTime lastWriteTime)        | 设置指定目录的最后写入时间             | Directory.SetLastWriteTime("path/to/directory", DateTime.Now);   |
+
 这是 C# `Directory` 类的所有成员函数的详细信息。
 ### StreamReader
 [开头](#c帮助文档)
@@ -1983,6 +2015,7 @@ StreamReader类用于从文本数据流中读取字符。
 | ReadLineAsync              | public virtual ValueTask<string> ReadLineAsync(CancellationToken cancellationToken = default)                | 异步从输入流中读取下一行字符                                                                                                      | string line = await reader.ReadLineAsync(cancellationToken);                                                                               |
 | ReadToEndAsync             | public virtual ValueTask<string> ReadToEndAsync(CancellationToken cancellationToken = default)                | 异步从当前位置读取到输入流的末尾，并返回所有字符                                                                            | string content = await reader.ReadToEndAsync(cancellationToken);                                                                           |
 | Dispose                   | public void Dispose()                                                                                      | 释放StreamReader对象使用的所有资源                                                                                                | reader.Dispose();                                                                                                                        |
+
 这是 C# `StreamReader` 类的所有成员函数的详细信息。
 ### StreamWriter
 [开头](#c帮助文档)
@@ -1999,6 +2032,7 @@ StreamWriter类提供了一个用于向文本文件写入字符的方便方法�
 | FlushAsync | Task FlushAsync() | 异步将所有缓冲的数据写入基础流。 | await writer.FlushAsync(); |
 | AutoFlush | bool AutoFlush { get; set; } | 获取或设置一个值，该值指示 StreamWriter 在每次调用 Write 方法后是否自动刷新缓冲区。 | writer.AutoFlush = true; |
 | NewLine | string NewLine { get; set; } | 获取或设置字符串，该字符串用于表示换行符。 | writer.NewLine = "\n"; |
+
 这是 C# `StreamWriter` 类的所有成员函数的详细信息。
 ### FileStream
 [开头](#c帮助文档)
@@ -2012,6 +2046,7 @@ C# FileStream类用于实现对文件的输入和输出操作，它提供了一�
 | Flush | void Flush() | 清空缓冲区，并将缓冲中的数据立即写入文件。 | fileStream.Flush(); |
 | Seek | long Seek(long offset, SeekOrigin origin) | 在文件中移动当前位置到指定位置。 | fileStream.Seek(0, SeekOrigin.Begin); |
 | Close | void Close() | 关闭FileStream对象，并释放相关资源。 | fileStream.Close(); |
+
 这是 C# `FileStream` 类的所有成员函数的详细信息。
 ### WebClient
 [开头](#c帮助文档)
@@ -2026,6 +2061,7 @@ C# WebClient类用于实现与 Web 服务器之间的通信，它提供了一系
 | UploadFile | byte[] UploadFile(string address, string fileName) | 将指定的文件上传到指定的网址，并返回响应数据的字节数组。 | byte[] response = webClient.UploadFile("http://example.com/upload", "file.txt"); |
 | UploadValues | byte[] UploadValues(string address, NameValueCollection data) | 将指定的名称/值集合上传到指定的网址，并返回响应数据的字节数组。 | byte[] response = webClient.UploadValues("http://example.com/submit", formData); |
 | Dispose | void Dispose() | 释放WebClient对象使用的资源。 | webClient.Dispose(); |
+
 这是 C# `WebClient` 类的所有成员函数的详细信息。
 ### Thread
 [开头](#c帮助文档)
@@ -2042,6 +2078,7 @@ C# Thread类是用于多线程编程的类，它提供了一系列用于线程�
 | GetState | ThreadState GetState() | 获取线程的当前状态。 | ThreadState state = thread.GetState(); |
 | SetName | void SetName(string name) | 设置线程的名称。 | thread.SetName("WorkerThread"); |
 | GetCurrentThread | static Thread GetCurrentThread() | 获取当前正在执行的线程对象。 | Thread currentThread = Thread.GetCurrentThread(); |
+
 这是 C# `Thread` 类的所有成员函数的详细信息。
 ## 自定义函数
 [开头](#c帮助文档)
